@@ -158,7 +158,7 @@
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
           integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
           crossorigin="anonymous"></script>
-  <script src="./ds/ds-bundle.js"></script>
+  <script src="./ds/_ds_bundle.js"></script>
 
   <script type="text/babel">
     const {
@@ -244,9 +244,39 @@
         spotify: 'https://open.spotify.com/episode/3gcahQ7GIvvtrOZrKfFL58',
         ivoox: 'https://www.ivoox.com/en/episodio-6-el-rock-psicodelico-londres-audios-mp3_rf_93288705_1.html',
         fountain: FOUNTAIN_SHOW,
-        guideHref: './guias/london-guide.html',
-        guideDescription: 'Swinging London: los escenarios de la contracultura que tomó la ciudad entre 1966 y 1970.',
+        guideHref: './guias/london-guide_1.html',
+        guideDescription: 'Swinging London: los escenarios de la contracultura que tomó la ciudad entre 1966 y 1970 — Notting Hill, Soho y Camden.',
         guideTags: ['Cómo llegar', 'Hoteles', 'Circuito'],
+      },
+      {
+        id: 'los-angeles',
+        img: 'https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=800&h=450&q=80',
+        typeColor: '#9b4fd0',
+        category: 'Rock Psicodélico',
+        title: 'Los Ángeles',
+        kicker: 'California · Sunset Strip · 1965–1969',
+        description: 'De Laurel Canyon al Sunset Strip: The Doors, The Byrds y la escena que convirtió a Los Ángeles en el otro polo del rock psicodélico americano.',
+        spotify: 'https://open.spotify.com/episode/1VUIjxKiEMcEYwuOctdjq9',
+        ivoox: 'https://www.ivoox.com/en/episodio-5-rock-psicodelico-los-angeles-audios-mp3_rf_89933220_1.html',
+        fountain: FOUNTAIN_SHOW,
+        guideHref: './guias/los-angeles-guide.html',
+        guideDescription: 'Cada barrio de LA es casi una ciudad distinta: el rock de West Hollywood, la playa de Santa Mónica o el Arts District. El circuito completo desde LAX.',
+        guideTags: ['Cómo llegar', 'Hoteles', 'Circuito'],
+      },
+      {
+        id: 'san-francisco',
+        img: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&h=450&q=80',
+        typeColor: '#9b4fd0',
+        category: 'Rock Psicodélico',
+        title: 'San Francisco',
+        kicker: 'California · Haight-Ashbury · Summer of Love',
+        description: 'Haight-Ashbury, el Fillmore y el Verano del Amor: la ciudad donde Grateful Dead y Jefferson Airplane le pusieron banda sonora a la contracultura.',
+        spotify: 'https://open.spotify.com/episode/0vr3DXtAmLYH1EIrkKVSEd',
+        ivoox: 'https://www.ivoox.com/en/episodio-4-rock-psicodelico-san-francisco-audios-mp3_rf_89430062_1.html',
+        fountain: FOUNTAIN_SHOW,
+        guideHref: './guias/san-francisco-guide.html',
+        guideDescription: 'Una ciudad compacta y transitable a pie — BART, tranvías históricos y cable cars. El circuito psicodélico por Haight-Ashbury, día a día.',
+        guideTags: ['Cómo llegar', 'Transporte', 'Circuito'],
       },
       {
         id: 'australia',
@@ -270,21 +300,13 @@
     // donde se pudo confirmar, y si no, el link del show completo.
     const MORE_EPISODES = [
       { id: 'back-to-the-beginning', category: 'Especial', title: 'Back to the Beginning — Reseña del evento (Birmingham)', spotify: 'https://open.spotify.com/episode/59MRilmn5BmBdzSQZndNd2', ivoox: 'https://www.ivoox.com/en/back-to-the-beginning-resena-del-evento-audios-mp3_rf_162302149_1.html' },
-      { id: 'tomorrowland', category: 'Especial', title: 'Core Tomorrowland — Medellín', spotify: 'https://open.spotify.com/episode/3vjJJnA43cxYmgBCqap1h2', ivoox: null },
       { id: 'venezuela', category: 'Destino', title: 'Venezuela — Puerto Ordáz y Delta del Orinoco', spotify: 'https://open.spotify.com/episode/4h7BEReBdl47pXrpdA8S8P', ivoox: 'https://www.ivoox.com/en/venezuela-puerto-ordaz-delta-del-orinoco-audios-mp3_rf_122634199_1.html' },
-      { id: 'navidad', category: 'Especial', title: 'Mensaje de Navidad', spotify: 'https://open.spotify.com/episode/37pwMWqNj3SiGNxZ4hrHt5', ivoox: 'https://www.ivoox.com/en/pasaporte-sinfonico-mensaje-navidad-audios-mp3_rf_121628373_1.html' },
-      { id: 'semana-e1', category: 'Cápsula', title: 'Y esta semana te contamos que… E1', spotify: null, ivoox: 'https://www.ivoox.com/en/y-esta-semana-te-contamos-que-e1-audios-mp3_rf_115814030_1.html' },
-      { id: 'semana-e2', category: 'Cápsula', title: 'Y esta semana te contamos que… E2', spotify: 'https://open.spotify.com/episode/65dTSlNkbPqBOuUfEIrafa', ivoox: null },
-      { id: 'semana-e3', category: 'Cápsula', title: 'Y esta semana te contamos que… E3', spotify: 'https://open.spotify.com/episode/5IVCcbPAnZStyJX4rd2Iag', ivoox: null },
-      { id: 'semana-e4', category: 'Cápsula', title: 'Y esta semana te contamos que… E4', spotify: 'https://open.spotify.com/episode/0N1ubZnMUGV73wEKbdFi4y', ivoox: 'https://www.ivoox.com/en/y-esta-semana-te-contamos-que-e4-audios-mp3_rf_119335270_1.html' },
       { id: 'ny-1', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — New York (1ra parte)', spotify: 'https://open.spotify.com/episode/7hElUe7uoZI8wUA7mP5LN9', ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-1ra-parte-audios-mp3_rf_115814013_1.html' },
       { id: 'ny-2', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — New York (2da parte)', spotify: 'https://open.spotify.com/episode/1AoUMoA6jTCM3gtKe1SIfN', ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-2da-parte-audios-mp3_rf_119031727_1.html' },
       { id: 'rep-dominicana', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — República Dominicana', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-3-8211-2da-temporada-musica-afrocaribena-audios-mp3_rf_111550581_1.html' },
       { id: 'cuba', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — Cuba', spotify: null, ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-cuba-audios-mp3_rf_106888096_1.html' },
       { id: 'puerto-rico', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — Puerto Rico', spotify: null, ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-puerto-rico-audios-mp3_rf_99460980_1.html' },
       { id: 'cordillera', category: 'Especial', title: 'Festival Cordillera — Bogotá', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-especial-8211-festival-cordillera-bogota-audios-mp3_rf_91996985_1.html' },
-      { id: 'psicodelico-la', category: 'Rock Psicodélico', title: 'Rock Psicodélico — Los Angeles', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-5-rock-psicodelico-los-angeles-audios-mp3_rf_89933220_1.html' },
-      { id: 'psicodelico-sf', category: 'Rock Psicodélico', title: 'Rock Psicodélico — San Francisco', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-4-rock-psicodelico-san-francisco-audios-mp3_rf_89430062_1.html' },
       { id: 'rock-cleveland', category: 'Rock and Roll', title: 'Rock and Roll — Cleveland', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-2-rock-and-roll-cleveland-audios-mp3_rf_89428270_1.html' },
     ].map(ep => ({ ...ep, spotify: ep.spotify || SPOTIFY_SHOW, ivoox: ep.ivoox || IVOOX_SHOW, fountain: FOUNTAIN_SHOW }));
 
