@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Francisco · Rock Psicodélico — El Pasaporte Sinfónico</title>
+<meta name="description" content="Guía interactiva de San Francisco — el Summer of Love, Haight-Ashbury, el Fillmore y las bandas que inventaron la psicodelia. Hoteles, itinerario, gastronomía y música en vivo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cinzel:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+/* ═══ COLOR TOKENS — PSYCHEDELIC ROCK · SAN FRANCISCO
+   Pacific gold / deep purple / midnight indigo
+*/
+:root {
+  --base-1:  #060509;
+  --base-2:  #0c0a12;
+  --base-3:  #14111c;
+  --base-4:  #1e1928;
+
+  --accent:        #c9a84c;
+  --accent-bright: #e8c96a;
+  --accent-deep:   #8a6e28;
+
+  --secondary:       #6b2fa0;
+  --secondary-glow:  #9b4fd0;
+  --secondary-light: rgba(107,47,160,0.15);
+
+  --pacific:      #1a4a7a;
+  --pacific-glow: #2a7ab0;
+
+  --bone:   #f0ece8;
+  --parch:  #e0d5cc;
+  --smoke:  #8a8298;
+  --rule:   #251f35;
+
+  --f-display: 'Cinzel', serif;
+  --f-head:    'Playfair Display', serif;
+  --f-body:    'Libre Baskerville', serif;
+  --f-label:   'Oswald', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--base-1);
+  color: var(--parch);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+body::after {
+  content:''; position:fixed; inset:0; pointer-events:none; z-index:9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity:0.55;
+}
+
+/* NAV */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:200;
+  background:rgba(6,5,9,0.97); backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+  height:62px; display:flex; align-items:center;
+  padding:0 2rem; justify-content:space-between;
+}
+.nav-logo {
+  font-family:var(--f-display); font-size:0.9rem; letter-spacing:0.18em;
+  color:var(--accent); text-decoration:none; text-transform:uppercase;
+  display:flex; align-items:center; gap:0.75rem;
+}
+.nav-logo em {
+  color:rgba(224,213,204,0.4); font-style:normal; font-size:0.7em;
+  display:block; letter-spacing:0.3em; font-family:var(--f-label); font-weight:300;
+}
+.nav-logo span { display:block; }
+.nav-links { display:flex; gap:0.1rem; list-style:none; }
+.nav-links a {
+  display:block; padding:0.3rem 0.65rem;
+  font-family:var(--f-label); font-size:0.63rem;
+  font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--smoke); text-decoration:none; transition:color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--accent); }
+@media(max-width:900px){ .nav-links { display:none; } }
+
+/* HERO */
+.hero {
+  min-height:100vh; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  padding:8rem 2rem 5rem; position:relative; overflow:hidden;
+  background:
+    radial-gradient(ellipse at 70% 25%, rgba(107,47,160,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 20% 75%, rgba(26,74,122,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 60%, rgba(201,168,76,0.06) 0%, transparent 45%),
+    var(--base-1);
+}
+.hero-watermark {
+  position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  font-size:40vw; line-height:1; color:var(--secondary); opacity:0.04;
+  pointer-events:none; user-select:none; font-family:var(--f-display);
+}
+.episode-badge {
+  font-family:var(--f-label); font-size:0.68rem; font-weight:700;
+  letter-spacing:0.35em; text-transform:uppercase; color:var(--accent);
+  margin-bottom:1.8rem; border:1px solid rgba(201,168,76,0.3);
+  display:inline-block; padding:0.5rem 1.4rem; position:relative;
+}
+.hero-title {
+  font-family:var(--f-display); font-weight:900; text-transform:uppercase;
+  letter-spacing:0.03em; line-height:1; color:var(--bone); margin-bottom:1rem;
+  position:relative;
+}
+.hero-title .under {
+  display:block; font-family:var(--f-label); font-weight:300; font-size:0.82rem;
+  letter-spacing:0.42em; text-transform:uppercase; color:var(--smoke); margin:0.7rem 0;
+}
+.hero-title .city {
+  display:block; font-family:var(--f-display); font-weight:900;
+  font-size:clamp(3rem, 9.5vw, 8.5rem); letter-spacing:0.04em;
+  text-transform:uppercase; color:var(--bone); line-height:1.02;
+}
+.hero-subtitle {
+  font-family:var(--f-label); font-size:0.82rem; font-weight:600;
+  letter-spacing:0.25em; text-transform:uppercase; color:var(--smoke); margin-bottom:3rem;
+}
+.hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.btn-primary {
+  font-family:var(--f-label); font-size:0.75rem; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase;
+  background:var(--accent); color:var(--base-1); padding:0.9rem 2.2rem;
+  text-decoration:none; clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+  transition:background 0.2s;
+}
+.btn-primary:hover { background:var(--accent-bright); }
+.btn-ghost {
+  font-family:var(--f-label); font-size:0.75rem; font-weight:600;
+  letter-spacing:0.2em; text-transform:uppercase;
+  background:transparent; color:var(--accent); border:1px solid var(--accent);
+  padding:0.9rem 2.2rem; text-decoration:none; transition:all 0.2s;
+}
+.btn-ghost:hover { background:rgba(201,168,76,0.1); }
+.scroll-hint {
+  position:relative; margin-top:4rem; display:flex; flex-direction:column;
+  align-items:center; gap:0.5rem; font-family:var(--f-label); font-size:0.6rem;
+  letter-spacing:0.25em; color:var(--smoke); text-transform:uppercase;
+}
+.scroll-arrow {
+  width:1px; height:40px;
+  background:linear-gradient(to bottom, var(--accent), transparent);
+  animation:scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+/* SECTIONS */
+.section { padding:5.5rem 0; }
+.section-alt { background:var(--base-2); }
+.section-inner { max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-rule {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;
+}
+.section-rule::after { content:''; flex:1; height:1px; background:var(--rule); }
+.section-tag {
+  font-family:var(--f-label); font-size:0.65rem; font-weight:700;
+  letter-spacing:0.3em; text-transform:uppercase; color:var(--accent);
+}
+.section-title {
+  font-family:var(--f-display); font-size:clamp(2rem,5vw,4rem);
+  font-weight:900; text-transform:uppercase; letter-spacing:0.02em;
+  color:var(--bone); margin-bottom:1.2rem; line-height:1.05;
+}
+.section-title em {
+  display:block; font-style:italic; font-family:var(--f-head);
+  color:var(--accent); font-weight:700; text-transform:none; font-size:0.65em;
+}
+.section-lead {
+  font-size:clamp(1rem,1.4vw,1.15rem); color:var(--parch); line-height:1.8;
+  max-width:720px; margin-bottom:3rem;
+}
+
+/* TRIBUTE BOX */
+.tribute-box {
+  max-width:860px; margin:0 auto; padding:3.2rem clamp(1.4rem,5vw,4rem);
+  border:1px solid var(--rule); border-top:2px solid var(--accent);
+  background:linear-gradient(180deg, var(--base-3) 0%, var(--base-2) 100%);
+}
+.tribute-box h2 {
+  font-family:var(--f-head); font-style:italic; font-weight:700;
+  font-size:clamp(1.4rem,3.2vw,2rem); color:var(--bone); margin-bottom:1.6rem; line-height:1.35;
+}
+.tribute-box p { margin-bottom:1.2rem; font-size:0.96rem; }
+
+/* STATS */
+.stats-row {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px; background:var(--rule); margin:2.5rem 0;
+}
+.stat-cell { background:var(--base-3); padding:1.8rem 1.5rem; text-align:center; }
+.stat-cell .lbl { font-family:var(--f-label); font-size:0.6rem; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:var(--smoke); margin-bottom:0.5rem; }
+.stat-cell .num { font-family:var(--f-display); font-size:2.5rem; font-weight:900; color:var(--accent); line-height:1; }
+.stat-cell .num em { font-size:0.55em; font-style:normal; color:var(--accent-bright); }
+.stat-cell .desc { font-size:0.75rem; color:var(--smoke); margin-top:0.4rem; font-style:italic; }
+
+/* CARDS */
+.cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+.card { background:var(--base-3); border:1px solid var(--rule); transition:border-color 0.2s,transform 0.2s; }
+.card:hover { border-color:rgba(201,168,76,0.35); transform:translateY(-2px); }
+.card-type {
+  font-family:var(--f-label); font-size:0.62rem; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase; padding:0.6rem 1rem;
+  border-bottom:1px solid var(--rule);
+}
+.card-type.hotel   { background:rgba(201,168,76,0.08); color:var(--accent); }
+.card-type.food    { background:rgba(192,56,32,0.08); color:#e07840; }
+.card-type.cafe    { background:rgba(160,100,20,0.12); color:#c8943a; }
+.card-type.culture { background:rgba(26,74,122,0.12); color:#5090d0; }
+.card-type.music   { background:rgba(107,47,160,0.10); color:#a060d0; }
+.card-type.festival{ background:rgba(60,140,30,0.10); color:#70b050; }
+.card-type.nature  { background:rgba(20,120,90,0.10); color:#40b080; }
+.card-type.tour    { background:rgba(80,50,160,0.10); color:#8060c0; }
+.card-type.sustain { background:rgba(30,140,80,0.10); color:#60c090; }
+.card-body { padding:1.4rem; }
+.card-title { font-family:var(--f-head); font-size:1.1rem; font-weight:700; color:var(--bone); margin-bottom:0.7rem; }
+.card-desc { font-size:0.86rem; color:var(--parch); line-height:1.65; margin-bottom:1rem; }
+.card-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.btn { display:inline-block; text-decoration:none; }
+.btn-web, .btn-map {
+  font-family:var(--f-label); font-size:0.62rem; font-weight:600;
+  letter-spacing:0.12em; text-transform:uppercase; padding:0.35rem 0.9rem;
+  border:1px solid var(--rule); color:var(--smoke); transition:all 0.2s;
+}
+.btn-web:hover { border-color:var(--accent); color:var(--accent); }
+.btn-map:hover { border-color:var(--secondary-glow); color:var(--secondary-glow); }
+
+/* TRANSPORT */
+.transport-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
+.transport-region { background:var(--base-3); border:1px solid var(--rule); padding:1.4rem; }
+.transport-region h4 {
+  font-family:var(--f-label); font-size:0.7rem; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase; color:var(--accent);
+  margin-bottom:1rem; padding-bottom:0.6rem; border-bottom:1px solid var(--rule);
+}
+.airline-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+.airline-list li { display:flex; align-items:center; justify-content:space-between; font-size:0.82rem; }
+.airline-list a {
+  font-family:var(--f-label); font-size:0.6rem; font-weight:600;
+  letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);
+  text-decoration:none; border:1px solid rgba(201,168,76,0.3);
+  padding:0.2rem 0.6rem; transition:all 0.2s;
+}
+.airline-list a:hover { background:rgba(201,168,76,0.1); }
+.tip-box {
+  margin-top:2rem; padding:1.4rem 1.8rem;
+  border-left:3px solid var(--accent); background:rgba(201,168,76,0.06);
+  font-size:0.88rem; color:var(--parch); line-height:1.7; font-style:italic;
+}
+
+/* BAND SPOTLIGHT */
+.band-spotlight { border-top:1px solid var(--rule); padding:2rem 0; }
+.band-spotlight:first-of-type { border-top:none; }
+.band-name { font-family:var(--f-display); font-size:1.8rem; color:var(--bone); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.3rem; }
+.band-years { font-family:var(--f-label); font-size:0.62rem; font-weight:400; letter-spacing:0.2em; color:var(--secondary-glow); text-transform:uppercase; margin-bottom:1rem; }
+.band-desc { font-family:var(--f-body); font-size:0.9rem; line-height:1.9; color:rgba(240,236,232,0.75); max-width:740px; }
+
+/* TIMELINE */
+.timeline { position:relative; padding-left:2.5rem; }
+.timeline::before { content:''; position:absolute; left:0.75rem; top:0; bottom:0; width:1px; background:linear-gradient(to bottom, var(--accent), transparent); }
+.tl-item { position:relative; padding-bottom:2.5rem; }
+.tl-item::before { content:''; position:absolute; left:-1.85rem; top:0.35rem; width:8px; height:8px; background:var(--accent); transform:rotate(45deg); }
+.tl-time { font-family:var(--f-label); font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.4rem; }
+.tl-place { font-family:var(--f-head); font-size:1.1rem; font-weight:700; color:var(--bone); margin-bottom:0.5rem; }
+.tl-desc { font-size:0.88rem; color:var(--parch); line-height:1.65; margin-bottom:0.8rem; }
+.tl-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
+
+/* TABS */
+.tabs-nav { overflow-x:auto; border-bottom:1px solid var(--rule); margin-bottom:2.5rem; }
+.tabs-nav-inner { display:flex; gap:0; white-space:nowrap; }
+.tab-btn {
+  font-family:var(--f-label); font-size:0.7rem; font-weight:700;
+  letter-spacing:0.15em; text-transform:uppercase; color:var(--smoke);
+  background:transparent; border:none; padding:0.9rem 1.6rem;
+  cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s;
+}
+.tab-btn:hover { color:var(--accent); }
+.tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+/* QUOTE */
+.quote-block { margin:2.5rem 0; padding:2rem 2.5rem; border-left:3px solid var(--accent); background:rgba(201,168,76,0.04); position:relative; }
+.quote-block::before { content:'"'; position:absolute; top:-0.5rem; left:1.5rem; font-family:var(--f-head); font-size:4rem; color:var(--accent); opacity:0.3; line-height:1; }
+.quote-text { font-family:var(--f-head); font-size:1.15rem; font-style:italic; color:var(--bone); line-height:1.6; margin-bottom:0.8rem; }
+.quote-source { font-family:var(--f-label); font-size:0.65rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--smoke); }
+
+/* FESTIVAL */
+.festival-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+.festival-card { background:var(--base-3); border:1px solid var(--rule); padding:1.6rem; transition:border-color 0.2s; }
+.festival-card:hover { border-color:rgba(201,168,76,0.35); }
+.festival-dates { font-family:var(--f-label); font-size:0.62rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--base-1); background:var(--accent); display:inline-block; padding:0.3rem 0.8rem; margin-bottom:1rem; }
+.festival-name { font-family:var(--f-head); font-size:1.2rem; font-weight:700; color:var(--bone); margin-bottom:0.6rem; }
+.festival-desc { font-size:0.86rem; color:var(--parch); line-height:1.65; margin-bottom:1rem; }
+
+/* MAP */
+.map-embed { width:100%; aspect-ratio:16/7; margin:2rem 0; background:var(--base-3); border:1px solid var(--rule); overflow:hidden; }
+.map-embed iframe { width:100%; height:100%; border:none; }
+
+/* AFFILIATE BANNER */
+.aff-banner {
+  background:linear-gradient(135deg,var(--base-3),var(--base-4));
+  border:1px solid rgba(201,168,76,0.25); padding:2rem 2.5rem; margin:3rem 0;
+  display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+}
+.aff-banner-text { flex:1; min-width:200px; }
+.aff-banner-label { font-family:var(--f-label); font-size:0.62rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); margin-bottom:0.5rem; }
+.aff-banner-title { font-family:var(--f-head); font-size:1rem; font-weight:700; color:var(--bone); margin-bottom:0.4rem; }
+.aff-banner-desc { font-size:0.82rem; color:var(--parch); }
+.aff-banner-ctas { display:flex; gap:0.6rem; flex-wrap:wrap; }
+
+/* CLOSING */
+.closing-section { background:var(--base-2); padding:6rem 2rem; text-align:center; }
+.closing-inner { max-width:700px; margin:0 auto; }
+.closing-text { font-family:var(--f-head); font-size:1.15rem; font-style:italic; color:var(--parch); line-height:1.85; margin-bottom:2.5rem; }
+.closing-text em { color:var(--accent); }
+.closing-ctas { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+
+/* FOOTER */
+.footer { padding:3rem 2rem; text-align:center; border-top:1px solid var(--rule); background:var(--base-1); }
+.footer-brand { font-family:var(--f-head); font-size:1.3rem; font-style:italic; color:var(--accent); margin-bottom:0.4rem; }
+.footer-tag { font-family:var(--f-label); font-size:0.65rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--smoke); margin-bottom:1.5rem; }
+.footer-links { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.footer-links a { font-family:var(--f-label); font-size:0.62rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--smoke); text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:var(--accent); }
+.footer-disc { font-size:0.72rem; color:var(--smoke); line-height:1.5; max-width:600px; margin:0 auto; }
+
+/* SF SCRIPT TITLE */
+.hero-title .sf-script {
+  display: block;
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(4rem, 11vw, 10rem);
+  text-transform: none;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  background: linear-gradient(
+    90deg,
+    #ff3cac 0%,
+    #ff6b35 12%,
+    #ffdd00 25%,
+    #00ff9f 38%,
+    #00c8ff 52%,
+    #b44bff 65%,
+    #ff3cac 78%,
+    #ff6b35 90%,
+    #ffdd00 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: psychedelic 4s linear infinite;
+  text-shadow: none;
+  filter: drop-shadow(0 4px 20px rgba(180,75,255,0.5)) drop-shadow(0 0 40px rgba(255,60,172,0.3));
+}
+
+@keyframes psychedelic {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* BRAND SEAL */
+.brand-seal { display:inline-block; flex-shrink:0; background:url(data:image/png;base64,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) center/contain no-repeat; }
+.seal-rule  { width:44px; height:44px; order:3; opacity:0.95; }
+.section-rule .section-tag { order:1; }
+.section-rule::after { order:2; }
+.seal-nav   { width:38px; height:38px; }
+.seal-hero  { width:112px; height:112px; margin-bottom:1.6rem; position:relative; z-index:2; filter:drop-shadow(0 10px 34px rgba(0,0,0,0.55)); }
+.seal-footer{ width:70px; height:70px; margin:0 auto 1rem; display:block; }
+
+/* FADE UP */
+.fade-up { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+@media(max-width:768px){
+  .hero-title .city { font-size:clamp(2.4rem,12vw,5rem); }
+  .section { padding:3.5rem 0; }
+  .cards-grid, .transport-grid { grid-template-columns:1fr; }
+  .aff-banner { flex-direction:column; gap:1.2rem; }
+}
+</style>
+  <!-- Para activar Calafia exacta: reemplaza la URL de Typekit con tu kit de Adobe Fonts
+       que incluya la fuente Calafia de P22. Mientras tanto, Sacramento actúa como fallback. -->
+</head>
+<body id="top">
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="brand-seal seal-nav"></span>
+    <span>El Pasaporte Sinfónico
+    <em>San Francisco · Episodio 4</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">← Circuitos</a></li>
+    <li><a href="#llegada">Cómo Llegar</a></li>
+    <li><a href="#hoteles">Hoteles</a></li>
+    <li><a href="#bandas">Las Bandas</a></li>
+    <li><a href="#itinerario">Itinerario</a></li>
+    <li><a href="#cultura">Cultura</a></li>
+    <li><a href="#festivales">Festivales</a></li>
+    <li><a href="#gastronomia">Gastronomía</a></li>
+    <li><a href="#regenerativo">Regenerativo</a></li>
+    <li><a href="#agenda">Agenda</a></li>
+    <li><a href="#deportes">Deportes</a></li>
+    <li><a href="#roadtrip">Road Trip</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-watermark">Ψ</div>
+  <div class="brand-seal seal-hero"></div>
+  <div class="episode-badge">Grateful Dead · Jefferson Airplane · Janis Joplin · Episodio 4</div>
+  <h1 class="hero-title">
+    <span class="under">El Pasaporte Sinfónico</span>
+    <span class="city"><span class="sf-script">San Francisco</span></span>
+    <span class="under">California · Summer of Love · 1967</span>
+  </h1>
+  <p class="hero-subtitle">Rock Psicodélico · Haight-Ashbury · El Fillmore · Monterey Pop Festival</p>
+  <div class="hero-ctas">
+    <a href="#itinerario" class="btn-primary">Ver el Itinerario →</a>
+    <a href="#bandas" class="btn-ghost">Las Bandas</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    Desciende
+  </div>
+</section>
+
+<!-- TRIBUTE -->
+<section class="section" style="background:var(--base-2)">
+  <div class="section-inner">
+    <div class="tribute-box fade-up">
+      <h2>El verano en que una ciudad le cambió la mente al mundo.</h2>
+      <p>En 1967, entre junio y agosto, más de 100,000 jóvenes llegaron a un barrio de San Francisco llamado Haight-Ashbury siguiendo la canción de Scott McKenzie — "Si vas a San Francisco, lleva flores en el pelo". Llegaron al hogar del Grateful Dead, la Jefferson Airplane y Janis Joplin. Llegaron al barrio donde el rock descubrió que podía durar veinte minutos, expandirse como una marea y explorar territorios que ningún músico de tres acordes había pisado antes.</p>
+      <p>Ese Summer of Love no fue un festival. Fue una declaración de intenciones sobre cómo la música, las drogas, la política y la vida podían reorganizarse de otra manera. Algunas de esas ideas funcionaron. Otras, no. Pero el sonido que produjo ese barrio —ese color específico de guitarra, esas voces que se quedaban suspendidas en el aire— cambió todo lo que vino después: el rock progresivo, el punk, el grunge, la música electrónica. Todo parte de aquí.</p>
+      <p style="margin-bottom:0; font-family:var(--f-label); font-size:0.64rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--secondary-glow)">1967 · Haight-Ashbury · Monterey Pop · El Fillmore · Golden Gate Park</p>
+    </div>
+    <div class="stats-row">
+      <div class="stat-cell fade-up"><div class="lbl">Asistentes al Summer of Love</div><div class="num">100<em>K</em></div><div class="desc">En 25 manzanas de Haight-Ashbury</div></div>
+      <div class="stat-cell fade-up"><div class="lbl">El Fillmore</div><div class="num">1<em>,150</em></div><div class="desc">personas, el escenario más mítico del rock</div></div>
+      <div class="stat-cell fade-up"><div class="lbl">Golden Gate Park</div><div class="num">1<em>,017</em></div><div class="desc">acres de parque en el corazón de la ciudad</div></div>
+      <div class="stat-cell fade-up"><div class="lbl">Distancia a Monterey</div><div class="num">120<em>km</em></div><div class="desc">el festival que lo cambió todo, en 1967</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPORT INTER-CIUDAD -->
+<section class="section" id="llegada">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Cómo Llegar</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Llegar a<br><em>San Francisco</em></h2>
+    <p class="section-lead fade-up">El Aeropuerto Internacional de San Francisco (SFO) es el hub principal de la costa oeste con conexiones directas desde todo el mundo. El Aeropuerto de Oakland (OAK) y el de San José (SJC) son opciones secundarias, a menudo más baratas, conectadas al centro por BART y servicios de transporte compartido.</p>
+    <div class="transport-grid fade-up">
+      <div class="transport-region">
+        <h4>🌎 Desde Norteamérica</h4>
+        <ul class="airline-list">
+          <li><span>Air Canada (Toronto, Vancouver)</span><a href="https://www.aircanada.com" target="_blank">Reservar</a></li>
+          <li><span>United Airlines (hub en SFO)</span><a href="https://www.united.com" target="_blank">Reservar</a></li>
+          <li><span>American Airlines</span><a href="https://www.aa.com" target="_blank">Reservar</a></li>
+          <li><span>Delta Air Lines</span><a href="https://www.delta.com" target="_blank">Reservar</a></li>
+          <li><span>WestJet (Calgary, Vancouver)</span><a href="https://www.westjet.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🌍 Desde Latinoamérica</h4>
+        <ul class="airline-list">
+          <li><span>LATAM Airlines (directo desde Lima)</span><a href="https://www.latam.com" target="_blank">Reservar</a></li>
+          <li><span>Avianca (vía Bogotá)</span><a href="https://www.avianca.com" target="_blank">Reservar</a></li>
+          <li><span>Aeromexico (directo desde CDMX)</span><a href="https://www.aeromexico.com" target="_blank">Reservar</a></li>
+          <li><span>Copa Airlines (vía PTY)</span><a href="https://www.copaair.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🌐 Desde Europa</h4>
+        <ul class="airline-list">
+          <li><span>Iberia (Madrid directo)</span><a href="https://www.iberia.com" target="_blank">Reservar</a></li>
+          <li><span>British Airways (Londres)</span><a href="https://www.britishairways.com" target="_blank">Reservar</a></li>
+          <li><span>Lufthansa (Frankfurt)</span><a href="https://www.lufthansa.com" target="_blank">Reservar</a></li>
+          <li><span>Air France (París CDG)</span><a href="https://www.airfrance.com" target="_blank">Reservar</a></li>
+          <li><span>KLM (Amsterdam)</span><a href="https://www.klm.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚂 Desde Los Ángeles</h4>
+        <ul class="airline-list">
+          <li><span>Amtrak Coast Starlight (10h)</span><a href="https://www.amtrak.com" target="_blank">Reservar</a></li>
+          <li><span>Flixbus (directo, 8h)</span><a href="https://www.flixbus.com" target="_blank">Reservar</a></li>
+          <li><span>Southwest Airlines (1h vuelo)</span><a href="https://www.southwest.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box fade-up">
+      <strong>Truco de viajero:</strong> Si vuelas desde Canadá, compara SFO con Oakland (OAK) — el BART conecta OAK al centro de SF en 25 minutos y las tarifas desde Vancouver o Calgary suelen ser menores. Para la ruta Monterey-Carmel, considera alquilar un coche en SF: la Pacific Coast Highway (Highway 1) es uno de los mejores tramos de carretera de toda California.
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPORT LOCAL -->
+<section class="section section-alt" id="local">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Moverse en la Ciudad</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">San Francisco<br><em>calle por calle</em></h2>
+    <p class="section-lead fade-up">San Francisco es compacta y perfectamente transitable a pie entre barrios — pero sus colinas son reales. El BART, el Muni, los tranvías históricos y los icónicos cable cars hacen que no necesites coche dentro de la ciudad.</p>
+    <div class="transport-grid fade-up">
+      <div class="transport-region">
+        <h4>🚇 BART — Metro Regional</h4>
+        <ul class="airline-list">
+          <li><span>SFO / OAK al centro</span><a href="https://www.bart.gov" target="_blank">Rutas</a></li>
+          <li><span>Tarjeta Clipper (sin contacto)</span><a href="https://www.clippercard.com" target="_blank">Clipper</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚃 Muni Metro & Bus</h4>
+        <ul class="airline-list">
+          <li><span>Red de tranvías + buses SF</span><a href="https://www.sfmta.com" target="_blank">Rutas</a></li>
+          <li><span>App MuniMobile (pago móvil)</span><a href="https://www.sfmta.com/munimobile-help" target="_blank">App</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚠 Cable Cars — Históricos</h4>
+        <ul class="airline-list">
+          <li><span>Powell-Mason · Powell-Hyde</span><a href="https://www.sfmta.com/getting-around/muni/cable-cars" target="_blank">Info</a></li>
+          <li><span>$8 por trayecto · Pasa todo el día</span><a href="https://www.sfmta.com" target="_blank">Tarifas</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>⛴ Ferry — Por la Bahía</h4>
+        <ul class="airline-list">
+          <li><span>San Francisco Bay Ferry</span><a href="https://sanfranciscobayferry.com" target="_blank">Horarios</a></li>
+          <li><span>Sausalito · Tiburón · Oakland</span><a href="https://sanfranciscobayferry.com/routes-schedules" target="_blank">Rutas</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚲 Bicicleta — Bay Wheels</h4>
+        <ul class="airline-list">
+          <li><span>Bay Wheels (Lyft) — Bikeshare</span><a href="https://www.lyft.com/bikes/bay-wheels" target="_blank">App</a></li>
+          <li><span>Rutas ciclables por el Golden Gate</span><a href="https://www.sfmta.com/getting-around/bike" target="_blank">Rutas</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚕 Rideshare</h4>
+        <ul class="airline-list">
+          <li><span>Uber San Francisco</span><a href="https://www.uber.com/global/en/r/cities/san-francisco-ca-us/" target="_blank">🚕 App</a></li>
+          <li><span>Lyft San Francisco</span><a href="https://www.lyft.com" target="_blank">🚕 App</a></li>
+        </ul>
+      </div>
+    </div>
+      <div class="card fade-up">
+        <div class="card-type culture">🦀 Icónico · Fisherman's Wharf · Bahía</div>
+        <div class="card-body">
+          <div class="card-title">Fisherman's Wharf — Paseo por el muelle</div>
+          <p class="card-desc">El muelle más famoso de San Francisco: cangrejos dungeness cocinados al momento en las ollas de la calle, el sonido de los leones marinos en el Pier 39, la niebla entrando por la bahía y el olor a mariscos mezclado con el de las galletas de la fábrica Ghirardelli. No es el SF más cool — es el SF más memorable. El paseo desde el Pier 39 hasta el Ghirardelli Square cuesta lo mismo que el aire, y la vista al Golden Gate desde el agua, al atardecer, es irrepetible.</p>
+          <div class="card-links">
+            <a href="https://www.fishermanswharf.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Fisherman's+Wharf+Pier+39+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">⛵ Isla · Bahía · Historia & Activismo</div>
+        <div class="card-body">
+          <div class="card-title">Alcatraz — La isla más famosa de la bahía</div>
+          <p class="card-desc">La prisión federal que albergó a Al Capone fue tomada en 1969 por activistas nativos americanos durante 19 meses — uno de los actos de protesta más importantes de la época psicodélica, contemporáneo exacto del Summer of Love. El audioguía narrado por ex-presos y ex-guardias es una experiencia que contradice todas las expectativas turísticas. Los ferries salen del Pier 33 varias veces al día. Reserva con días de anticipación — los cupos se agotan, especialmente en verano.</p>
+          <div class="card-links">
+            <a href="https://www.alcatrazcruises.com" target="_blank" class="btn btn-web">🎟 Entradas Oficiales</a>
+            <a href="https://www.getyourguide.com/san-francisco-l61/alcatraz-tours-tc21/" target="_blank" class="btn btn-web">🎟 GetYourGuide</a>
+            <a href="https://www.google.com/maps/search/Alcatraz+Island+San+Francisco+Bay" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    <div class="map-embed fade-up">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50408.32!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sus!4v1718460000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="text-align:center;margin-top:1rem">
+      <a href="https://www.google.com/maps/search/San+Francisco+California" target="_blank" class="btn-ghost">📍 Abrir San Francisco en Google Maps</a>
+    </div>
+    <div class="tip-box fade-up" style="margin-top:2rem">
+      <strong>🌐 Traductor de viaje — que el idioma no sea una barrera</strong><br>
+      Para comunicarte en inglés sin problemas, activa el modo conversación de <a href="https://translate.google.com/intl/es/about/" target="_blank" style="color:var(--accent)">🌐 Google Translate</a> — habla en español y el teléfono responde en inglés en tiempo real. Para grupos, <a href="https://www.microsoft.com/en-us/translator/apps/" target="_blank" style="color:var(--accent)">💬 Microsoft Translator</a> permite que varias personas participen desde sus propios dispositivos en la misma conversación.
+    </div>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section class="section" id="hoteles">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Dónde Alojarse</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Hoteles con<br><em>alma de San Francisco</em></h2>
+    <p class="section-lead fade-up">La ciudad tiene una densidad notable de hoteles boutique independientes — nada de cadenas globales. Cada barrio tiene su propio carácter, y tu hotel determina qué San Francisco vas a vivir: el Haight-Ashbury bohemio, el North Beach beatnik, el Hayes Valley creativo o el Mission muralista.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Boutique · Hayes Valley · Arte</div>
+        <div class="card-body">
+          <div class="card-title">Hotel Axiom</div>
+          <p class="card-desc">Un boutique de diseño en el centro, a tres manzanas del Civic Center y a caminar del Hayes Valley. 152 habitaciones con arte urbano en las paredes, Netflix incluido y una estética que mezcla la cultura hip-hop con la psicodelia californiana. El bar cocktail Axis Lounge es uno de los más relajados del barrio. Para quien quiere diseño sin pretensión.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/axiom.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Hotel+Axiom+San+Francisco+Market+Street" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Heritage · North Beach · Beatnik</div>
+        <div class="card-body">
+          <div class="card-title">Hotel Bohème</div>
+          <p class="card-desc">Dieciséis habitaciones en North Beach, el barrio de los beatniks, a metros del City Lights Bookstore donde Ginsberg y Kerouac bebían café y leían sus poemas. Las habitaciones tienen paredes de color azafrán y negro, fotografías de la era beat y una atmósfera que recuerda que San Francisco fue antes bohemia que tecnológica. El mejor punto de partida para entender la ciudad.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/boheme.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Hotel+Boheme+North+Beach+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Boutique Náutico · Fisherman's Wharf · Bahía</div>
+        <div class="card-body">
+          <div class="card-title">Hotel Zephyr San Francisco</div>
+          <p class="card-desc">El único hotel boutique de lujo con frente al agua en Fisherman's Wharf, construido con contenedores de carga reciclados y elementos náuticos rescatados. 361 habitaciones temáticas al estilo "camarote del capitán": ventanillas estilo porthole, redes de pesca como lámparas y vistas a la bahía, al Golden Gate y a Alcatraz. Las fogatas nocturnas en el patio exterior convierten el atardecer sobre la bahía en uno de los momentos más memorables de cualquier visita a SF. A cuatro minutos a pie del Pier 39 y a dos del ferry para Alcatraz.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/zephyr-san-francisco.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Hotel+Zephyr+250+Beach+Street+San+Francisco+Fishermans+Wharf" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Lujo · Nob Hill · Histórico</div>
+        <div class="card-body">
+          <div class="card-title">Scarlett Huntington Hotel</div>
+          <p class="card-desc">En lo más alto de Nob Hill, con vistas panorámicas a la bahía y la ciudad. El Scarlett es uno de los grandes hoteles históricos de SF: construido en 1924, con un restaurante Michelin, piscina climatizada cubierta y esa mezcla de elegancia californiana y atmósfera de película noir que hace que San Francisco sea, entre todas las ciudades americanas, la más cinematográfica. El bar Big 4 homenajea a los magnates ferroviarios del siglo XIX.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/the-huntington-hotel-nob-hill.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Huntington+Hotel+Nob+Hill+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="aff-banner fade-up">
+      <div class="aff-banner-text">
+        <div class="aff-banner-label">🛏 Afiliado Recomendado</div>
+        <div class="aff-banner-title">Reserva tu hotel en San Francisco con Booking.com</div>
+        <div class="aff-banner-desc">Más de 800 opciones en toda el área de SF. Cancelación gratuita en la mayoría. Sin cargos adicionales al reservar.</div>
+      </div>
+      <div class="aff-banner-ctas">
+        <a href="https://www.booking.com/searchresults.html?ss=San+Francisco%2C+California%2C+United+States&dest_type=city" target="_blank" class="btn-primary">Ver Hoteles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANDAS -->
+<section class="section section-alt" id="bandas">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Las Bandas</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Las voces del<br><em>Summer of Love</em></h2>
+    <p class="section-lead fade-up">Haight-Ashbury no fue un escenario. Fue una comunidad donde los músicos vivían en las mismas casas, compartían los mismos ensayos y tocaban en los mismos parques. El sonido que salió de ahí — denso, largo, expansivo — cambió lo que el rock podía ser.</p>
+
+    <div class="band-spotlight fade-up">
+      <div class="band-name">Grateful Dead</div>
+      <div class="band-years">1965 – 1995 · San Francisco · Jerry Garcia · El viaje más largo del rock</div>
+      <p class="band-desc">Empezaron como The Warlocks en Palo Alto, se mudaron a Haight-Ashbury y se convirtieron en la banda más extraña y duradera del rock americano. Jerry Garcia, guitarrista y alma del grupo, desarrolló un lenguaje propio: improvisaciones que podían durar cuarenta minutos sin perder el hilo, melodías que venían del bluegrass y del jazz y terminaban en territorio desconocido. Los Deadheads — su ejército de seguidores que seguía la banda de ciudad en ciudad, concierto tras concierto — son el fenómeno fan más singular de la historia de la música. Ninguna otra banda ha generado una comunidad tan cohesionada, tan duradera, tan genuinamente alternativa al sistema. Jerry García murió en 1995; sus excompañeros llevan treinta años tocando bajo diferentes nombres, incapaces — o tal vez sin querer — de cerrar el libro.</p>
+      <div style="margin-top:1.2rem">
+        <a href="https://open.spotify.com/artist/4TMHGUX5WI7OOm53PqSDAT" target="_blank" class="btn btn-web" style="font-size:0.72rem">🎵 Escuchar en Spotify</a>
+      </div>
+    </div>
+
+    <div class="band-spotlight fade-up">
+      <div class="band-name">Jefferson Airplane</div>
+      <div class="band-years">1965 – 1972 · San Francisco · Grace Slick · La voz del ácido</div>
+      <p class="band-desc">La primera banda de rock de San Francisco en alcanzar el éxito nacional, y la que puso la ciudad en el mapa musical antes del Summer of Love. Grace Slick llegó en 1966 y lo cambió todo: su voz — de mezzosoprano pura, capaz de cortar el aire — en "Somebody to Love" y "White Rabbit" convirtió la psicodelia en radio comercial sin perder ni un ápice de su radicalidad. "White Rabbit" es una canción sobre Alicia en el País de las Maravillas que le dice a los niños que tomen drogas, y la censura tardó tres años en darse cuenta. La banda tocó en el Monterey Pop Festival en 1967 y en Woodstock en 1969, marcando los dos extremos de una época que fue demasiado intensa para durar.</p>
+      <div style="margin-top:1.2rem">
+        <a href="https://open.spotify.com/artist/2qFr8w5sWUITRlzZ9kZotF" target="_blank" class="btn btn-web" style="font-size:0.72rem">🎵 Escuchar en Spotify</a>
+      </div>
+    </div>
+
+    <div class="band-spotlight fade-up">
+      <div class="band-name">Janis Joplin</div>
+      <div class="band-years">1966 – 1970 · San Francisco / Port Arthur TX · Big Brother & The Holding Company</div>
+      <p class="band-desc">Llegó de Port Arthur, Texas — una ciudad que la rechazó con crueldad — y en Haight-Ashbury encontró por primera vez una comunidad que la aceptaba. Cantaba blues con una intensidad física que nadie antes había llevado al rock: la voz quebrada, los gritos, el vibrato desgarrado eran la expresión de alguien que ponía todo lo que tenía en cada nota. Su actuación en el Monterey Pop Festival en junio de 1967 la convirtió en estrella nacional en menos de treinta minutos. Murió en octubre de 1970, a los 27 años, en un hotel de Hollywood. Pero antes grabó "Me and Bobby McGee", "Mercedes Benz" y "Piece of My Heart" — canciones que suenan, con cada escucha, como si las estuviera cantando por primera y última vez.</p>
+      <div style="margin-top:1.2rem">
+        <a href="https://open.spotify.com/artist/4NgfOZCL9Ml67xzM0xzIvC" target="_blank" class="btn btn-web" style="font-size:0.72rem">🎵 Escuchar en Spotify</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ITINERARIO -->
+<section class="section" id="itinerario">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Itinerario · 4 Días</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Cuatro días<br><em>en la ciudad de la niebla</em></h2>
+    <p class="section-lead fade-up">San Francisco se entiende barrio a barrio: el Haight-Ashbury bohemio, el North Beach beatnik, el Mission muralista, el Castro histórico, el Embarcadero y la bahía. Este itinerario las conecta siguiendo el hilo del rock psicodélico — desde donde nació hasta donde sigue sonando.</p>
+
+    <div class="tabs-nav fade-up">
+      <div class="tabs-nav-inner">
+        <button class="tab-btn active" onclick="switchTab('dia1',this)">Día 1 · Haight-Ashbury</button>
+        <button class="tab-btn" onclick="switchTab('dia2',this)">Día 2 · El Fillmore & North Beach</button>
+        <button class="tab-btn" onclick="switchTab('dia3',this)">Día 3 · Golden Gate & Bahía</button>
+        <button class="tab-btn" onclick="switchTab('dia4',this)">Día 4 · Monterey & Carmel</button>
+      </div>
+    </div>
+
+    <div id="dia1" class="tab-content active">
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-time">☕ Mañana · 9:00</div>
+          <div class="tl-place">Flywheel Coffee Roasters, Haight Street</div>
+          <p class="tl-desc">El café de referencia del Upper Haight. Pequeño, sin pretensiones, con los mejores espressos del barrio y una clientela que mezcla residentes de toda la vida con músicos que ensayan a dos cuadras. Desde aquí, Haight Street comienza a activarse lentamente — las tiendas de vinilo y vintage abren a las diez.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Flywheel+Coffee+Roasters+Haight+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎸 Media mañana · 10:30</div>
+          <div class="tl-place">Haight-Ashbury — El barrio del Summer of Love</div>
+          <p class="tl-desc">La intersección de Haight y Ashbury es el epicentro. El edificio violeta del número 710 Ashbury fue la casa del Grateful Dead. El 635 Ashbury fue la de Janis Joplin. El 1090 Page Street, a dos manzanas, fue donde Jefferson Airplane ensayaba. No hay placas oficiales en todos — busca el mural del Grateful Dead en la Haight Street como punto de partida y camina despacio.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Haight+Ashbury+intersection+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.viator.com/tours/San-Francisco/Haight-Ashbury-Hippie-Subculture-Walking-Tour/d651-3383HAIGHT" target="_blank" class="btn btn-web">🎟 Tour Guiado</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎵 Mediodía · 12:30</div>
+          <div class="tl-place">Amoeba Music San Francisco — Haight Street</div>
+          <p class="tl-desc">La hermana mayor de la tienda de Los Ángeles. 40,000 títulos de vinilo bajo el mismo techo, con una sección de rock psicodélico y blues que es probablemente la mejor de la costa oeste. Los empleados conocen el catálogo de memoria. El precio de los raros es justo. Calcula una hora mínima.</p>
+          <div class="tl-links">
+            <a href="https://www.amoeba.com/our-stores/store-photos/san-francisco/" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Amoeba+Music+1855+Haight+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌿 Tarde · 15:00</div>
+          <div class="tl-place">Golden Gate Park — Panhandle y el corazón del parque</div>
+          <p class="tl-desc">El parque donde se celebraron los conciertos gratuitos del Summer of Love. El Human Be-In de enero de 1967 reunió a 30,000 personas aquí — Grateful Dead, Jefferson Airplane y Allen Ginsberg recitando poesía. Hoy el Panhandle sigue siendo el espacio de encuentro del barrio. El Sunday Streets convierte el parque en peatonal los domingos de verano.</p>
+          <div class="tl-links">
+            <a href="https://www.golden-gate-park.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Golden+Gate+Park+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎶 Noche · 20:00</div>
+          <div class="tl-place">The Independent — Concierto en vivo, Divisadero</div>
+          <p class="tl-desc">Capacidad para 500 personas en Divisadero Street, el corredor de música en vivo más activo de SF. El Independent lleva décadas siendo el escenario donde los grupos a medio camino entre el underground y el mainstream presentan sus discos. La programación cubre indie, folk-rock, psicodelia contemporánea y jazz. Revisa la agenda semanal antes de llegar.</p>
+          <div class="tl-links">
+            <a href="https://www.theindependentsf.com" target="_blank" class="btn btn-web">🌐 Agenda</a>
+            <a href="https://www.google.com/maps/search/The+Independent+San+Francisco+628+Divisadero" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dia2" class="tab-content">
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-time">☕ Mañana · 8:30</div>
+          <div class="tl-place">Sightglass Coffee, SoMa</div>
+          <p class="tl-desc">El tostador más fotogénico de la ciudad — una nave industrial de dos pisos con un espresso excepcional y un ambiente que resume qué es San Francisco hoy: diseño, tecnología, café de especialidad y una herencia cultural que sigue gravitando sobre todo. La base ideal antes de atravesar el barrio hacia el Fillmore District.</p>
+          <div class="tl-links">
+            <a href="https://www.sightglasscoffee.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Sightglass+Coffee+San+Francisco+7th+Street" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎸 Mañana · 10:00</div>
+          <div class="tl-place">The Fillmore — 1805 Geary Boulevard</div>
+          <p class="tl-desc">El escenario más importante del rock psicodélico de San Francisco. Desde 1965, Bill Graham organizó aquí los conciertos que pusieron el sonido del Haight en el mapa mundial: Grateful Dead, Jefferson Airplane, Janis Joplin, Jimi Hendrix, The Doors. La sala sigue activa con conciertos casi diarios. La colección de posters psicodélicos originales que cuelgan de las paredes — creados por artistas como Wes Wilson y Victor Moscoso — es en sí misma un museo del arte de los 60.</p>
+          <div class="tl-links">
+            <a href="https://www.thefillmore.com" target="_blank" class="btn btn-web">🌐 Agenda 2026</a>
+            <a href="https://www.google.com/maps/search/The+Fillmore+1805+Geary+Blvd+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">📚 Mediodía · 12:30</div>
+          <div class="tl-place">City Lights Bookstore & North Beach</div>
+          <p class="tl-desc">La librería de Lawrence Ferlinghetti en Columbus Avenue es el origen de todo: aquí Ferlinghetti publicó "Howl" de Allen Ginsberg en 1956 y fue arrestado por obscenidad. Aquí Jack Kerouac leía sus textos antes de escribir "En el Camino". El movimiento beat precedió al psicodélico en un par de décadas, y este barrio es donde se puede sentir esa continuidad histórica. Sube al Vesuvio Café de al lado —donde bebían los beats— y pide una cerveza italiana.</p>
+          <div class="tl-links">
+            <a href="https://citylights.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/City+Lights+Bookstore+261+Columbus+Ave+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌆 Tarde · 15:30</div>
+          <div class="tl-place">Coit Tower & Telegrafo Hill</div>
+          <p class="tl-desc">La torre art déco de 1933 en lo más alto de Telegraph Hill, con murales del New Deal en el interior que representan la vida en California durante la Depresión. La subida a pie por el sendero de loros salvajes que habitan el Telegraph Hill es uno de los paseos más singulares de la ciudad. Desde arriba, vista de 360 grados sobre la bahía, Alcatraz y el Bay Bridge.</p>
+          <div class="tl-links">
+            <a href="https://sfrecpark.org/destination/coit-tower" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Coit+Tower+1+Telegraph+Hill+Blvd+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Noche · 19:30</div>
+          <div class="tl-place">Cena en North Beach — Tony's Pizza Napoletana</div>
+          <p class="tl-desc">Tony Gemignani es campeón mundial de pizza — literalmente — y su pizzería en Washington Square Park tiene el mejor horno a leña de la ciudad. La margherita de bufala es la referencia. Las otras diez opciones del menú justifican una segunda visita. Sin reserva los lunes y martes; para el resto de la semana, libro con dos días de anticipación. Es el tipo de local que hace que valga la pena volver a SF.</p>
+          <div class="tl-links">
+            <a href="https://www.tonyspizzanapoletana.com" target="_blank" class="btn btn-web">🌐 Reservas</a>
+            <a href="https://www.google.com/maps/search/Tony's+Pizza+Napoletana+1570+Stockton+St+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dia3" class="tab-content">
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌉 Mañana · 8:00</div>
+          <div class="tl-place">Golden Gate Bridge — A pie desde el lado SF</div>
+          <p class="tl-desc">El puente más fotografiado del mundo tiene 2.7 kilómetros de longitud y se atraviesa a pie en unos 45 minutos. La niebla matinal lo vuelve especialmente cinematográfico: la ciudad desaparece en el banco de nubes y el puente emerge como si flotara. Lleva una chaqueta — el viento canalizado por la bahía corta, incluso en verano. El mirador del lado Marin Valley es el más dramático.</p>
+          <div class="tl-links">
+            <a href="https://www.goldengate.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Golden+Gate+Bridge+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">⛴ Media mañana · 11:00</div>
+          <div class="tl-place">Ferry a Sausalito — La bahía desde el agua</div>
+          <p class="tl-desc">El ferry desde el Ferry Building cruza la bahía en veinte minutos hasta el pueblo marinero de Sausalito — donde los músicos del Grateful Dead y Jefferson Airplane vivían en casas flotantes en los 60 y 70. El barrio mantiene ese carácter bohemio: galerías, restaurantes de marisco y el mejor ángulo para fotografiar el puente Golden Gate. El viaje de vuelta en bicicleta (alquilada en Sausalito y devuelta cruzando el puente) es legendario.</p>
+          <div class="tl-links">
+            <a href="https://sanfranciscobayferry.com" target="_blank" class="btn btn-web">🌐 Horarios Ferry</a>
+            <a href="https://www.google.com/maps/search/Sausalito+California+ferry" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🏝 Tarde · 14:00</div>
+          <div class="tl-place">Alcatraz — La isla más famosa de la bahía</div>
+          <p class="tl-desc">La prisión federal que albergó a Al Capone y el Pájaro de Alcatraz fue tomada en 1969 por activistas nativos americanos durante 19 meses — uno de los actos de protesta más importantes de la época, contemporáneo exacto del Summer of Love y el movimiento hippie. El audioguía es narrado parcialmente por ex-presos y ex-guardias: una experiencia que contradice todas las expectativas turísticas. Reserva con días de anticipación; los ferries se agotan.</p>
+          <div class="tl-links">
+            <a href="https://www.nps.gov/alca/index.htm" target="_blank" class="btn btn-web">🌐 Web NPS</a>
+            <a href="https://www.alcatrazcruises.com" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Alcatraz+Island+San+Francisco+Bay" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Tarde · 17:30</div>
+          <div class="tl-place">Embarcadero & Ferry Building Market</div>
+          <p class="tl-desc">El Embarcadero a la hora dorada — con la luz rasante sobre la bahía y el Bay Bridge al fondo — es el mejor momento del día en SF. El Ferry Building Marketplace tiene los mejores productores locales de la ciudad: quesos artesanales, ostras de Hog Island, pan de Acme Bread. Los sábados por la mañana es un mercado de agricultores; al atardecer, el espacio se transforma.</p>
+          <div class="tl-links">
+            <a href="https://www.ferrybuildingmarketplace.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Ferry+Building+San+Francisco+Embarcadero" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dia4" class="tab-content">
+      <div class="timeline">
+        <div class="tl-item fade-up">
+          <div class="tl-time">🚗 Mañana temprano · 8:00</div>
+          <div class="tl-place">Highway 1 Sur — Pacífica a Monterey</div>
+          <p class="tl-desc">La ruta más dramática de California: la Highway 1 corre pegada al acantilado sobre el Pacífico durante 120 kilómetros desde SF hasta Monterey. Paradas obligatorias en Half Moon Bay (ostras y surf), Pescadero (queso artesanal), el puente del Big Creek y los elefantes marinos de Año Nuevo si es temporada. Calcula cuatro horas sin prisa, que es la única manera de hacerla.</p>
+          <div class="tl-links">
+            <a href="https://www.california1.org" target="_blank" class="btn btn-web">🌐 Highway 1</a>
+            <a href="https://www.google.com/maps/dir/San+Francisco+CA/Monterey+CA/via+Highway+1" target="_blank" class="btn btn-map">📍 Ruta Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎵 Mediodía · 13:00</div>
+          <div class="tl-place">Monterey — El Pop Festival de 1967</div>
+          <p class="tl-desc">En junio de 1967, el Monterey International Pop Festival fue el primer festival de rock de la historia moderna: 90,000 asistentes, treinta actuaciones en tres días y el debut en Estados Unidos de Jimi Hendrix, que tocó con los dientes, quemó su guitarra y la arrojó al público. Janis Joplin llegó sin ser conocida y se fue siendo una leyenda. El festival ya no existe, pero el recinto del County Fairgrounds sigue ahí. Puedes ir, ver el escenario vacío y entender por qué ese fin de semana cambió la historia de la música.</p>
+          <div class="tl-links">
+            <a href="https://www.seemonterey.com" target="_blank" class="btn btn-web">🌐 Visit Monterey</a>
+            <a href="https://www.google.com/maps/search/Monterey+County+Fairgrounds+2004+Fairground+Road+Monterey" target="_blank" class="btn btn-map">📍 El recinto</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🐬 Tarde · 15:00</div>
+          <div class="tl-place">Monterey Bay Aquarium</div>
+          <p class="tl-desc">Uno de los mejores acuarios del mundo, construido sobre la antigua Cannery Row que Steinbeck inmortalizó en su novela. El tanque de mar abierto — tres pisos de profundidad con tiburones, mantarrayas y cardúmenes circulando — es un espectáculo sin igual. El programa de conservación de nutrias de mar es una de las historias de éxito ecológico más notables de California. Reserva entrada online.</p>
+          <div class="tl-links">
+            <a href="https://www.montereybayaquarium.org" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Monterey+Bay+Aquarium+886+Cannery+Row+Monterey" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌲 Tarde · 17:30</div>
+          <div class="tl-place">Carmel-by-the-Sea — El pueblo más singular de California</div>
+          <p class="tl-desc">A 10 kilómetros de Monterey, Carmel es el pueblo donde Clint Eastwood fue alcalde, donde las casas no tienen número y el correo se recoge en el ayuntamiento, y donde el arte y la arquitectura se han protegido de la masificación con una fidelidad casi obsesiva. La playa de arena blanca al final de Ocean Avenue, con los cipreses retorcidos por el viento del Pacífico, es una de las imágenes más características de California. Cena aquí antes de volver a SF.</p>
+          <div class="tl-links">
+            <a href="https://www.carmelcalifornia.com" target="_blank" class="btn btn-web">🌐 Visit Carmel</a>
+            <a href="https://www.google.com/maps/search/Carmel-by-the-Sea+California+beach" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURA -->
+<section class="section section-alt" id="cultura">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Cultura & Atractivos</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">La ciudad<br><em>más allá del puente</em></h2>
+    <p class="section-lead fade-up">San Francisco tiene más museos per cápita que cualquier otra ciudad de Estados Unidos. Y una cultura de barrio — de colectivos, galerías emergentes, mercados de artesanos — que ninguna de las guías turísticas convencionales cubre bien.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type culture">🎨 Museo · Golden Gate Park · Arte</div>
+        <div class="card-body">
+          <div class="card-title">de Young Museum</div>
+          <p class="card-desc">El museo de arte más importante de San Francisco dentro del Golden Gate Park. El edificio de cobre oxidado de Herzog & de Meuron cambia de color con la luz y las estaciones. La torre de observación tiene las mejores vistas de la ciudad desde interior. La colección de arte americano, textil y arte de las Américas es extraordinaria. Los viernes en verano, "Friday Nights at the de Young" convierte el patio en una fiesta con música en vivo.</p>
+          <div class="card-links">
+            <a href="https://www.famsf.org/visit/de-young" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/de+Young+Museum+50+Hagiwara+Tea+Garden+Drive+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type culture">🔬 Ciencia · Golden Gate Park · Naturaleza</div>
+        <div class="card-body">
+          <div class="card-title">California Academy of Sciences</div>
+          <p class="card-desc">Enfrente del de Young, el más singular museo de ciencias naturales del país: un planetario, un acuario de arrecife de coral, un bosque tropical bajo una cúpula de vidrio y el techo vivo más grande del mundo (2.5 acres de plantas autóctonas). Diseñado por Renzo Piano. Los jueves por la noche se convierte en un club temático para adultos con música en vivo y cócteles. Reserva entrada online.</p>
+          <div class="card-links">
+            <a href="https://www.calacademy.org" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/California+Academy+of+Sciences+55+Music+Concourse+Dr+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type music">🎵 Historia Musical · Haight · Psicodelia</div>
+        <div class="card-body">
+          <div class="card-title">Haight-Ashbury Music Center & Dead Stores</div>
+          <p class="card-desc">El barrio sigue siendo el lugar donde comprar vinyl, merchandising histórico y memorabilia del Summer of Love. Bound Together Books (anarquista), Amoeba Music y las tiendas especializadas en Grateful Dead merch son puntos de referencia para fans del período. El Haight-Ashbury Food Program, en el mismo barrio, sigue la tradición de los Diggers de 1967: ofrece comida gratuita a quien la necesita cada viernes.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Haight+Street+Music+San+Francisco+vinyl+stores" target="_blank" class="btn btn-map">📍 Maps zona</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type culture">🏛 Arte · SoMa · Contemporáneo</div>
+        <div class="card-body">
+          <div class="card-title">SFMOMA — San Francisco Museum of Modern Art</div>
+          <p class="card-desc">El primer museo de arte moderno de la costa oeste, con una de las mejores colecciones de fotografía y pintura del siglo XX en América. La ampliación de 2016 triplicó el espacio. La colección de Robert Rauschenberg, Andy Warhol, Frida Kahlo y los fotógrafos de la escuela de San Francisco (Ansel Adams, Dorothea Lange) es excepcional. Los viernes después de las 18h la entrada tiene descuento.</p>
+          <div class="card-links">
+            <a href="https://www.sfmoma.org" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/SFMOMA+151+Third+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type culture">🌉 Historia · Embarcadero · Arquitectura</div>
+        <div class="card-body">
+          <div class="card-title">Exploratorium — Pier 15</div>
+          <p class="card-desc">En el Pier 15 del Embarcadero, este museo de ciencia experimental lleva décadas siendo el modelo para los museos interactivos del mundo entero. Más de 600 instalaciones que exploran la física, la percepción, el arte y el comportamiento humano — con la bahía de SF como telón de fondo. El programa "After Dark" los jueves por la noche convierte el museo en un espacio adulto con alcohol, música y experimentos sin restricción.</p>
+          <div class="card-links">
+            <a href="https://www.exploratorium.edu" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Exploratorium+Pier+15+San+Francisco+Embarcadero" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🎟 Tour Musical · Haight · Historia</div>
+        <div class="card-body">
+          <div class="card-title">Haight-Ashbury Walking Tour — San Francisco Love Tours</div>
+          <p class="card-desc">Los mejores tours del barrio están liderados por veteranos que vivieron la época o por académicos especializados en la contracultura californiana. SF Love Tours organiza recorridos de dos horas que visitan las casas de Grateful Dead, Joplin y Jefferson Airplane, con contexto histórico y musical. GetYourGuide y Viator tienen varios operadores con reseñas verificadas.</p>
+          <div class="card-links">
+            <a href="https://www.viator.com/tours/San-Francisco/Haight-Ashbury-Hippie-Subculture-Walking-Tour/d651-3383HAIGHT" target="_blank" class="btn btn-web">🎟 Viator</a>
+            <a href="https://www.viator.com/San-Francisco/d651-ttd/walking-tours" target="_blank" class="btn btn-web">🎟 Viator</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FESTIVALES Y VENUES -->
+<section class="section" id="festivales">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Música en Vivo · Venues · 2026</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Venues &<br><em>Festivales</em></h2>
+    <p class="section-lead fade-up">San Francisco sigue siendo una de las ciudades con la vida musical más activa de América. El Fillmore, el Warfield, el Great American Music Hall y los parques de la ciudad mantienen viva la tradición de los conciertos gratuitos y la música como experiencia comunitaria.</p>
+    <div class="festival-cards fade-up">
+      <div class="festival-card">
+        <div class="festival-dates">Todo el año · 40+ conciertos anuales</div>
+        <div class="festival-name">The Fillmore</div>
+        <p class="festival-desc">El escenario que lanzó el rock psicodélico de SF al mundo sigue activo con programación casi diaria. 1,150 personas de pie, acústica de sala pequeña y los pósters psicodélicos originales en las paredes. Bill Graham comenzó aquí en 1965 con el Grateful Dead y Janis Joplin. Los viernes y sábados de 2026 incluyen sets de indie, folk-rock contemporáneo y bandas de homenaje al período dorado. Se reparte una manzana gratis a la entrada.</p>
+        <div class="card-links">
+          <a href="https://www.thefillmore.com" target="_blank" class="btn btn-web">🌐 Agenda</a>
+          <a href="https://www.google.com/maps/search/The+Fillmore+1805+Geary+Blvd+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+      <div class="festival-card">
+        <div class="festival-dates">Festival Anual · Golden Gate Park · Octubre</div>
+        <div class="festival-name">Hardly Strictly Bluegrass</div>
+        <p class="festival-desc">Tres días, cinco escenarios, 100 artistas, entrada completamente gratuita. El festival más generoso del calendario musical americano — fundado por el multimillonario Warren Hellman como regalo permanente a la ciudad. Bluegrass, country, folk y Americana en el Golden Gate Park cada octubre. Artistas previos: Elvis Costello, Emmylou Harris, Steve Earle, Gillian Welch. No hay nada igual en ningún otro lugar del mundo.</p>
+        <div class="card-links">
+          <a href="https://www.hardlystrictlybluegrass.com" target="_blank" class="btn btn-web">🌐 Programa</a>
+          <a href="https://www.google.com/maps/search/Golden+Gate+Park+Speedway+Meadow+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+      <div class="festival-card">
+        <div class="festival-dates">Desde 1907 · 850 personas · SoMa</div>
+        <div class="festival-name">Great American Music Hall</div>
+        <p class="festival-desc">El venue más antiguo de San Francisco: un salón de baile victoriano de 1907 con columnas de mármol, balcones dorados y una historia que incluye a Frank Sinatra, Duke Ellington y los Grateful Dead. Hoy es la sala donde actúan artistas que están entre el underground y el mainstream — jazz, rock indie, folk y psicodelia contemporánea. Los conciertos con asientos reservados tienen una atmósfera que el Fillmore no puede ofrecer.</p>
+        <div class="card-links">
+          <a href="https://www.gamh.com" target="_blank" class="btn btn-web">🌐 Agenda</a>
+          <a href="https://www.google.com/maps/search/Great+American+Music+Hall+859+O'Farrell+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+      <div class="festival-card">
+        <div class="festival-dates">Junio–Agosto · Golden Gate Park</div>
+        <div class="festival-name">Outside Lands 2026</div>
+        <p class="festival-desc">El festival de música urbana más importante del verano de SF: tres días en el Golden Gate Park con los headliners del año. En 2025 pasaron por aquí SZA, Hozier y Tyler the Creator. La edición 2026 se anunciará en primavera, pero el escenario — rodeado de secuoyas y con el Pacífico a pocos kilómetros — convierte cualquier cartel en una experiencia única. Entradas con varios meses de antelación.</p>
+        <div class="card-links">
+          <a href="https://www.sfoutsidelands.com" target="_blank" class="btn btn-web">🌐 Entradas</a>
+          <a href="https://www.google.com/maps/search/Golden+Gate+Park+Polo+Fields+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:3rem" class="fade-up">
+      <h3 style="font-family:var(--f-head);color:var(--bone);font-size:1.3rem;margin-bottom:1rem;" id="agenda">Agenda Viva — Consulta antes de viajar</h3>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="https://www.sfgate.com/entertainment/music/" target="_blank" class="btn-ghost">SF Gate · Música</a>
+        <a href="https://www.timeout.com/san-francisco/music" target="_blank" class="btn-ghost">Time Out SF</a>
+        <a href="https://www.songkick.com/metro-areas/26330-us-san-francisco-bay-area" target="_blank" class="btn-ghost">Songkick SF</a>
+        <a href="https://www.ticketmaster.com/discover/san-francisco" target="_blank" class="btn-ghost">Ticketmaster SF</a>
+        <a href="https://www.sftravel.com/events" target="_blank" class="btn-ghost">Visit SF · Eventos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GASTRONOMIA -->
+<section class="section section-alt" id="gastronomia">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Gastronomía</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Comer en<br><em>San Francisco</em></h2>
+    <p class="section-lead fade-up">San Francisco tiene una de las escenas gastronómicas más avanzadas del mundo — y también una de las más asequibles si sabes dónde ir. La tradición china, mexicana, italiana e italiana del North Beach conviven con los restaurantes de granja-a-mesa que el movimiento slow food inventó aquí antes de llegar a Europa.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type food">🦪 Mariscos · Embarcadero · Fresco</div>
+        <div class="card-body">
+          <div class="card-title">Hog Island Oyster Co. — Ferry Building</div>
+          <p class="card-desc">Las ostras del Hog Island Oyster Farm de Tomales Bay, a noventa minutos de SF, llegan al Ferry Building con menos de un día de mar. La barra del restaurante tiene vistas a la bahía y las ostras al vapor con mantequilla de limón son la razón por la que San Francisco tiene fama de ciudad de marisco. Los sábados de mercado la barra tiene media hora de espera: llega antes de las 11.</p>
+          <div class="card-links">
+            <a href="https://www.hogislandoysters.com/restaurants/ferry-building" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Hog+Island+Oyster+Ferry+Building+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🌮 Mexicano · Mission · Auténtico</div>
+        <div class="card-body">
+          <div class="card-title">La Taqueria — Mission District</div>
+          <p class="card-desc">El mejor burrito de San Francisco, según America's Classic del James Beard Foundation. La Taqueria de la Mission lleva desde 1973 sirviendo burritos sin arroz — solo carne, frijoles, crema y queso en una tortilla de harina cocinada a la plancha — que hacen que todas las otras versiones parezcan un mal chiste. La cola llega hasta la calle; avanza rápido. Cash only.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/La+Taqueria+2889+Mission+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🍞 Panadería · Mission · Sourdough</div>
+        <div class="card-body">
+          <div class="card-title">Tartine Bakery</div>
+          <p class="card-desc">El pan de masa madre de Chad Robertson cambió la panadería artesanal americana. La hogaza de país de Tartine — con su corteza oscura, su miga húmeda y su acidez perfectamente calibrada — sale del horno a las 17h los martes a sábado y se acaba en menos de una hora. La croissant de mantequilla de la mañana es igualmente legendaria. El café es bueno. La cola también.</p>
+          <div class="card-links">
+            <a href="https://www.tartinebakery.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Tartine+Bakery+600+Guerrero+St+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type cafe">☕ Café · Hayes Valley · Especialidad</div>
+        <div class="card-body">
+          <div class="card-title">Ritual Coffee Roasters</div>
+          <p class="card-desc">Uno de los tostadores pioneros del movimiento de café de especialidad americano, fundado en SF en 2005. La ubicación de Hayes Valley es la más bonita: local de ladrillo visto, luz natural y el mejor cortado de origen único de la ciudad. Varios San Francisco restaurantes sirven el café de Ritual; la experiencia en el local propio es diferente.</p>
+          <div class="card-links">
+            <a href="https://www.ritualcoffee.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Ritual+Coffee+Roasters+Hayes+Valley+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🍜 Dim Sum · Chinatown · Histórico</div>
+        <div class="card-body">
+          <div class="card-title">City View Restaurant — Chinatown</div>
+          <p class="card-desc">El Chinatown de San Francisco es el más antiguo de América del Norte — llegaron los trabajadores chinos para construir el ferrocarril transcontinental en los años 1860 — y City View es su restaurante de dim sum de referencia. Carritos, har gow, siu mai y char siu bao que llegan a la mesa a las 11am y se agotan antes de la 1pm. Llega con hambre y sin agenda para la tarde.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/City+View+Restaurant+662+Commercial+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🍕 Italiana · North Beach · Clásico</div>
+        <div class="card-body">
+          <div class="card-title">Tony's Pizza Napoletana</div>
+          <p class="card-desc">Tony Gemignani, campeón mundial de lanzamiento de masa, tiene el mejor horno a leña de la ciudad y una carta con doce tipos de pizza. La napoletana de bufala con tomate San Marzano y albahaca fresca es la referencia. La pizza New York estilo también tiene categoría propia. North Beach lo adoptó como el restaurante del barrio; el resto de la ciudad hace fila. Reservar con dos días de anticipación.</p>
+          <div class="card-links">
+            <a href="https://www.tonyspizzanapoletana.com" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Tony's+Pizza+Napoletana+1570+Stockton+St+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🥩 Alta Cocina · SoMa · Granja-a-mesa</div>
+        <div class="card-body">
+          <div class="card-title">Zuni Café</div>
+          <p class="card-desc">La referencia de la cocina californiana desde 1979. El pollo asado en horno de leña con ensalada de pan — que Judy Rodgers creó y nadie ha podido copiar satisfactoriamente — es el plato más imitado de la historia de la restauración americana. La barra de cobre, la luz de la tarde y el nivel de los vinos de California por copa hacen de este local uno de los mejores restaurantes que existen, sin importar la categoría.</p>
+          <div class="card-links">
+            <a href="https://www.zunicafe.com" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Zuni+Cafe+1658+Market+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type food">🐟 Peruana · Embarcadero · Gastrón Acurio</div>
+        <div class="card-body">
+          <div class="card-title">La Mar Cebichería Peruana</div>
+          <p class="card-desc">Gastón Acurio, el chef más influyente de América Latina, eligió el Pier 1.5 del Embarcadero de San Francisco para abrir el primer La Mar fuera de Lima, en 2008. Con el agua de la bahía a un metro y la silueta del Bay Bridge al fondo, los cebiches de Acurio — tiraditos de lenguado, causas de camarón, anticuchos de corazón — se convierten aquí en una experiencia que ningún restaurante de la ciudad puede replicar. El bar de pisco, con más de veinte variedades, es el mejor de la costa oeste.</p>
+          <div class="card-links">
+            <a href="https://lamarcebicheria.com/san-francisco/" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/La+Mar+Cebicheria+Pier+1.5+Embarcadero+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">⭐ Alta Cocina · Cow Hollow · 3 Estrellas Michelin</div>
+        <div class="card-body">
+          <div class="card-title">Atelier Crenn</div>
+          <p class="card-desc">Dominique Crenn es la primera mujer chef en ganar tres estrellas Michelin en Estados Unidos. Su restaurante en Fillmore Street es, en el mundo de la gastronomía de autor, lo que el Fillmore Music Hall es en el del rock: el escenario donde sucede lo que el resto del mundo estudiará durante décadas. El menú se sirve como un poema — literalmente, está escrito en verso — y cada plato es una combinación de su infancia en Bretaña y los ingredientes de su granja en Sonoma. Reserva con semanas de antelación y considera el presupuesto (~$450 por persona). Algunas experiencias no se discuten; se viven.</p>
+          <div class="card-links">
+            <a href="https://www.ateliercrenn.com" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Atelier+Crenn+3127+Fillmore+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🌮 Fusión · Mission · Mercado</div>
+        <div class="card-body">
+          <div class="card-title">Bi-Rite Market & Creamery</div>
+          <p class="card-desc">La tienda gourmet más querida del Mission — y la heladería más fotografiada de SF. El helado de sal marina con caramelo y el de mantequilla de almendras son los dos sabores por los que la cola llega hasta la acera de Dolores Park. La tienda tiene los mejores quesos artesanales y embutidos de California, y el personal conoce la procedencia de cada producto. Para un picnic en Dolores Park de enfrente, no hay nada mejor.</p>
+          <div class="card-links">
+            <a href="https://www.biritecreamery.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Bi-Rite+Creamery+3692+18th+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGENERATIVO -->
+<section class="section" id="regenerativo">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Viaje Responsable</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Dar algo<br><em>a la ciudad</em></h2>
+    <p class="section-lead fade-up">San Francisco heredó del Summer of Love una tradición de activismo, comunidad y cuidado del medioambiente que sigue siendo la más activa de América. Estas iniciativas conectan al viajero con la ciudad real — no la turística — y dejan algo más que selfies en la Golden Gate.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type sustain">🌊 Conservación · Bahía · Voluntariado</div>
+        <div class="card-body">
+          <div class="card-title">Save The Bay — Restauración de Marismas</div>
+          <p class="card-desc">La bahía de San Francisco perdió el 95% de sus marismas originales en el siglo XX. Save The Bay organiza jornadas de restauración cada fin de semana: plantar juncos, retirar invasoras, monitorizar aves. Dos horas un sábado por la mañana en las orillas de la bahía, con vistas al Bay Bridge y el sonido de las garzas. Registro gratuito online.</p>
+          <div class="card-links">
+            <a href="https://www.savethebay.org/volunteer" target="_blank" class="btn btn-web">🌐 Registrarse</a>
+            <a href="https://www.google.com/maps/search/San+Francisco+Bay+marshes+restoration" target="_blank" class="btn btn-map">📍 Ubicación</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type sustain">🎵 Música Social · Tenderloin · Arte</div>
+        <div class="card-body">
+          <div class="card-title">Community Music Center</div>
+          <p class="card-desc">Fundado en 1921, el CMC lleva más de un siglo ofreciendo clases de música a precio reducido o gratuito en el Tenderloin y la Mission. Conciertos gratuitos casi cada semana, programas de formación para jóvenes y adultos, y una misión que conecta directamente con la tradición del Haight-Ashbury: la música como herramienta de comunidad, no de comercio.</p>
+          <div class="card-links">
+            <a href="https://www.sfcmc.org" target="_blank" class="btn btn-web">🌐 Programación</a>
+            <a href="https://www.google.com/maps/search/Community+Music+Center+544+Capp+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type sustain">🌱 Jardines · Excelsior · Comunidad</div>
+        <div class="card-body">
+          <div class="card-title">Golden Gate Park — Naturaleza & Jardines</div>
+          <p class="card-desc">El Golden Gate Park, con sus 1,017 acres, es uno de los parques urbanos más grandes del mundo y el alma verde de San Francisco. Alberga el de Young Museum, la California Academy of Sciences, el Japanese Tea Garden, el Botanical Garden y los campos donde se celebraron los conciertos gratuitos del Summer of Love. SF Recreation & Parks organiza voluntariados de mantenimiento y plantación en el parque casi todos los fines de semana.</p>
+          <div class="card-links">
+            <a href="https://sfrecpark.org/parks-open-spaces/golden-gate-park" target="_blank" class="btn btn-web">🌐 Voluntariado</a>
+            <a href="https://www.google.com/maps/search/Garden+for+the+Environment+7th+Avenue+Golden+Gate+Park+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type sustain">📚 Cultura · Tenderloin · Educación</div>
+        <div class="card-body">
+          <div class="card-title">826 Valencia — Escritura Creativa</div>
+          <p class="card-desc">Dave Eggers fundó este centro de escritura creativa para jóvenes en 2002 — detrás de una tienda de artículos para piratas (para cumplir con el zoning comercial). Desde entonces ha ayudado a miles de jóvenes de SF a desarrollar habilidades de escritura. El voluntariado como tutor es una manera única de conectar con la ciudad y con la tradición literaria del Bay Area.</p>
+          <div class="card-links">
+            <a href="https://www.826valencia.org/volunteer" target="_blank" class="btn btn-web">🌐 Voluntariado</a>
+            <a href="https://www.google.com/maps/search/826+Valencia+826+Valencia+Street+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEAN MACHINE TRIBUTE -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Banda Invitada · Episodio 4</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Mean Machine<br><em>@meanmachinevzla</em></h2>
+    <div class="quote-block fade-up">
+      <p class="quote-text">"El rock psicodélico no murió en San Francisco. Emigró. Y hoy vive en cualquier ciudad donde alguien enciende un amplificador y cierra los ojos."</p>
+      <div class="quote-source">— El Pasaporte Sinfónico · Episodio 4</div>
+    </div>
+    <p class="fade-up" style="color:var(--parch);font-size:0.92rem;line-height:1.8;max-width:700px;">
+      Mean Machine fue la banda invitada del Episodio 4 de El Pasaporte Sinfónico, trayendo el sonido del rock psicodélico venezolano a la conversación sobre San Francisco y el Summer of Love. Encuéntralos en Instagram como <strong style="color:var(--accent)">@meanmachinevzla</strong>.
+    </p>
+    <div style="margin-top:1.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;" class="fade-up">
+      <a href="https://www.instagram.com/meanmachinevzla" target="_blank" class="btn-ghost">Instagram</a>
+      <a href="https://open.spotify.com/episode/0vr3DXtAmLYH1EIrkKVSEd" target="_blank" class="btn-primary">🎧 Escuchar Episodio 4</a>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="section" style="background:var(--base-2)">
+  <div style="max-width:820px;margin:0 auto;text-align:center;padding:2rem 2rem;" class="fade-up">
+    <p style="font-family:var(--f-head);font-style:italic;font-size:clamp(1.3rem,3.4vw,2rem);color:var(--bone);line-height:1.5;">
+      "San Francisco (Be Sure to Wear Flowers in Your Hair)"
+    </p>
+    <p style="font-family:var(--f-label);font-style:normal;font-size:0.62rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-top:1.6rem;">
+      Scott McKenzie · Letra de John Phillips · 1967 · El himno de un verano
+    </p>
+  </div>
+</section>
+
+
+<!-- VIÑEDOS COPPOLA -->
+<section class="section" id="vinedos">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Excursión · Wine Country</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Francis Ford Coppola<br><em>La bodega como manifiesto</em></h2>
+    <p class="section-lead fade-up">A 90 minutos de San Francisco por la US-101 hacia el norte, en Geyserville, el director de El Padrino y Apocalipsis Now construyó algo que va más allá de una bodega: un resort de vino, cine y gastronomía donde sus Oscar de la Academia comparten espacio con piscinas, bocce y el mejor Cabernet de Sonoma County.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type tour">🍷 Viñedos · Geyserville · Sonoma County</div>
+        <div class="card-body">
+          <div class="card-title">Francis Ford Coppola Winery</div>
+          <p class="card-desc">Una bodega que es parte parque temático, parte museo de cine y parte refugio de lujo entre viñedos. Las piscinas exteriores, las canchas de bocce y el restaurante Rustic (cocina italiana con ingredientes del jardín orgánico) hacen que la mayoría de los visitantes lleguen para una cata de vinos y se queden el día entero. En el interior, la galería de memorabilia incluye el automóvil de la escena final de El Padrino, vestuario de Bram Stoker's Dracula y dos de sus cinco Oscar. Coppola está involucrado en cada decisión del lugar — desde el etiquetado de los vinos hasta el menú.</p>
+          <div class="card-links">
+            <a href="https://www.francisfordcoppolawinery.com" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.exploretock.com/francisfordcoppolawinery/" target="_blank" class="btn btn-web">🎟 Reservar Tour</a>
+            <a href="https://www.google.com/maps/search/Francis+Ford+Coppola+Winery+300+Via+Archimedes+Geyserville+California" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPORTES SF -->
+<section class="section section-alt" id="deportes">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">San Francisco & El Deporte</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">San Francisco<br><em>en el deporte</em></h2>
+    <p class="section-lead fade-up">San Francisco tiene dos franquicias icónicas que hacen de la ciudad uno de los mercados deportivos más apasionantes del oeste: los Giants en el béisbol y los 49ers en el fútbol americano. Un partido de béisbol en Oracle Park, con la bahía al fondo, es una de las experiencias más auténticamente californianas que puedes vivir.</p>
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type tour">⚾ MLB · Oracle Park · Bahía</div>
+        <div class="card-body">
+          <div class="card-title">San Francisco Giants</div>
+          <p class="card-desc">Oracle Park, inaugurado en 2000, es considerado el estadio más bonito de las Grandes Ligas — no por sus dimensiones sino por su posición: el jardín derecho da directamente a la bahía de San Francisco, y los home runs al agua (los "splash hits") son una de las imágenes más icónicas del béisbol americano. Los Giants han ganado tres Series Mundiales desde 2010. Ver un partido aquí al atardecer, con la niebla entrando por el Golden Gate y la silueta del Bay Bridge al fondo, es una experiencia que ningún otro estadio puede ofrecer.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com/giants" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.mlb.com/giants/tickets" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Oracle+Park+24+Willie+Mays+Plaza+San+Francisco" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🏈 NFL · Levi's Stadium · Santa Clara</div>
+        <div class="card-body">
+          <div class="card-title">San Francisco 49ers</div>
+          <p class="card-desc">Cinco Super Bowls entre 1981 y 1994 — la franquicia más ganadora de la historia de la NFL en su época dorada, con Joe Montana y Jerry Rice. Los 49ers juegan en el Levi's Stadium en Santa Clara, a 45 minutos del centro de SF por BART o coche. Bajo el mando de Kyle Shanahan han vuelto a ser contendientes regulares. El calendario de la temporada 2026 se puede consultar directamente en su web oficial.</p>
+          <div class="card-links">
+            <a href="https://www.49ers.com" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.49ers.com/tickets/" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.nfl.com/teams/san-francisco-49ers/" target="_blank" class="btn btn-web">🏈 NFL.com</a>
+            <a href="https://www.google.com/maps/search/Levi's+Stadium+4900+Marie+P+DeBartolo+Way+Santa+Clara" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🏟 Ligas Oficiales · Calendarios</div>
+        <div class="card-body">
+          <div class="card-title">MLB & NFL — Calendarios Oficiales</div>
+          <p class="card-desc">Antes de viajar, consulta si los Giants juegan en casa durante tus fechas — los partidos de béisbol entre semana pueden conseguirse desde $20 y Oracle Park al atardecer es uno de los espectáculos más hermosos del deporte americano. Para los 49ers, las entradas se agotan con semanas de antelación; usa el sitio oficial para evitar la reventa.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com" target="_blank" class="btn btn-web">⚾ MLB Oficial</a>
+            <a href="https://www.nfl.com" target="_blank" class="btn btn-web">🏈 NFL Oficial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACIFIC COAST HIGHWAY — SF A LA -->
+<section class="section" id="roadtrip">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">El Gran Road Trip</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">San Francisco<br><em>a Los Ángeles por la costa</em></h2>
+    <p class="section-lead fade-up">Imagina manejar en un auto descapotable de los 60, con tus ojos llenos de paisajes inimaginables, el olor al mar, y el viento jugando contigo, y tú te vas conectando con la California de las canciones de la contracultura. Eso es la Highway 1 — la Pacific Coast Highway — de San Francisco a Los Ángeles: 600 kilómetros de acantilados, surf, playas secretas y los pueblos donde la contracultura californiana todavía respira.</p>
+
+    <div class="quote-block fade-up">
+      <p class="quote-text">"The California sun, the Big Sur where the mountains meet the sea..."</p>
+      <div class="quote-source">— Big Sur · El alma del camino que te espera</div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card fade-up">
+        <div class="card-type tour">🚗 Parada 1 · Half Moon Bay · 50 km de SF</div>
+        <div class="card-body">
+          <div class="card-title">Half Moon Bay — Primera parada</div>
+          <p class="card-desc">La primera gran pausa del camino, a 50 kilómetros de San Francisco. En otoño e invierno es la capital mundial del surf de olas gigantes — el Mavericks, a 3 kilómetros de la costa, produce olas de hasta 20 metros. En primavera y verano es un pueblo tranquilo con granja de alcachofas y la mejor empanada de cangrejo de la costa. El Pasta Moon es el restaurante con mejores vistas al océano de la zona.</p>
+          <div class="card-links">
+            <a href="https://www.visithalfmoonbay.org" target="_blank" class="btn btn-web">🌐 Half Moon Bay</a>
+            <a href="https://www.google.com/maps/search/Half+Moon+Bay+California+Highway+1" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🌲 Parada 2 · Big Sur · 340 km de SF</div>
+        <div class="card-body">
+          <div class="card-title">Big Sur — El corazón del camino</div>
+          <p class="card-desc">El tramo más dramático de la Highway 1: 140 kilómetros donde la carretera corre suspendida entre el acantilado y el Pacífico. El puente del Bixby Creek es la foto más tomada del camino. La playa de Pfeiffer Big Sur State Park, al fondo de un cañón de secuoyas, parece sacada de un sueño. Come en Nepenthe — el restaurante construido por Orson Welles en 1944 en lo alto del acantilado — con el oceáno frente a ti. Permite al menos dos horas solo para este tramo.</p>
+          <div class="card-links">
+            <a href="https://www.bigsurcalifornia.org" target="_blank" class="btn btn-web">🌐 Big Sur</a>
+            <a href="https://www.google.com/maps/search/Big+Sur+California+Highway+1+Bixby+Bridge" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🎵 Parada 3 · Monterey & Carmel · 190 km de SF</div>
+        <div class="card-body">
+          <div class="card-title">Monterey & Carmel — Donde la historia se detiene</div>
+          <p class="card-desc">Monterey: el Cannery Row de Steinbeck, el mejor acuario del mundo y el recinto del Monterey Pop Festival de 1967 — donde Hendrix quemó su guitarra y Janis Joplin se convirtió en leyenda. A diez minutos, Carmel-by-the-Sea: el pueblo sin número en las casas, donde Clint Eastwood fue alcalde, donde las calles terminan en una playa de arena blanca entre cipreses retorcidos por el viento del Pacífico. El Carmel Bach Festival, cada julio, llena los 89 años de historia musical del pueblo.</p>
+          <div class="card-links">
+            <a href="https://www.carmelcalifornia.com" target="_blank" class="btn btn-web">🌐 Visit Carmel</a>
+            <a href="https://bachfestival.org" target="_blank" class="btn btn-web">🎵 Carmel Bach Festival</a>
+            <a href="https://www.seemonterey.com" target="_blank" class="btn btn-web">🌐 Visit Monterey</a>
+            <a href="https://www.google.com/maps/search/Carmel-by-the-Sea+California+beach" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up">
+        <div class="card-type tour">🌴 Llegada · Los Ángeles · 600 km de SF</div>
+        <div class="card-body">
+          <div class="card-title">El final del camino — Los Ángeles</div>
+          <p class="card-desc">Después de Carmel, la Highway 1 se fusiona con la US-101 y baja hacia Los Ángeles. La última parada mítica antes de la ciudad es Malibu — la Pacific Coast Highway costera con el Pacífico a tu izquierda, las mansiones de los músicos a tu derecha, y la sensación de que has completado el viaje que los Beatles, los Doors y los Beach Boys hicieron en imaginación. El Pasaporte Sinfónico tiene una guía completa de Los Ángeles esperando por ti al final del camino.</p>
+          <div class="card-links">
+            <a href="los-angeles-guide.html" class="btn btn-web" style="background:var(--accent);color:var(--base-1);border-color:var(--accent)">🎸 Guía de Los Ángeles →</a>
+            <a href="https://www.google.com/maps/dir/San+Francisco+CA/Los+Angeles+CA/via+highway+1+pacific+coast" target="_blank" class="btn btn-map">📍 Ruta completa Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tip-box fade-up">
+      <strong>Consejo del camino:</strong> El road trip completo de SF a LA por la Highway 1 son unas 8-10 horas sin parar — haz el trayecto en 2 o 3 días, durmiendo en Big Sur o Carmel. La mejor época es mayo-octubre (antes de la temporada de lluvia). Una app como Google Maps en modo "evitar autopistas" te mantiene pegado a la costa. La gasolina se acaba entre Big Sur y San Simeon — llena el tanque en Carmel antes de salir hacia el sur.
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing-section">
+  <div class="closing-inner">
+    <div class="section-rule fade-up" style="justify-content:center"><span class="section-tag">Manifiesto Final</span></div>
+    <div class="closing-text fade-up">
+      San Francisco no te pide que la quieras. Te desafía a que la entiendas. Sus colinas son reales, su niebla es constante y sus contradicciones — la ciudad más progresista de América que tiene la mayor brecha de desigualdad del país — son genuinas. Pero en esos barrios donde la música todavía importa, donde un viernes en el Fillmore se siente como un puente directo a 1967, la ciudad te revela algo que ninguna otra ciudad del mundo puede mostrarte.<br><br>
+      <em>Cada ciudad tiene su banda sonora. La de San Francisco suena todavía.</em>
+    </div>
+    <div class="closing-ctas fade-up">
+      <a href="https://www.sftravel.com" target="_blank" class="btn-primary">Turismo Oficial de SF</a>
+      <a href="https://open.spotify.com/episode/0vr3DXtAmLYH1EIrkKVSEd" target="_blank" class="btn-ghost">🎧 Episodio 4 en Spotify</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="brand-seal seal-footer"></span>
+  <div class="footer-brand">El Pasaporte Sinfónico</div>
+  <div class="footer-tag">El podcast donde la música viaja</div>
+  <div class="footer-links">
+    <a href="index.html">← Todos los Circuitos</a>
+    <a href="https://open.spotify.com/show/0gYgTB6oyizyaaaHxhQORe" target="_blank">Spotify</a>
+    <a href="https://www.instagram.com/elpasaportesinfonico" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/ELPasaporteSinfonico" target="_blank">Facebook</a>
+    <a href="https://www.youtube.com/@ElPasaporteSinfonico" target="_blank">YouTube</a>
+  </div>
+  <p class="footer-disc">
+    Episodio 4 — Rock Psicodélico · San Francisco, Monterey & Carmel · 4 días de circuito · 40+ lugares verificados · Esta guía es de carácter orientativo. Verifica horarios, precios y disponibilidad antes de visitar. Los enlaces de afiliados nos ayudan a mantener el proyecto sin costo para ti. © 2026 El Pasaporte Sinfónico.
+  </p>
+</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

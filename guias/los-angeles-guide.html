@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los Ángeles · Rock Psicodélico — El Pasaporte Sinfónico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cinzel:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ COLOR TOKENS — PSYCHEDELIC ROCK · LOS ÁNGELES
+   Pacific gold / terracota sunset / deep indigo night
+*/
+:root {
+  --base-1:  #07050a;
+  --base-2:  #0f0c14;
+  --base-3:  #18141e;
+  --base-4:  #241d2c;
+
+  --accent:       #e8a93a;
+  --accent-bright:#f5c860;
+  --accent-deep:  #a06e18;
+
+  --secondary:    #c03820;
+  --secondary-glow:#e05030;
+  --secondary-light: rgba(192,56,32,0.12);
+
+  --pacific:      #1a4a7a;
+  --pacific-glow: #2a6aaa;
+
+  --bone:    #f2ece0;
+  --parch:   #e0d4c0;
+  --smoke:   #8a7a90;
+
+  --rule:    #2e2038;
+
+  --f-display: 'Cinzel', serif;
+  --f-head:    'Playfair Display', serif;
+  --f-body:    'Libre Baskerville', serif;
+  --f-label:   'Oswald', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--base-1);
+  color: var(--parch);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::after {
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.55;
+}
+
+/* NAV */
+.nav {
+  position: fixed; top:0; left:0; right:0; z-index:200;
+  background: rgba(7,5,10,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232,169,58,0.2);
+  height: 62px;
+  display: flex; align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: var(--f-display);
+  font-size: 0.9rem; letter-spacing: 0.18em;
+  color: var(--accent); text-decoration: none; text-transform: uppercase;
+}
+.nav-logo em {
+  color: rgba(224,212,192,0.4); font-style: normal;
+  font-size: 0.7em; display: block; letter-spacing: 0.3em;
+  font-family: var(--f-label); font-weight: 300;
+}
+.nav-links { display:flex; gap:0.1rem; list-style:none; }
+.nav-links a {
+  display:block; padding:0.3rem 0.7rem;
+  font-family: var(--f-label); font-size:0.68rem;
+  font-weight:600; letter-spacing:0.15em; text-transform:uppercase;
+  color: var(--smoke); text-decoration:none; transition:color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 60% 30%, rgba(192,56,32,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 80%, rgba(26,74,122,0.15) 0%, transparent 55%),
+              var(--base-1);
+}
+.hero-watermark {
+  position: absolute; top:50%; left:50%;
+  transform: translate(-50%,-50%);
+  font-size: 42vw; line-height:1;
+  color: var(--accent); opacity:0.025;
+  pointer-events:none; user-select:none;
+  font-family: var(--f-display);
+}
+.hero-badge {
+  font-family: var(--f-label); font-size:0.68rem;
+  font-weight:700; letter-spacing:0.35em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:1.8rem;
+  border: 1px solid rgba(232,169,58,0.3);
+  display:inline-block; padding:0.5rem 1.4rem;
+}
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight:900; text-transform:uppercase;
+  letter-spacing:0.02em; line-height:0.92;
+  color: var(--bone); margin-bottom:1rem;
+}
+
+/* DODGERS JERSEY STYLE — solo para "Los Ángeles" en el hero */
+.hero-title .dodgers-la {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 700;
+  font-size: clamp(4.5rem, 13vw, 11rem);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.0;
+  color: #005A9C;
+  -webkit-text-stroke: 3px #ffffff;
+  text-stroke: 3px #ffffff;
+  paint-order: stroke fill;
+  text-shadow:
+    4px 4px 0px #003d6b,
+    6px 6px 0px rgba(0,30,60,0.4),
+    0 8px 24px rgba(0,30,80,0.5);
+  filter: drop-shadow(0 2px 8px rgba(0,40,100,0.35));
+}
+.hero-title em {
+  display:block; font-style:italic;
+  font-family: var(--f-head);
+  color: var(--accent); font-weight:700;
+  font-size:0.55em; letter-spacing:0.05em;
+}
+.hero-subtitle {
+  font-family: var(--f-label); font-size:0.82rem;
+  font-weight:600; letter-spacing:0.25em; text-transform:uppercase;
+  color: var(--smoke); margin-bottom:3rem;
+}
+.hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.btn-primary {
+  font-family: var(--f-label); font-size:0.75rem;
+  font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  background: var(--accent); color: var(--base-1);
+  padding:0.9rem 2.2rem; text-decoration:none;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--accent-bright); }
+.btn-ghost {
+  font-family: var(--f-label); font-size:0.75rem;
+  font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+  background: transparent; color: var(--accent);
+  border: 1px solid var(--accent); padding:0.9rem 2.2rem;
+  text-decoration:none; transition: all 0.2s;
+}
+.btn-ghost:hover { background: rgba(232,169,58,0.1); }
+.scroll-hint {
+  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:0.5rem;
+  font-family: var(--f-label); font-size:0.6rem; letter-spacing:0.25em;
+  color: var(--smoke); text-transform:uppercase;
+}
+.scroll-arrow {
+  width:1px; height:40px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+/* SECTIONS */
+.section { padding: 5.5rem 0; }
+.section-alt { background: var(--base-2); }
+.section-inner { max-width:1200px; margin:0 auto; padding:0 2rem; }
+.section-rule {
+  display:flex; align-items:center; gap:1rem;
+  margin-bottom:1.5rem;
+}
+.section-rule::before {
+  content:''; width:40px; height:1px;
+  background: var(--accent); flex-shrink:0;
+}
+.section-tag {
+  font-family: var(--f-label); font-size:0.65rem;
+  font-weight:700; letter-spacing:0.3em; text-transform:uppercase;
+  color: var(--accent);
+}
+.section-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight:900; text-transform:uppercase;
+  letter-spacing:0.02em; color: var(--bone);
+  margin-bottom:1.2rem; line-height:1.05;
+}
+.section-title em {
+  display:block; font-style:italic;
+  font-family: var(--f-head);
+  color: var(--accent); font-weight:700;
+  text-transform:none; font-size:0.65em;
+}
+.section-lead {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--parch); line-height:1.8;
+  max-width:720px; margin-bottom:3rem;
+}
+
+/* CARDS */
+.cards-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap:1.5rem;
+}
+.card {
+  background: var(--base-3); border:1px solid var(--rule);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: rgba(232,169,58,0.35); transform:translateY(-2px); }
+.card-type {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  padding:0.6rem 1rem; border-bottom:1px solid var(--rule);
+}
+.card-type.hotel    { background:rgba(232,169,58,0.08); color:var(--accent); }
+.card-type.food     { background:rgba(192,56,32,0.08); color:#e07840; }
+.card-type.cafe     { background:rgba(160,100,20,0.12); color:#c8943a; }
+.card-type.culture  { background:rgba(26,74,122,0.12); color:#5090d0; }
+.card-type.music    { background:rgba(140,30,120,0.10); color:#c060a0; }
+.card-type.festival { background:rgba(60,140,30,0.10); color:#70b050; }
+.card-type.nature   { background:rgba(20,120,90,0.10); color:#40b080; }
+.card-type.tour     { background:rgba(80,50,160,0.10); color:#8060c0; }
+.card-body { padding:1.4rem; }
+.card-title {
+  font-family: var(--f-head); font-size:1.1rem;
+  font-weight:700; color: var(--bone); margin-bottom:0.7rem;
+}
+.card-desc {
+  font-size:0.86rem; color: var(--parch);
+  line-height:1.65; margin-bottom:1rem;
+}
+.card-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
+.btn { display:inline-block; text-decoration:none; }
+.btn-web, .btn-map {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:600; letter-spacing:0.12em; text-transform:uppercase;
+  padding:0.35rem 0.9rem; border:1px solid var(--rule);
+  color: var(--smoke); transition:all 0.2s;
+}
+.btn-web:hover { border-color:var(--accent); color:var(--accent); }
+.btn-map:hover { border-color:var(--secondary); color:var(--secondary-glow); }
+
+/* TRANSPORT */
+.transport-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));
+  gap:1.2rem;
+}
+.transport-region {
+  background: var(--base-3); border:1px solid var(--rule); padding:1.4rem;
+}
+.transport-region h4 {
+  font-family: var(--f-label); font-size:0.7rem;
+  font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:1rem;
+  padding-bottom:0.6rem; border-bottom:1px solid var(--rule);
+}
+.airline-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+.airline-list li {
+  display:flex; align-items:center; justify-content:space-between;
+  font-size:0.82rem;
+}
+.airline-list a {
+  font-family: var(--f-label); font-size:0.6rem;
+  font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+  color: var(--accent); text-decoration:none; border:1px solid rgba(232,169,58,0.3);
+  padding:0.2rem 0.6rem; transition:all 0.2s;
+}
+.airline-list a:hover { background:rgba(232,169,58,0.1); }
+.tip-box {
+  margin-top:2rem; padding:1.4rem 1.8rem;
+  border-left:3px solid var(--accent);
+  background: rgba(232,169,58,0.06);
+  font-size:0.88rem; color:var(--parch); line-height:1.7;
+  font-style:italic;
+}
+
+/* TIMELINE */
+.timeline { position:relative; padding-left:2.5rem; }
+.timeline::before {
+  content:''; position:absolute; left:0.75rem; top:0; bottom:0;
+  width:1px; background: linear-gradient(to bottom, var(--accent), transparent);
+}
+.tl-item { position:relative; padding-bottom:2.5rem; }
+.tl-item::before {
+  content:''; position:absolute; left:-1.85rem; top:0.35rem;
+  width:8px; height:8px;
+  background: var(--accent); transform:rotate(45deg);
+}
+.tl-time {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:0.4rem;
+}
+.tl-place {
+  font-family: var(--f-head); font-size:1.1rem;
+  font-weight:700; color: var(--bone); margin-bottom:0.5rem;
+}
+.tl-desc { font-size:0.88rem; color:var(--parch); line-height:1.65; margin-bottom:0.8rem; }
+.tl-links { display:flex; gap:0.5rem; flex-wrap:wrap; }
+
+/* TABS */
+.tabs-nav { overflow-x:auto; border-bottom:1px solid var(--rule); margin-bottom:2.5rem; }
+.tabs-nav-inner { display:flex; gap:0; white-space:nowrap; }
+.tab-btn {
+  font-family: var(--f-label); font-size:0.7rem;
+  font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+  color: var(--smoke); background:transparent; border:none;
+  padding:0.9rem 1.6rem; cursor:pointer;
+  border-bottom:2px solid transparent; transition:all 0.2s;
+}
+.tab-btn:hover { color:var(--accent); }
+.tab-btn.active { color:var(--accent); border-bottom-color:var(--accent); }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+
+/* QUOTE */
+.quote-block {
+  margin:2.5rem 0; padding:2rem 2.5rem;
+  border-left:3px solid var(--accent);
+  background: rgba(232,169,58,0.04);
+  position:relative;
+}
+.quote-block::before {
+  content:'"'; position:absolute; top:-0.5rem; left:1.5rem;
+  font-family: var(--f-head); font-size:4rem;
+  color: var(--accent); opacity:0.3; line-height:1;
+}
+.quote-text {
+  font-family: var(--f-head); font-size:1.15rem;
+  font-style:italic; color: var(--bone); line-height:1.6;
+  margin-bottom:0.8rem;
+}
+.quote-source {
+  font-family: var(--f-label); font-size:0.65rem;
+  font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+  color: var(--smoke);
+}
+
+/* STATS */
+.stats-row {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr));
+  gap:1px; background:var(--rule); margin:2.5rem 0;
+}
+.stat-cell {
+  background: var(--base-3); padding:1.8rem 1.5rem; text-align:center;
+}
+.stat-cell .lbl {
+  font-family: var(--f-label); font-size:0.6rem;
+  font-weight:700; letter-spacing:0.25em; text-transform:uppercase;
+  color: var(--smoke); margin-bottom:0.5rem;
+}
+.stat-cell .num {
+  font-family: var(--f-display); font-size:2.5rem;
+  font-weight:900; color: var(--accent); line-height:1;
+}
+.stat-cell .num em { font-size:0.55em; font-style:normal; color:var(--accent-bright); }
+.stat-cell .desc {
+  font-size:0.75rem; color:var(--smoke); margin-top:0.4rem; font-style:italic;
+}
+
+/* FESTIVAL CARDS */
+.festival-cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:1.5rem; }
+.festival-card {
+  background: var(--base-3); border:1px solid var(--rule); padding:1.6rem;
+  position:relative; overflow:hidden;
+  transition: border-color 0.2s;
+}
+.festival-card:hover { border-color:rgba(232,169,58,0.35); }
+.festival-dates {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:700; letter-spacing:0.15em; text-transform:uppercase;
+  color: var(--base-1); background: var(--accent);
+  display:inline-block; padding:0.3rem 0.8rem; margin-bottom:1rem;
+}
+.festival-name {
+  font-family: var(--f-head); font-size:1.2rem;
+  font-weight:700; color: var(--bone); margin-bottom:0.6rem;
+}
+.festival-desc {
+  font-size:0.86rem; color:var(--parch); line-height:1.65; margin-bottom:1rem;
+}
+
+/* MAP */
+.map-embed {
+  width:100%; aspect-ratio:16/7; margin:2rem 0;
+  background: var(--base-3); border:1px solid var(--rule); overflow:hidden;
+}
+.map-embed iframe { width:100%; height:100%; border:none; }
+
+/* CLOSING */
+.closing-section {
+  background: var(--base-2);
+  padding:6rem 2rem; text-align:center;
+}
+.closing-inner { max-width:700px; margin:0 auto; }
+.closing-text {
+  font-family: var(--f-head); font-size:1.15rem;
+  font-style:italic; color:var(--parch); line-height:1.85;
+  margin-bottom:2.5rem;
+}
+.closing-text em { color:var(--accent); }
+.closing-ctas { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+
+/* FOOTER */
+.footer {
+  padding:3rem 2rem; text-align:center;
+  border-top:1px solid var(--rule);
+  background: var(--base-1);
+}
+.footer-brand {
+  font-family: var(--f-head); font-size:1.3rem;
+  font-style:italic; color:var(--accent); margin-bottom:0.4rem;
+}
+.footer-tag {
+  font-family: var(--f-label); font-size:0.65rem;
+  font-weight:600; letter-spacing:0.25em; text-transform:uppercase;
+  color: var(--smoke); margin-bottom:1.5rem;
+}
+.footer-links { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.footer-links a {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:600; letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--smoke); text-decoration:none; transition:color 0.2s;
+}
+.footer-links a:hover { color:var(--accent); }
+.footer-disc {
+  font-size:0.72rem; color:var(--smoke); line-height:1.5; max-width:600px; margin:0 auto;
+}
+
+/* FADE UP */
+.fade-up { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* AFFILIATE BANNER */
+.aff-banner {
+  background: linear-gradient(135deg, var(--base-3), var(--base-4));
+  border:1px solid rgba(232,169,58,0.25); border-radius:0;
+  padding:2rem 2.5rem; margin:3rem 0;
+  display:flex; align-items:center; gap:2rem; flex-wrap:wrap;
+}
+.aff-banner-text { flex:1; min-width:200px; }
+.aff-banner-label {
+  font-family: var(--f-label); font-size:0.62rem;
+  font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  color: var(--accent); margin-bottom:0.5rem;
+}
+.aff-banner-title {
+  font-family: var(--f-head); font-size:1rem;
+  font-weight:700; color:var(--bone); margin-bottom:0.4rem;
+}
+.aff-banner-desc { font-size:0.82rem; color:var(--parch); }
+.aff-banner-ctas { display:flex; gap:0.6rem; flex-wrap:wrap; }
+
+@media(max-width:768px){
+  .nav-links { display:none; }
+  .hero-title { font-size: clamp(2.5rem,12vw,5rem); }
+  .section { padding:3.5rem 0; }
+  .cards-grid, .transport-grid { grid-template-columns:1fr; }
+  .aff-banner { flex-direction:column; gap:1.2rem; }
+}
+
+/* BRAND SEAL */
+.brand-seal {
+  display:inline-block; flex-shrink:0;
+  background:url(data:image/png;base64,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) center/contain no-repeat;
+}
+.seal-rule  { width:44px; height:44px; order:3; opacity:0.95; }
+.section-rule .section-tag { order:1; }
+.section-rule::after       { order:2; }
+.seal-nav   { width:38px; height:38px; }
+.seal-hero  { width:112px; height:112px; margin-bottom:1.6rem; position:relative; z-index:2; filter:drop-shadow(0 10px 34px rgba(0,0,0,0.55)); }
+.seal-footer{ width:70px; height:70px; margin:0 auto 1rem; display:block; }
+.nav-logo   { display:flex; align-items:center; gap:0.75rem; }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://pasaporte-sinfonico.netlify.app" class="nav-logo">
+    <span class="brand-seal seal-nav"></span>
+    <span>El Pasaporte Sinfónico
+    <em>El podcast donde la música viaja</em></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#transport">Cómo llegar</a></li>
+    <li><a href="#hotels">Hoteles</a></li>
+    <li><a href="#itinerary">Itinerario</a></li>
+    <li><a href="#venues">Venues</a></li>
+    <li><a href="#food">Gastronomía</a></li>
+    <li><a href="#culture">Cultura</a></li>
+    <li><a href="#regenerative">Viaje Responsable</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-watermark">☀</div>
+  <div class="brand-seal seal-hero"></div>
+  <div class="hero-badge">Rock Psicodélico · Episodio 5 · Los Ángeles, California</div>
+  <h1 class="hero-title">
+    <em>El Pasaporte Sinfónico</em>
+    <span class="dodgers-la">Los Ángeles</span>
+  </h1>
+  <p class="hero-subtitle">The Doors · The Beach Boys · Laurel Canyon · El Sueño Californiano</p>
+  <div class="hero-ctas">
+    <a href="#itinerary" class="btn-primary">Explorar la Guía</a>
+    <a href="https://open.spotify.com/episode/1VUIjxKiEMcEYwuOctdjq9" target="_blank" class="btn-ghost">🎧 Escuchar Episodio 5</a>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-arrow"></div>
+    Descubrir
+  </div>
+</section>
+
+<!-- OPENING ANECDOTE -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">El Espíritu del Lugar</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">La ciudad que<br><em>inventó el sueño</em></h2>
+    <div class="quote-block fade-up">
+      <p class="quote-text">"The blue bus is calling us. Driver, where you taking us?"</p>
+      <div class="quote-source">— Jim Morrison · The End · The Doors, 1967</div>
+    </div>
+    <p class="section-lead fade-up">
+      Los Ángeles no es una ciudad. Es una idea que la humanidad decidió construir frente al Pacífico. Aquí, entre 1965 y 1972, algo extraordinario ocurrió: el rock se volvió psicodélico, los hippies tomaron las colinas de Laurel Canyon, y bandas como The Doors, The Byrds, Buffalo Springfield y Love redefinieron lo que la música podía ser. No eran canciones. Eran estados alterados de conciencia puestos en vinilo.
+    </p>
+    <p class="fade-up" style="color:var(--parch);font-size:0.92rem;line-height:1.8;max-width:720px;">
+      Jim Morrison murió en París en 1971. Brian Wilson casi muere en Los Ángeles —en sus propios estudios, en su propia cabeza— y sobrevivió para contar la historia de las olas y el sol como nadie más podría. Esta guía sigue sus huellas. No para llorar lo que se fue, sino para entender que la ciudad que los vio nacer sigue siendo, en sus cañones, sus playas y sus callejones de West Hollywood, exactamente eso: un lugar donde la música y el paisaje se funden en algo que no tiene nombre.
+    </p>
+    <div class="stats-row fade-up" style="margin-top:2.5rem">
+      <div class="stat-cell">
+        <div class="lbl">Álbumes grabados</div>
+        <div class="num">4<em>K+</em></div>
+        <div class="desc">Solo en la década del 60-70</div>
+      </div>
+      <div class="stat-cell">
+        <div class="lbl">Hollywood Bowl</div>
+        <div class="num">17<em>K</em></div>
+        <div class="desc">asientos bajo las estrellas</div>
+      </div>
+      <div class="stat-cell">
+        <div class="lbl">Sunset Strip</div>
+        <div class="num">1<em>.5km</em></div>
+        <div class="desc">de historia del rock en vivo</div>
+      </div>
+      <div class="stat-cell">
+        <div class="lbl">Beaches</div>
+        <div class="num">96<em>km</em></div>
+        <div class="desc">de costa entre Malibú y Long Beach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="section section-alt" id="transport">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Logística de Viaje</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Cómo llegar a<br><em>Los Ángeles</em></h2>
+    <p class="section-lead fade-up">LAX es el quinto aeropuerto más transitado del mundo y tiene conexiones directas desde casi cualquier ciudad del continente. Pero hay más formas de llegar. Y algunas son más interesantes que la directa.</p>
+    <div class="transport-grid fade-up">
+      <div class="transport-region">
+        <h4>🌎 Desde Norteamérica</h4>
+        <ul class="airline-list">
+          <li><span>Air Canada (Toronto, Montréal)</span><a href="https://www.aircanada.com" target="_blank">Reservar</a></li>
+          <li><span>American Airlines</span><a href="https://www.aa.com" target="_blank">Reservar</a></li>
+          <li><span>United Airlines</span><a href="https://www.united.com" target="_blank">Reservar</a></li>
+          <li><span>Delta Air Lines</span><a href="https://www.delta.com" target="_blank">Reservar</a></li>
+          <li><span>WestJet (Calgary, Vancouver)</span><a href="https://www.westjet.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🌍 Desde Sudamérica</h4>
+        <ul class="airline-list">
+          <li><span>LATAM Airlines</span><a href="https://www.latam.com" target="_blank">Reservar</a></li>
+          <li><span>Avianca (vía Bogotá)</span><a href="https://www.avianca.com" target="_blank">Reservar</a></li>
+          <li><span>Aeromexico (vía CDMX)</span><a href="https://www.aeromexico.com" target="_blank">Reservar</a></li>
+          <li><span>Copa Airlines (vía PTY)</span><a href="https://www.copaair.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🌐 Desde Europa</h4>
+        <ul class="airline-list">
+          <li><span>Iberia (Madrid directo)</span><a href="https://www.iberia.com" target="_blank">Reservar</a></li>
+          <li><span>British Airways (Londres)</span><a href="https://www.britishairways.com" target="_blank">Reservar</a></li>
+          <li><span>Lufthansa (Frankfurt)</span><a href="https://www.lufthansa.com" target="_blank">Reservar</a></li>
+          <li><span>Air France (París CDG)</span><a href="https://www.airfrance.com" target="_blank">Reservar</a></li>
+          <li><span>KLM (Amsterdam)</span><a href="https://www.klm.com" target="_blank">Reservar</a></li>
+        </ul>
+      </div>
+      <div class="transport-region">
+        <h4>🚗 Moverse en LA</h4>
+        <ul class="airline-list">
+          <li><span>Lyft / Uber (preferido)</span><a href="https://www.lyft.com" target="_blank">App</a></li>
+          <li><span>Metro LA (líneas A,B,C,D,E)</span><a href="https://www.metro.net" target="_blank">Rutas</a></li>
+          <li><span>Discover Cars (renta LAX)</span><a href="https://www.discovercars.com" target="_blank">Reservar</a></li>
+          <li><span>FlyAway Bus LAX↔DTLA</span><a href="https://www.flylax.com/flyaway" target="_blank">Info</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip-box fade-up">
+      <strong>Truco de viajero:</strong> Si vuelas desde Canadá, busca conexiones por San Francisco o Phoenix — a veces cuestan 30-40% menos que el directo a LAX. Y considera aterrizar en <em>Burbank Bob Hope Airport (BUR)</em> si tu plan está en Hollywood o West Hollywood: más pequeño, sin colas, y a 20 minutos del Sunset Strip sin peajes.
+    </div>
+
+    <!-- AFFILIATE: DISCOVER CARS -->
+    <div class="aff-banner fade-up">
+      <div class="aff-banner-text">
+        <div class="aff-banner-label">🚗 Afiliado Recomendado</div>
+        <div class="aff-banner-title">Renta tu auto desde LAX con Discover Cars</div>
+        <div class="aff-banner-desc">Compara más de 500 empresas. Sin cargos ocultos. Cancelación gratuita en la mayoría de tarifas. LA es una ciudad para manejar.</div>
+      </div>
+      <div class="aff-banner-ctas">
+        <a href="https://www.discovercars.com" target="_blank" class="btn-primary">Ver Tarifas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOTELS -->
+<section class="section" id="hotels">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Dónde Alojarse</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Hoteles con<br><em>alma californiana</em></h2>
+    <p class="section-lead fade-up">Cada barrio de Los Ángeles es casi una ciudad distinta. Tu hotel define qué LA vas a vivir: el rock de West Hollywood, la playa de Santa Mónica, o el caos creativo del Arts District. Elige bien.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Boutique · West Hollywood · Sunset Strip</div>
+        <div class="card-body">
+          <div class="card-title">Andaz West Hollywood</div>
+          <p class="card-desc">Literalmente en el Sunset Strip. Keith Moon tiró su TV por la ventana de este hotel cuando era el Continental Hyatt. Hoy es el Andaz, renovado con diseño contemporáneo, pero la energía del rock —la historia en las paredes— no se fue. Piscina en la azotea, vistas al Strip, y a dos pasos del Whisky a Go Go.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/andaz-west-hollywood-los-angeles.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Andaz+West+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.booking.com/hotel/us/andaz-west-hollywood.html" target="_blank" class="btn btn-web">🛏 Booking</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Boutique · Rock & Roll · Hollywood</div>
+        <div class="card-body">
+          <div class="card-title">Whisky Hotel Hollywood</div>
+          <p class="card-desc">El hotel más rock de Hollywood — y lo dice en el nombre. 132 habitaciones en pleno corazón de la ciudad, a una cuadra del Walk of Fame y a pasos del Capitol Records. Inspirado en la era dorada del whisky y el rock de los 60s: suelos de nogal europeo, bar en la azotea con vistas a los rascacielos, dos restaurantes y una energía de la que se habla. El welcome shot de whisky al llegar marca el tono del resto de la estancia.</p>
+          <div class="card-links">
+            <a href="https://www.booking.com/hotel/us/whisky-hotel-los-angeles.html" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Magic+Castle+Hotel+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.booking.com/hotel/us/magic-castle.html" target="_blank" class="btn btn-web">🛏 Booking</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Design · DTLA · Arts District</div>
+        <div class="card-body">
+          <div class="card-title">The Line Hotel Los Angeles</div>
+          <p class="card-desc">En Koreatown, sobre Wilshire Boulevard. Diseño de Clout Studio, restaurantes serios (Openaire, Kali), DJ sets los fines de semana y una clientela que mezcla creativos, músicos y visitantes internacionales. El tipo de hotel donde la recepción suena mejor que muchos clubs.</p>
+          <div class="card-links">
+            <a href="https://www.thelinehotel.com/los-angeles" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/The+Line+Hotel+Los+Angeles+Koreatown" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.booking.com/hotel/us/the-l-a-line.html" target="_blank" class="btn btn-web">🛏 Booking</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Playa · Santa Mónica · Pacific Coast</div>
+        <div class="card-body">
+          <div class="card-title">Shutters on the Beach</div>
+          <p class="card-desc">El único hotel de Santa Mónica con acceso directo a la playa. Treinta años de historia, una estética de cabaña costera de lujo, y esas vistas al Pacífico que los Beach Boys describieron en sus discos. Si vienes a Los Ángeles por el sol y el océano, este es el punto de partida correcto.</p>
+          <div class="card-links">
+            <a href="https://www.shuttersonthebeach.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Shutters+on+the+Beach+Santa+Monica" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.booking.com/hotel/us/shutters-on-the-beach.html" target="_blank" class="btn btn-web">🛏 Booking</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Económico Cool · Silver Lake · Eastside</div>
+        <div class="card-body">
+          <div class="card-title">Freehand Los Angeles</div>
+          <p class="card-desc">En el corazón de Downtown LA. Bar en la azotea, Broken Shaker (uno de los mejores cocktail bars de la ciudad), habitaciones privadas y compartidas con diseño cuidado. La opción más inteligente si tu presupuesto es moderado pero no quieres sacrificar el ambiente. Cerca del Metro, Grand Central Market y el Arts District.</p>
+          <div class="card-links">
+            <a href="https://www.freehandhotels.com/los-angeles" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Freehand+Hotel+Los+Angeles+Downtown" target="_blank" class="btn btn-map">📍 Maps</a>
+            <a href="https://www.booking.com/hotel/us/freehand-los-angeles.html" target="_blank" class="btn btn-web">🛏 Booking</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AFFILIATE: BOOKING.COM -->
+    <div class="aff-banner fade-up">
+      <div class="aff-banner-text">
+        <div class="aff-banner-label">🛏 Afiliado Recomendado</div>
+        <div class="aff-banner-title">Reserva tu hotel en Los Ángeles con Booking.com</div>
+        <div class="aff-banner-desc">Más de 1,200 opciones en toda el área de LA. Cancelación gratuita en la mayoría. Sin cargos adicionales al reservar.</div>
+      </div>
+      <div class="aff-banner-ctas">
+        <a href="https://www.booking.com/searchresults.html?ss=Los+Angeles%2C+California%2C+United+States&dest_type=city" target="_blank" class="btn-primary">Ver Hoteles</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section section-alt" id="itinerary">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Itinerario · 4 Días</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Cuatro días<br><em>en el corazón de LA</em></h2>
+    <p class="section-lead fade-up">No existe una sola Los Ángeles. Existen docenas. Este itinerario conecta el rock psicodélico del Sunset Strip con las playas de los Beach Boys, los cañones donde nació el folk de Laurel Canyon, y los barrios donde la ciudad sigue creando música hoy. Cuatro días. Muchos kilómetros. Una sola ciudad.</p>
+
+    <div class="tabs-nav fade-up">
+      <div class="tabs-nav-inner">
+        <button class="tab-btn active" onclick="switchTab('dia1',this)">Día 1 · Sunset Strip</button>
+        <button class="tab-btn" onclick="switchTab('dia2',this)">Día 2 · Laurel Canyon & The Doors</button>
+        <button class="tab-btn" onclick="switchTab('dia3',this)">Día 3 · Beach Boys & Santa Mónica</button>
+        <button class="tab-btn" onclick="switchTab('dia4',this)">Día 4 · DTLA & Eastside</button>
+      </div>
+    </div>
+
+    <!-- DIA 1 -->
+    <div id="dia1" class="tab-content active">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">☕ Mañana · 9:00</div>
+          <div class="tl-place">Intelligentsia Coffee, Silver Lake</div>
+          <p class="tl-desc">El primer café del día en uno de los tostadores de referencia de la ciudad. Silver Lake es el barrio donde los músicos de hoy viven. Dos tazas, una ventana, y la sensación de que todo lo que importa en Los Ángeles está pasando exactamente aquí.</p>
+          <div class="tl-links">
+            <a href="https://www.intelligentsiacoffee.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Intelligentsia+Coffee+Silver+Lake+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎸 Media mañana · 10:30</div>
+          <div class="tl-place">Amoeba Music, Hollywood</div>
+          <p class="tl-desc">La tienda de discos más grande del mundo. No es exageración. Más de 100,000 títulos de vinilo, CD y cassette. Aquí encontrarás ese álbum de The Doors que no supiste que necesitabas. Reserva al menos dos horas o no saldrás.</p>
+          <div class="tl-links">
+            <a href="https://www.amoeba.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Amoeba+Music+Hollywood+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Tarde · 15:00</div>
+          <div class="tl-place">Sunset Strip, West Hollywood</div>
+          <p class="tl-desc">1.5 kilómetros de historia del rock en vivo. El Whisky a Go Go en el número 8901, donde The Doors fueron la banda residente en 1966 antes de que los despidieran después de que Jim Morrison improvisara una versión de 15 minutos de The End. El Roxy, donde Neil Young hizo sus grabaciones en vivo más legendarias. Camina despacio. Mira los murales. Todo habla.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Sunset+Strip+West+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍺 Noche · 20:00</div>
+          <div class="tl-place">Whisky a Go Go — Concierto en vivo</div>
+          <p class="tl-desc">Desde 1964 en el mismo escenario. Capacidad para 500 personas, sonido cercano e íntimo. La programación es casi diaria — desde bandas emergentes hasta homenajes a los grandes. Robby Krieger (guitarrista de The Doors) toca aquí regularmente. Compra entradas en su web o en la taquilla el mismo día.</p>
+          <div class="tl-links">
+            <a href="https://www.whiskyagogo.com" target="_blank" class="btn btn-web">🌐 Entradas</a>
+            <a href="https://www.google.com/maps/search/Whisky+a+Go+Go+West+Hollywood+8901+Sunset" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIA 2 -->
+    <div id="dia2" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌄 Mañana · 8:30</div>
+          <div class="tl-place">Laurel Canyon, Hollywood Hills</div>
+          <p class="tl-desc">En este cañón vivieron, entre 1966 y 1972, casi todos los que importaban: Joni Mitchell, Crosby Stills Nash & Young, The Mamas & The Papas, Frank Zappa. Las casas siguen ahí. El Country Store —la tienda que era el punto de encuentro— sigue abierta. Sube a pie por Laurel Canyon Blvd antes de que el calor llegue.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Laurel+Canyon+Country+Store+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎵 Mañana · 11:00</div>
+          <div class="tl-place">The Doors — Venice Beach & Canal District</div>
+          <p class="tl-desc">Jim Morrison vivió en un pequeño apartamento en Venice, en la calle Nowita Place. No hay placa. Solo el edificio y el recuerdo de que aquí escribió algunas de las letras más extrañas del rock. Desde ahí, camina hacia los canales de Venice — construidos en 1905 para imitar Venecia — y hasta el Venice Beach Boardwalk.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Venice+Canals+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps Venice Canals</a>
+            <a href="https://www.google.com/maps/search/Venice+Beach+Boardwalk+Los+Angeles" target="_blank" class="btn btn-map">📍 Boardwalk</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">☀ Tarde · 14:00</div>
+          <div class="tl-place">The Doors of the 21st Century — Troubadour</div>
+          <p class="tl-desc">Nueve cuadras al norte del Whisky, en Santa Mónica Boulevard, el Troubadour lleva activo desde 1957. Aquí debutó Buffalo Springfield con Neil Young en 1966. Elton John hizo su primera presentación estadounidense en este escenario en 1970. Con capacidad para 500 personas, es el lugar más íntimo para escuchar música en vivo en toda la ciudad.</p>
+          <div class="tl-links">
+            <a href="https://www.troubadour.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Troubadour+West+Hollywood+9081+Santa+Monica" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌃 Noche · 19:30</div>
+          <div class="tl-place">Griffith Observatory — Los Ángeles de noche</div>
+          <p class="tl-desc">Aquí se filmó Rebelde Sin Causa. Aquí Robby Krieger contó que la primera vez que vio Los Ángeles desde arriba entendió que la ciudad era tan extraña como la música que hacían. De noche, con las luces de la cuenca iluminando el horizonte hasta el Pacífico, es el mejor mirador gratuito del mundo. Sin discusión.</p>
+          <div class="tl-links">
+            <a href="https://griffithobservatory.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Griffith+Observatory+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIA 3 -->
+    <div id="dia3" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌊 Mañana · 9:00</div>
+          <div class="tl-place">Santa Mónica Pier & Beach Boys Territory</div>
+          <p class="tl-desc">Brian Wilson creció en Hawthorne, pero la playa que describió en "Surfin' USA", "California Girls" y "Good Vibrations" es exactamente esta: Santa Mónica, el Pacífico, el sol de las 9 de la mañana. El Pier fue construido en 1909. La noria Pacific Wheel es icónica. El agua, en junio, todavía fría.</p>
+          <div class="tl-links">
+            <a href="https://www.santamonicapier.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Santa+Monica+Pier+California" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🏄 Media mañana · 11:00</div>
+          <div class="tl-place">Malibu — Pacific Coast Highway</div>
+          <p class="tl-desc">35 kilómetros de costa sobre la Pacific Coast Highway. Zuma Beach, Point Dume, El Matador State Beach. Los surfistas que Wilson describía no están en Venice: están aquí, a primera hora, cuando las olas llegan del norte. Alquila una bicicleta en Santa Mónica y llega hasta Malibu pedaleando por el carril costero.</p>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Zuma+Beach+Malibu+California" target="_blank" class="btn btn-map">📍 Zuma Beach</a>
+            <a href="https://www.google.com/maps/search/El+Matador+State+Beach+Malibu" target="_blank" class="btn btn-map">📍 El Matador</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Tarde · 14:30</div>
+          <div class="tl-place">Nobu Malibu</div>
+          <p class="tl-desc">Sobre las rocas de Malibu, con el Pacífico debajo y el sol californiano de frente. El restaurante de Nobu Matsuhisa que convirtió el sushi de fusión en algo que Los Ángeles hizo suyo. Los black cod con miso siguen siendo la mejor razón para gastar aquí. Reserva con días de anticipación.</p>
+          <div class="tl-links">
+            <a href="https://www.noburestaurants.com/malibu" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Nobu+Malibu+Restaurant+California" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Tarde · 18:00</div>
+          <div class="tl-place">Hollywood Bowl — Concierto al atardecer</div>
+          <p class="tl-desc">Más de 100 años. Aquí tocaron The Beatles en 1964, Jimi Hendrix en 1967, y The Doors en 1968. La temporada 2026 trae a los Beach Boys el 2, 3 y 4 de julio con la Hollywood Bowl Orchestra. Los asientos del gallinero cuestan desde $1. Las cajas son para otra vida. Lleva comida y vino —puedes— y siéntate bajo las estrellas.</p>
+          <div class="tl-links">
+            <a href="https://www.hollywoodbowl.com" target="_blank" class="btn btn-web">🌐 Entradas 2026</a>
+            <a href="https://www.google.com/maps/search/Hollywood+Bowl+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DIA 4 -->
+    <div id="dia4" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌆 Mañana · 9:00</div>
+          <div class="tl-place">Grand Central Market, Downtown LA</div>
+          <p class="tl-desc">Abierto desde 1917. Más de 40 puestos bajo un mismo techo en Broadway, entre arquitectura del siglo XX y letreros de neón. Desayuna en Eggslut (huevos, brioche, cheddar derretido) o en China Café, que lleva décadas sirviendo el mismo chop suey. Esto es Los Ángeles antes de que llegaran los Instagram influencers.</p>
+          <div class="tl-links">
+            <a href="https://www.grandcentralmarket.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Grand+Central+Market+317+S+Broadway+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🏛 Mañana · 11:00</div>
+          <div class="tl-place">The Broad Museum, DTLA</div>
+          <p class="tl-desc">Arte contemporáneo en el mejor edificio de Bunker Hill. Koons, Basquiat, Cindy Sherman, Jeff Koons. La entrada es gratuita si reservas con anticipación. A dos cuadras, el Walt Disney Concert Hall de Frank Gehry —con su titanio reflejando el sol californiano— es el mejor edificio de la ciudad. Verlo desde fuera cuesta lo mismo que el aire.</p>
+          <div class="tl-links">
+            <a href="https://www.thebroad.org" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/The+Broad+Museum+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎨 Tarde · 14:00</div>
+          <div class="tl-place">Arts District, East Los Angeles</div>
+          <p class="tl-desc">El barrio donde los artistas llegaron cuando no podían pagar Silverlake. Hoy es una mezcla de galerías, estudios de tatuaje, bares naturales, cervecerías artesanales y murales que cubren cuadras enteras. Smorgasburg LA (domingos) es el mejor mercado gastronómico al aire libre de la ciudad.</p>
+          <div class="tl-links">
+            <a href="https://www.smorgasburg.com/la" target="_blank" class="btn btn-web">🌐 Smorgasburg</a>
+            <a href="https://www.google.com/maps/search/Arts+District+Los+Angeles+East" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎶 Noche · 20:00</div>
+          <div class="tl-place">The Roxy Theatre, Sunset Strip</div>
+          <p class="tl-desc">Abierto desde 1973, el Roxy es donde Neil Young grabó Tonight's the Night en vivo, donde Bob Marley tocó su primera gran actuación en Estados Unidos, y donde Bruce Springsteen presentó Born to Run a la costa oeste. 500 personas, un escenario íntimo, y la sensación de que la historia sigue pasando aquí.</p>
+          <div class="tl-links">
+            <a href="https://www.theroxy.com" target="_blank" class="btn btn-web">🌐 Programación</a>
+            <a href="https://www.google.com/maps/search/The+Roxy+Theatre+Sunset+Strip+West+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VENUES & FESTIVALS -->
+<section class="section" id="venues">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Música en Vivo · 2026</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Venues &<br><em>Festivales</em></h2>
+    <p class="section-lead fade-up">Los Ángeles tiene más escenarios activos que cualquier otra ciudad del mundo occidental. Desde el Hollywood Bowl con 18,000 asientos hasta el Troubadour con 500. Esta es la selección que importa.</p>
+
+    <div class="festival-cards fade-up">
+
+      <div class="festival-card">
+        <div class="festival-dates">Jun–Sep 2026 · Temporada completa</div>
+        <div class="festival-name">Hollywood Bowl 2026 Season</div>
+        <p class="festival-desc">Los Beach Boys el 2-4 de julio con la Hollywood Bowl Orchestra y John Stamos. Paul Simon el 7 de junio. ZZ Top & Cheap Trick el 5 de agosto. Salsa Night con Grupo Niche el 15 de julio. La temporada más ecléctica en años, y con entradas desde $1 para los clásicos del jueves.</p>
+        <div class="card-links">
+          <a href="https://www.hollywoodbowl.com" target="_blank" class="btn btn-web">🌐 Entradas</a>
+          <a href="https://www.google.com/maps/search/Hollywood+Bowl+2301+N+Highland+Ave+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+
+      <div class="festival-card">
+        <div class="festival-dates">Todo el año · Programación diaria</div>
+        <div class="festival-name">Whisky a Go Go</div>
+        <p class="festival-desc">El escenario donde The Doors fueron la banda residente. Donde Led Zeppelin, Janis Joplin y Alice Cooper tocaron antes de ser legends. Hoy sigue con 75+ conciertos anuales, programación casi diaria, y la misma energía oscura y eléctrica del Sunset Strip de los 60. Robby Krieger toca aquí varias veces al año.</p>
+        <div class="card-links">
+          <a href="https://www.whiskyagogo.com" target="_blank" class="btn btn-web">🌐 Agenda</a>
+          <a href="https://www.google.com/maps/search/Whisky+a+Go+Go+8901+Sunset+Blvd+West+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+
+      <div class="festival-card">
+        <div class="festival-dates">Desde 1957 · Íntimo · 500 personas</div>
+        <div class="festival-name">The Troubadour</div>
+        <p class="festival-desc">El club que lanzó a Elton John en Estados Unidos, que vio los primeros pasos de James Taylor, que dio escenario a Buffalo Springfield. 9081 Santa Monica Blvd. Con 47 conciertos confirmados para 2026, es el lugar más activo e importante del circuito indie de West Hollywood.</p>
+        <div class="card-links">
+          <a href="https://www.troubadour.com" target="_blank" class="btn btn-web">🌐 Programación</a>
+          <a href="https://www.google.com/maps/search/Troubadour+9081+Santa+Monica+Blvd+West+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+
+      <div class="festival-card">
+        <div class="festival-dates">Jun 27 · 2026</div>
+        <div class="festival-name">A Roots Picnic Experience — Hollywood Bowl</div>
+        <p class="festival-desc">The Roots, Nas, T.I., Bun B y De La Soul en una sola noche bajo las estrellas de Los Ángeles. La mejor noche de hip-hop del año en la costa oeste, en el escenario más mítico de California.</p>
+        <div class="card-links">
+          <a href="https://www.hollywoodbowl.com" target="_blank" class="btn btn-web">🌐 Entradas</a>
+          <a href="https://www.google.com/maps/search/Hollywood+Bowl+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Agenda Viva -->
+    <div style="margin-top:3rem" class="fade-up">
+      <h3 style="font-family:var(--f-head);color:var(--bone);font-size:1.3rem;margin-bottom:1rem;">Agenda Viva — Consulta antes de viajar</h3>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="https://www.discoverlosangeles.com/events" target="_blank" class="btn-ghost">Do LA</a>
+        <a href="https://www.goldenvoice.com" target="_blank" class="btn-ghost">Goldenvoice</a>
+        <a href="https://www.ticketmaster.com/discover/los-angeles" target="_blank" class="btn-ghost">Ticketmaster LA</a>
+        <a href="https://www.songkick.com/metro-areas/17835-us-los-angeles-la" target="_blank" class="btn-ghost">Songkick LA</a>
+        <a href="https://www.bandsintown.com/city/los-angeles" target="_blank" class="btn-ghost">Bandsintown</a>
+      </div>
+    </div>
+
+    <!-- AFFILIATE: GETYOURGUIDE -->
+    <div class="aff-banner fade-up">
+      <div class="aff-banner-text">
+        <div class="aff-banner-label">🎟 Afiliado Recomendado</div>
+        <div class="aff-banner-title">Tours musicales en Los Ángeles con GetYourGuide</div>
+        <div class="aff-banner-desc">Rock & Roll Walking Tours por el Sunset Strip, tours de estrellas y grabaciones históricas, excursiones a Malibú y las colinas de Hollywood.</div>
+      </div>
+      <div class="aff-banner-ctas">
+        <a href="https://www.getyourguide.com/los-angeles-l191/music-tours-tc1/" target="_blank" class="btn-primary">Ver Tours</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GASTRONOMY -->
+<section class="section section-alt" id="food">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Gastronomía</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Comer en<br><em>Los Ángeles</em></h2>
+    <p class="section-lead fade-up">La mejor cocina de Los Ángeles no está en los restaurantes con estrellas. Está en los food trucks de Boyle Heights, en los tacos de la Avenida César Chávez, y en los mercados donde cuarenta culturas deciden coexistir bajo un mismo techo desde 1917.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type food">🍜 Mercado Histórico · DTLA · Desde 1917</div>
+        <div class="card-body">
+          <div class="card-title">Grand Central Market</div>
+          <p class="card-desc">El lugar más honesto para comer en toda la ciudad. Más de 40 puestos. Desayuna en Eggslut (espera línea pero vale), almuerza en Sarita's Pupusería como en <em>La La Land</em>, y termina con una ración de Broad Street Oyster Co. Abierto todos los días de 8am a 9pm.</p>
+          <div class="card-links">
+            <a href="https://www.grandcentralmarket.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Grand+Central+Market+Los+Angeles+317+S+Broadway" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍣 Fusión · Malibú · Frente al Pacífico</div>
+        <div class="card-body">
+          <div class="card-title">Nobu Malibu</div>
+          <p class="card-desc">Black cod con miso. Rock shrimp tempura. Sashimi de atún con jalapeño. La mesa más cara frente al Pacífico y la razón por la que los grandes del rock de los 70 —cuando pudieron— cambiaron el Sunset Strip por Malibú. Reserva con una semana de anticipación.</p>
+          <div class="card-links">
+            <a href="https://www.noburestaurants.com/malibu" target="_blank" class="btn btn-web">🌐 Reservas</a>
+            <a href="https://www.google.com/maps/search/Nobu+Malibu+22706+Pacific+Coast+Highway" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🌮 Tacos · East LA · Auténtico</div>
+        <div class="card-body">
+          <div class="card-title">Guisados, Boyle Heights</div>
+          <p class="card-desc">Birria, tinga de pollo, chiles toreados. Los mejores guisados en taco de masa en la ciudad. Cuatro ubicaciones pero la original —en Boyle Heights— es donde el barrio se mezcla con el mundo y el resultado huele a comal y epazote. Lo que no encontrarás en ningún menú turístico.</p>
+          <div class="card-links">
+            <a href="https://www.guisados.la" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Guisados+Boyle+Heights+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type cafe">☕ Café de Especialidad · Silver Lake · Tercera Ola</div>
+        <div class="card-body">
+          <div class="card-title">Intelligentsia Coffee</div>
+          <p class="card-desc">Uno de los tres tostadores que definieron el movimiento del café de especialidad en Estados Unidos. La ubicación de Silver Lake es el punto de encuentro de músicos, diseñadores y guionistas que hacen que LA sea, a pesar de todo, una ciudad donde las ideas circulan. El cortado es una obra menor de ingeniería.</p>
+          <div class="card-links">
+            <a href="https://www.intelligentsiacoffee.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Intelligentsia+Coffee+Silver+Lake" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🥩 Carnes · West Hollywood · Alta Gama</div>
+        <div class="card-body">
+          <div class="card-title">Crossroads Kitchen</div>
+          <p class="card-desc">El restaurante de Tal Ronnen que convenció a Moby y Alanis Morissette de que la cocina de autor sin carne podía ser mejor que la con carne. Plant-based pero sin el dogmatismo. Las costillas de coliflor y el queso de anacardo son parte del menú permanente desde hace diez años. Reserva.</p>
+          <div class="card-links">
+            <a href="https://www.crossroadskitchen.com" target="_blank" class="btn btn-web">🌐 Reservas</a>
+            <a href="https://www.google.com/maps/search/Crossroads+Kitchen+West+Hollywood+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍔 Smash Burger · DTLA · Mercado</div>
+        <div class="card-body">
+          <div class="card-title">For the Win (FTW) — Grand Central Market</div>
+          <p class="card-desc">El smash burger más fotografiado de la ciudad dentro del Grand Central Market. Carne doble, queso americano, cebolla caramelizada, pickles. Sin postureo, sin menú de ocho páginas. Solo una hamburguesa perfecta en un mercado que lleva 107 años siendo el estómago de Downtown LA.</p>
+          <div class="card-links">
+            <a href="https://www.grandcentralmarket.com/vendors/for-the-win" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/For+The+Win+Grand+Central+Market+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="section" id="culture">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Cultura y Atractivos</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">La ciudad<br><em>más allá del strip</em></h2>
+    <p class="section-lead fade-up">Los Ángeles tiene más museos per cápita que Nueva York. Y más murales que cualquier otra ciudad del hemisferio occidental. No todo es rock y playas.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type culture">🎨 Museo · Mid-Wilshire · Arte Contemporáneo</div>
+        <div class="card-body">
+          <div class="card-title">LACMA — Los Angeles County Museum of Art</div>
+          <p class="card-desc">El museo de arte más grande del oeste de Estados Unidos. La instalación Urban Light de Chris Burden —202 lámparas de hierro fundido de 1920 a 1930 frente al edificio— es lo más fotografiado de la ciudad después del letrero de Hollywood. Entrada gratuita los segundos martes del mes.</p>
+          <div class="card-links">
+            <a href="https://www.lacma.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/LACMA+5905+Wilshire+Blvd+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🎬 Historia · Hollywood · Cine</div>
+        <div class="card-body">
+          <div class="card-title">TCL Chinese Theatre & Walk of Fame</div>
+          <p class="card-desc">Las huellas de manos y pies de los grandes del cine en el cemento de Hollywood Boulevard. Marilyn Monroe. Humphrey Bogart. Los Beatles pusieron sus palmas aquí en 1964. El teatro sigue proyectando estrenos. La acera es la historia viva del siglo XX americano.</p>
+          <div class="card-links">
+            <a href="https://www.tclchinesetheatres.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/TCL+Chinese+Theatre+Hollywood+Boulevard" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🔭 Observatorio · Griffith Park · Ciencia</div>
+        <div class="card-body">
+          <div class="card-title">Griffith Observatory</div>
+          <p class="card-desc">Construcción art deco de 1935 en las colinas sobre Hollywood. Gratis para entrar. Las vistas de noche —toda la cuenca de Los Ángeles iluminada hasta el horizonte del Pacífico— son el equivalente visual de lo que Joni Mitchell intentó describir en "California". Aparca abajo y sube caminando por el sendero del parque.</p>
+          <div class="card-links">
+            <a href="https://griffithobservatory.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Griffith+Observatory+2800+E+Observatory+Rd+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🏛 Arte Contemporáneo · DTLA · Arquitectura</div>
+        <div class="card-body">
+          <div class="card-title">The Broad Museum</div>
+          <p class="card-desc">Eli Broad construyó este museo en Bunker Hill para dar acceso gratuito a su colección de Basquiat, Koons, Cindy Sherman y Roy Lichtenstein. El edificio de Diller Scofidio + Renfro parece una caja perforada desde fuera y un espacio imposible desde dentro. Reserva entrada gratis con anticipación.</p>
+          <div class="card-links">
+            <a href="https://www.thebroad.org" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/The+Broad+Museum+221+S+Grand+Ave+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type music">🎵 Historia del Rock · Hollywood · Discos</div>
+        <div class="card-body">
+          <div class="card-title">Capitol Records Building</div>
+          <p class="card-desc">El primer edificio circular del mundo construido como rascacielos. 1956. Frank Sinatra, Nat King Cole, The Beach Boys y Radiohead grabaron aquí. Desde afuera en Hollywood Boulevard se ve perfectamente: es la torreta de una aguja de tocadiscos. Hay una luz en la cúpula que parpadea "Hollywood" en código morse.</p>
+          <div class="card-links">
+            <a href="https://www.discoverlosangeles.com/visit/the-capitol-records-building-the-story-of-an-la-icon" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Capitol+Records+Building+1750+Vine+Street+Hollywood" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🌿 Jardín · Bel Air · Botánica</div>
+        <div class="card-body">
+          <div class="card-title">Getty Center</div>
+          <p class="card-desc">Richard Meier diseñó este museo en las colinas sobre Bel Air con vistas a todo Los Ángeles hasta el océano. Arte europeo del siglo XII al XIX, jardines de cactus escultórico, y esas vistas que hacen que hasta las colecciones más académicas parezcan algo distinto. Entrada gratis. Solo el parking tiene cargo.</p>
+          <div class="card-links">
+            <a href="https://www.getty.edu/museum" target="_blank" class="btn btn-web">🌐 Reservar</a>
+            <a href="https://www.google.com/maps/search/Getty+Center+1200+Getty+Center+Drive+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="map-embed fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d105490.44890408!2d-118.2436849!3d34.0522342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sus!4v1718460000000"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:1rem">
+      <a href="https://www.google.com/maps/search/Los+Angeles+California" target="_blank" class="btn-ghost">📍 Abrir Los Ángeles en Google Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIAS & ENTRETENIMIENTO -->
+<section class="section" id="experiencias">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Experiencias & Entretenimiento</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Más allá<br><em>del rock</em></h2>
+    <p class="section-lead fade-up">Los Ángeles no es solo música — es el lugar donde se fabrican los sueños. Estos son los planes que no puedes dejar fuera del circuito, especialmente si viajas en familia o quieres ver la ciudad desde adentro de la máquina.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type tour">🎡 Parque Temático · Anaheim · Familia</div>
+        <div class="card-body">
+          <div class="card-title">Disneyland Resort</div>
+          <p class="card-desc">A 45 minutos de Hollywood, el parque original de Walt Disney sigue siendo una experiencia única en el mundo. Disneyland Park y Disney California Adventure en un mismo resort. Reserva tus entradas con antelación desde la web oficial — en 2026 las taquillas físicas desaparecieron, todo es digital. Los niños de 3 a 9 años tienen tarifa especial en verano desde $50. Llega temprano: las atracciones más populares se llenan en los primeros 30 minutos.</p>
+          <div class="card-links">
+            <a href="https://disneyland.disney.go.com" target="_blank" class="btn btn-web">🎟 Entradas Oficiales</a>
+            <a href="https://www.google.com/maps/search/Disneyland+Resort+Anaheim+California" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">🎬 Estudio · Burbank · Harry Potter · DC</div>
+        <div class="card-body">
+          <div class="card-title">Warner Bros. Studio Tour Hollywood</div>
+          <p class="card-desc">En Burbank, a 20 minutos de Hollywood. El tour más completo de la industria cinematográfica: los sets originales de Harry Potter y Fantastic Beasts (clase de pociones, herbología, la varita de Hermione), el universo DC, el sofá de Friends y 100 años de historia de Warner. Entradas desde $70 adultos / $60 niños. Reserva online — la disponibilidad es limitada cada día. Imprescindible para fans del cine y de la magia.</p>
+          <div class="card-links">
+            <a href="https://www.wbstudiotour.com" target="_blank" class="btn btn-web">🎟 Entradas Oficiales</a>
+            <a href="https://www.google.com/maps/search/Warner+Bros+Studio+Tour+Hollywood+Burbank" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEPORTES LOS ANGELES -->
+<section class="section section-alt" id="mlb">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Los Ángeles & El Deporte</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Los Ángeles<br><em>en el deporte</em></h2>
+    <p class="section-lead fade-up">Los Ángeles es una de las ciudades deportivas más apasionantes del mundo: béisbol, baloncesto y fútbol americano en el mismo código postal. Dodgers, Lakers y Chargers — tres franquicias icónicas, tres estadios de primer nivel, y la certeza de que en cualquier mes del año hay un partido al que ir.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type tour">⚾ MLB · Dodger Stadium · Chavez Ravine</div>
+        <div class="card-body">
+          <div class="card-title">Los Angeles Dodgers</div>
+          <p class="card-desc">El tercer estadio más antiguo de las Grandes Ligas (1962), con capacidad para 56,000 personas y las Montañas San Gabriel de telón de fondo. En 2024 ficharon a Shohei Ohtani por el mayor contrato de la historia del deporte. Ver un partido aquí es ver LA en modo festivo: la ciudad entera de azul. Entradas desde $15 para partidos entre semana.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com/dodgers/tickets" target="_blank" class="btn btn-web">🎟 Entradas Dodgers</a>
+            <a href="https://www.mlb.com/dodgers" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.google.com/maps/search/Dodger+Stadium+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">⚾ MLB · Angel Stadium · Anaheim</div>
+        <div class="card-body">
+          <div class="card-title">Los Angeles Angels</div>
+          <p class="card-desc">El equipo de Anaheim, a 40 minutos de Hollywood. El Angel Stadium es uno de los parques más icónicos de la liga, con sus rocas volcánicas y la fuente en el outfield. Experiencia más tranquila que en Dodger Stadium, con entradas más accesibles y ambiente familiar. El calendario completo de ambos equipos está en MLB.com.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com/angels/tickets" target="_blank" class="btn btn-web">🎟 Entradas Angels</a>
+            <a href="https://www.mlb.com/angels" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.google.com/maps/search/Angel+Stadium+Anaheim+California" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card fade-up">
+        <div class="card-type tour">🏀 NBA · Crypto.com Arena · Downtown LA</div>
+        <div class="card-body">
+          <div class="card-title">Los Angeles Lakers</div>
+          <p class="card-desc">17 campeonatos de la NBA, el estadio más famoso del baloncesto profesional y una lista de leyendas que incluye a Magic Johnson, Kareem Abdul-Jabbar, Shaquille O'Neal, Kobe Bryant y LeBron James. Los Lakers juegan en el Crypto.com Arena en el centro de Los Ángeles, uno de los recintos de entretenimiento más activos del planeta. Una noche con los Lakers es Hollywood dentro de la cancha: celebridades en el courtside, la atmósfera eléctrica de LA Live y el eco de décadas de historia del baloncesto. Entradas desde $40 para temporada regular.</p>
+          <div class="card-links">
+            <a href="https://www.nba.com/lakers" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.lakers.com/tickets" target="_blank" class="btn btn-web">🎟 Entradas Lakers</a>
+            <a href="https://www.nba.com" target="_blank" class="btn btn-web">🏀 NBA.com</a>
+            <a href="https://www.google.com/maps/search/Crypto.com+Arena+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">🏈 NFL · SoFi Stadium · Inglewood</div>
+        <div class="card-body">
+          <div class="card-title">Los Angeles Chargers</div>
+          <p class="card-desc">Fútbol americano en el estadio más moderno y costoso de la historia de la NFL. Los Chargers juegan en SoFi Stadium en Inglewood — un coloso de $4.9 mil millones que fue sede del Super Bowl LVI en 2022 y albergará las ceremonias de apertura y clausura de los Juegos Olímpicos de Los Ángeles 2028. El estadio, que comparten con los Rams, tiene capacidad para 70,240 aficionados y un techo translúcido que deja pasar la luz sin exponer al sol. Bajo el mando de Jim Harbaugh — el mismo que ganó un campeonato universitario en Michigan — los Chargers llegan al 2026 con dos temporadas seguidas de 11 victorias. Entradas desde $165 para temporada regular.</p>
+          <div class="card-links">
+            <a href="https://www.chargers.com/tickets" target="_blank" class="btn btn-web">🎟 Entradas Chargers</a>
+            <a href="https://www.chargers.com" target="_blank" class="btn btn-web">🌐 Web Oficial</a>
+            <a href="https://www.nfl.com/teams/los-angeles-chargers" target="_blank" class="btn btn-web">🏈 NFL.com</a>
+            <a href="https://www.google.com/maps/search/SoFi+Stadium+Inglewood+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">🏟 Ligas Oficiales · Calendarios · Temporadas</div>
+        <div class="card-body">
+          <div class="card-title">Las Ligas Oficiales — MLB & NBA</div>
+          <p class="card-desc">Los portales oficiales de cada liga tienen el calendario completo de la temporada, precios de entradas, estadísticas en tiempo real y transmisión de todos los partidos. Antes de viajar, consulta si alguno de los tres equipos juega en casa — los Dodgers un martes pueden conseguirse desde $15, los Lakers y los Chargers requieren más antelación y presupuesto, pero la experiencia de los tres estadios es irrepetible.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com" target="_blank" class="btn btn-web">⚾ MLB</a>
+            <a href="https://www.nba.com" target="_blank" class="btn btn-web">🏀 NBA</a>
+            <a href="https://www.nfl.com" target="_blank" class="btn btn-web">🏈 NFL</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- REGENERATIVE -->
+<section class="section section-alt" id="regenerative">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Viaje Responsable</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Dar algo<br><em>a la ciudad</em></h2>
+    <p class="section-lead fade-up">Los Ángeles recibe 50 millones de visitantes al año. La mayoría toma. Algunos pocos dejan algo. Esta guía cree que el viajero que da siempre vuelve con más. Aquí, tres formas concretas de que tu viaje tenga un impacto positivo.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type nature">🌊 Conservación Marina · Santa Mónica · Voluntariado</div>
+        <div class="card-body">
+          <div class="card-title">Heal the Bay — Beach Cleanups</div>
+          <p class="card-desc">La organización más activa en limpieza de playas del sur de California. Heal the Bay organiza limpiezas en Santa Mónica, Venice, Malibú y Long Beach cada fin de semana. La participación es gratuita y abierta a todos. Dos horas un sábado de mañana. El Pacífico te lo agradece.</p>
+          <div class="card-links">
+            <a href="https://healthebay.org/volunteer" target="_blank" class="btn btn-web">🌐 Registrarse</a>
+            <a href="https://www.google.com/maps/search/Santa+Monica+State+Beach+Heal+the+Bay" target="_blank" class="btn btn-map">📍 Ubicación</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type nature">🌱 Jardines Comunitarios · East LA · Comunidad</div>
+        <div class="card-body">
+          <div class="card-title">Ron Finley Project — Guerrilla Gardening</div>
+          <p class="card-desc">Ron Finley comenzó a plantar vegetales en las aceras de South Central en 2010. Lo arrestaron. Ganó el caso. Hoy dirige un proyecto que ha convertido terrenos baldíos en jardines comunitarios por todo East Los Ángeles. Ofrece workshops abiertos al público los fines de semana.</p>
+          <div class="card-links">
+            <a href="https://www.ronfinley.com" target="_blank" class="btn btn-web">🌐 Workshops</a>
+            <a href="https://www.google.com/maps/search/Ron+Finley+Project+South+Central+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type tour">🎵 Música Social · East LA · Arte Comunitario</div>
+        <div class="card-body">
+          <div class="card-title">Los Angeles Poverty Department (LAPD)</div>
+          <p class="card-desc">No, no es la policía. Es la compañía de teatro y artes performativas más antigua de Skid Row, fundada en 1985. Organiza performances, música en vivo y actividades comunitarias que dan voz a los residentes más vulnerables de la ciudad. Una noche aquí cambia la perspectiva de lo que Los Ángeles es realmente.</p>
+          <div class="card-links">
+            <a href="https://www.lapovertydept.org" target="_blank" class="btn btn-web">🌐 Programación</a>
+            <a href="https://www.google.com/maps/search/Los+Angeles+Poverty+Department+Skid+Row" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type nature">🐬 Fauna Marina · San Pedro · Conservación</div>
+        <div class="card-body">
+          <div class="card-title">Cabrillo Marine Aquarium — Tidepool Programs</div>
+          <p class="card-desc">En la punta sur de Los Ángeles, sobre el Pacífico de San Pedro, el acuario más completo sobre la fauna costera californiana ofrece programas de voluntariado y visitas guiadas a las pozas de mareas. Una experiencia que recuerda por qué el océano que inspiró a los Beach Boys merece ser cuidado.</p>
+          <div class="card-links">
+            <a href="https://www.cabrillomarineaquarium.org" target="_blank" class="btn btn-web">🌐 Programa</a>
+            <a href="https://www.google.com/maps/search/Cabrillo+Marine+Aquarium+San+Pedro+Los+Angeles" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEAN MACHINE TRIBUTE -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-rule fade-up"><span class="section-tag">Banda Invitada · Episodio 5</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title fade-up">Mean Machine<br><em>@meanmachinevzla</em></h2>
+    <div class="quote-block fade-up">
+      <p class="quote-text">"El rock psicodélico no murió en Los Ángeles. Emigró. Y hoy vive en cualquier ciudad donde alguien enciende un amplificador y cierra los ojos."</p>
+      <div class="quote-source">— El Pasaporte Sinfónico · Episodio 5</div>
+    </div>
+    <p class="fade-up" style="color:var(--parch);font-size:0.92rem;line-height:1.8;max-width:700px;">
+      Mean Machine fue la banda invitada del Episodio 5 de El Pasaporte Sinfónico, trayendo el sonido del rock psicodélico venezolano a la conversación sobre Los Ángeles. Encuéntralos en Instagram como <strong style="color:var(--accent);">@meanmachinevzla</strong>.
+    </p>
+    <div style="margin-top:1.5rem;display:flex;gap:0.8rem;flex-wrap:wrap;" class="fade-up">
+      <a href="https://www.instagram.com/meanmachinevzla" target="_blank" class="btn-ghost">Instagram</a>
+      <a href="https://open.spotify.com/episode/1VUIjxKiEMcEYwuOctdjq9" target="_blank" class="btn-primary">🎧 Escuchar Ep. 5</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing-section">
+  <div class="closing-inner">
+    <div class="section-rule fade-up" style="justify-content:center"><span class="section-tag">Manifiesto Final</span></div>
+    <div class="closing-text fade-up">
+      Los Ángeles no te debe nada. Te lo avisa desde el principio, con esa luz que llega a las seis de la mañana y te despierta sin permiso. Pero si llegas dispuesto a escuchar — las olas de Zuma, las guitarras del Whisky, el silencio de Laurel Canyon al amanecer — la ciudad te cuenta una historia que ningún libro ha podido capturar del todo.
+      <br><br>
+      <em>The Doors abrieron una puerta. Los Beach Boys describieron lo que había al otro lado. Tú eres el siguiente en cruzar.</em>
+    </div>
+    <div class="closing-ctas fade-up">
+      <a href="https://www.discoverlosangeles.com" target="_blank" class="btn-primary">Turismo Oficial de LA</a>
+      <a href="https://open.spotify.com/episode/1VUIjxKiEMcEYwuOctdjq9" target="_blank" class="btn-ghost">🎧 Episodio 5 en Spotify</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="brand-seal seal-footer"></span>
+  <div class="footer-brand">El Pasaporte Sinfónico</div>
+  <div class="footer-tag">El podcast donde la música viaja</div>
+  <div class="footer-links">
+    <a href="https://pasaporte-sinfonico.netlify.app">Inicio</a>
+    <a href="https://open.spotify.com/show/0gYgTB6oyizyaaaHxhQORe" target="_blank">Spotify</a>
+    <a href="https://www.instagram.com/elpasaportesinfonico" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/ELPasaporteSinfonico" target="_blank">Facebook</a>
+    <a href="https://www.youtube.com/@ElPasaporteSinfonico" target="_blank">YouTube</a>
+  </div>
+  <p class="footer-disc">
+    Esta guía es de carácter orientativo. Verifica horarios, precios y disponibilidad antes de visitar. Los enlaces de afiliados nos ayudan a mantener el proyecto sin costo para ti. © 2026 El Pasaporte Sinfónico.
+  </p>
+</footer>
+
+<script>
+// Tabs
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Fade up
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Nav active
+window.addEventListener('scroll', () => {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  let current = '';
+  sections.forEach(s => {
+    if(window.scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if(a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
