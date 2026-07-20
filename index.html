@@ -293,6 +293,21 @@
         guideDescription: 'Sídney (5 días), Melbourne (4 días) y Adelaida (3 días) — vuelos, festivales y el circuito completo por AC/DC.',
         guideTags: ['Vuelos', 'Festivales', 'Circuito'],
       },
+      {
+        id: 'australia-2',
+        img: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&h=450&q=80',
+        typeColor: '#e57315',
+        category: 'Especial · Nuevo',
+        title: 'Australia al ritmo de AC/DC — Parte II',
+        kicker: 'Adelaida · Perth',
+        description: 'La ruta continúa: de Adelaida a Perth siguiendo los pasos de los hermanos Young hasta el otro extremo del continente australiano.',
+        spotify: 'https://open.spotify.com/episode/0GGLLV7GGVr7rJ5dKooWlS',
+        ivoox: 'https://www.ivoox.com/en/australia-ac-dc-adelaide-perth-audios-mp3_rf_177599903_1.html',
+        fountain: 'https://www.fountain.fm/episode/ZFKdDipSuWEuISkJwRFc',
+        guideHref: './guias/guia-australia-acdc-2.html',
+        guideDescription: 'La misma guía completa de Australia: vuelos, festivales y el circuito ciudad por ciudad — ahora con la segunda parte del episodio.',
+        guideTags: ['Vuelos', 'Festivales', 'Circuito'],
+      },
     ];
 
     // El resto del catálogo publicado: todavía sin guía de viaje propia.
@@ -444,7 +459,7 @@
               lead="Transporte, alojamiento y el circuito día a día — todo lo que recorrimos en el episodio, listo para que lo repitas."
             />
             <div className="grid-3">
-              {FEATURED_EPISODES.map(ep => (
+              {FEATURED_EPISODES.filter((ep, i, arr) => arr.findIndex(e => e.guideHref === ep.guideHref) === i).map(ep => (
                 <Card
                   key={ep.id}
                   type="Guía completa"
