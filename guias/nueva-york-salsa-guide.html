@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nueva York · Salsa Brava — El Pasaporte Sinfónico</title>
+<meta name="description" content="La guía interactiva de Nueva York a través de la salsa brava: El Barrio, el Bronx, la Fania, hoteles, itinerario de 5 días, deportes, festivales y turismo regenerativo. Basada en los episodios del podcast El Pasaporte Sinfónico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cinzel:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ PALETA · SALSA BRAVA · NARANJA FANIA + ROJO ═══ */
+:root {
+  --base-1:  #0a0605;
+  --base-2:  #120b07;
+  --base-3:  #1c120b;
+  --base-4:  #2a1a0e;
+
+  --accent:        #e27512;
+  --accent-bright: #f5933a;
+  --accent-deep:   #9e5208;
+
+  --secondary:      #a01818;
+  --secondary-glow: #c93030;
+
+  --bone:    #f5ead6;
+  --parch:   #ecdcc2;
+  --smoke:   #96826e;
+
+  --rule:    #3a2718;
+
+  --f-display: 'Cinzel', serif;
+  --f-head:    'Playfair Display', serif;
+  --f-body:    'Libre Baskerville', serif;
+  --f-label:   'Oswald', sans-serif;
+}
+
+
+/* ═══ BANDA SONORA · SPOTIFY ═══ */
+.sp-episodes { display:grid; grid-template-columns:repeat(auto-fit,minmax(340px,1fr)); gap:2rem; margin-bottom:4.5rem; }
+.sp-ep { background:var(--base-3); border:1px solid var(--rule); border-radius:3px; padding:1.8rem; transition:border-color .4s, transform .4s; }
+.sp-ep:hover { border-color:var(--accent); transform:translateY(-4px); }
+.sp-ep .ep-kicker { font-family:var(--f-label); font-size:0.68rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent); margin-bottom:0.7rem; }
+.sp-ep h3 { font-family:var(--f-head); font-size:1.35rem; color:var(--bone); margin-bottom:0.5rem; line-height:1.3; }
+.sp-ep .ep-meta { font-family:var(--f-label); font-size:0.7rem; letter-spacing:0.14em; color:var(--smoke); text-transform:uppercase; margin-bottom:0.9rem; }
+.sp-ep p { font-size:0.85rem; line-height:1.75; color:rgba(236,220,194,0.72); margin-bottom:1.2rem; }
+.sp-ep iframe { border-radius:10px; display:block; width:100%; border:0; }
+.sp-ep .ep-open { display:inline-block; margin-top:1rem; font-family:var(--f-label); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--accent); text-decoration:none; border-bottom:1px solid rgba(226,117,18,0.4); padding-bottom:2px; }
+.sp-ep .ep-open:hover { color:var(--accent-bright); border-color:var(--accent-bright); }
+
+.artist-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:1.1rem; }
+.artist-card { display:block; text-decoration:none; background:var(--base-3); border:1px solid var(--rule); border-radius:3px; padding:1.3rem 1.1rem; transition:border-color .35s, background .35s, transform .35s; position:relative; overflow:hidden; }
+.artist-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background:var(--accent); transform:scaleY(0); transform-origin:bottom; transition:transform .35s; }
+.artist-card:hover { border-color:rgba(226,117,18,0.55); background:var(--base-4); transform:translateY(-3px); }
+.artist-card:hover::before { transform:scaleY(1); }
+.artist-card .ac-role { font-family:var(--f-label); font-size:0.6rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--secondary-glow); margin-bottom:0.45rem; }
+.artist-card .ac-name { font-family:var(--f-head); font-size:1.06rem; color:var(--bone); line-height:1.25; margin-bottom:0.4rem; }
+.artist-card .ac-note { font-size:0.75rem; line-height:1.55; color:var(--smoke); font-style:italic; }
+.artist-card .ac-go { display:block; margin-top:0.8rem; font-family:var(--f-label); font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--accent); }
+
+/* ═══ RESETS ═══ */
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--base-1);
+  color: var(--parch);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ═══ GRANO (textura de revista) ═══ */
+body::after {
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.6;
+}
+
+/* ═══ SELLO DE LA MARCA ═══ */
+.brand-seal {
+  display:inline-block; flex-shrink:0;
+  background:url(data:image/png;base64,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) center/contain no-repeat;
+}
+.seal-nav { width:38px; height:38px; }
+.seal-rule { width:44px; height:44px; opacity:0.95; }
+.seal-hero { width:118px; height:118px; margin-bottom:1.8rem; position:relative; filter:drop-shadow(0 10px 34px rgba(0,0,0,0.55)); }
+.seal-quote { width:52px; height:52px; margin:0 auto 1.4rem; display:block; }
+.seal-closing { width:64px; height:64px; margin:0 auto 1.8rem; display:block; }
+.seal-footer { width:74px; height:74px; margin:0 auto 0.9rem; display:block; }
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(10,6,5,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226,117,18,0.2);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: var(--f-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  display:flex; align-items:center; gap:0.75rem;
+}
+
+.nav-logo em {
+  color: rgba(236,220,194,0.4);
+  font-style: normal;
+  font-size: 0.7em;
+  display: block;
+  letter-spacing: 0.3em;
+  font-family: var(--f-label);
+  font-weight: 300;
+}
+
+.nav-links { display: flex; gap: 0.1rem; list-style: none; }
+
+.nav-links a {
+  display: block;
+  padding: 0.3rem 0.7rem;
+  font-family: var(--f-label);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+/* ═══ HERO ═══ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 2rem 5rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(160,24,24,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 20% 70%, rgba(18,11,7,0.95) 0%, transparent 80%),
+    linear-gradient(180deg, #0c0705 0%, var(--base-1) 100%);
+}
+
+.hero-watermark {
+  position: absolute;
+  font-family: var(--f-display);
+  font-size: 28vw;
+  color: rgba(226,117,18,0.035);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  user-select: none;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.episode-badge {
+  position: relative;
+  display: inline-block;
+  font-family: var(--f-label);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(226,117,18,0.4);
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.episode-badge::before, .episode-badge::after {
+  content: '✦';
+  margin: 0 0.6em;
+  opacity: 0.5;
+}
+
+.hero-title {
+  position: relative;
+  font-family: var(--f-display);
+  font-size: clamp(2.8rem, 9vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+/* ═══ MARQUESINA DE BROADWAY · "NUEVA YORK" ═══ */
+.hero-title .city {
+  --bulb: 22px;
+  --bulb-on:  #ffd88a;
+  --bulb-off: rgba(226,117,18,0.22);
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.14em auto 0.05em;
+  padding: calc(var(--bulb) * 0.95) calc(var(--bulb) * 1.15);
+  font-size: clamp(1.55rem, 8vw, 6.2rem);
+  line-height: 0.95;
+  white-space: nowrap;
+  color: var(--accent);
+  border: 1px solid rgba(226,117,18,0.30);
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(226,117,18,0.16) 0%, rgba(226,117,18,0.05) 45%, transparent 72%);
+  box-shadow:
+    0 0 90px rgba(226,117,18,0.22),
+    inset 0 0 70px rgba(226,117,18,0.10);
+}
+
+/* marco interior de la marquesina */
+.hero-title .city::after {
+  content: '';
+  position: absolute;
+  inset: calc(var(--bulb) * 0.72);
+  border: 1px solid rgba(236,220,194,0.14);
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* filas y columnas de bombillos */
+.city-bulbs {
+  position: absolute;
+  pointer-events: none;
+  background-repeat: repeat;
+  animation: bulbChase 1.1s steps(1) infinite;
+}
+.city-bulbs.t, .city-bulbs.b {
+  left: 0; right: 0;
+  height: var(--bulb);
+  background-image: radial-gradient(circle at 50% 50%, var(--bulb-on) 0 21%, var(--bulb-off) 23% 30%, transparent 32%);
+  background-size: var(--bulb) var(--bulb);
+}
+.city-bulbs.t { top: 0; }
+.city-bulbs.b { bottom: 0; animation-delay: -0.55s; }
+.city-bulbs.l, .city-bulbs.r {
+  top: 0; bottom: 0;
+  width: var(--bulb);
+  background-image: radial-gradient(circle at 50% 50%, var(--bulb-on) 0 21%, var(--bulb-off) 23% 30%, transparent 32%);
+  background-size: var(--bulb) var(--bulb);
+  animation-name: bulbChaseV;
+}
+.city-bulbs.l { left: 0; }
+.city-bulbs.r { right: 0; animation-delay: -0.55s; }
+
+@keyframes bulbChase {
+  0%, 49%  { background-position: 0 0;                    filter: drop-shadow(0 0 7px rgba(255,200,110,0.75)); }
+  50%,100% { background-position: calc(var(--bulb) / 2) 0; filter: drop-shadow(0 0 7px rgba(255,200,110,0.75)); }
+}
+@keyframes bulbChaseV {
+  0%, 49%  { background-position: 0 0;                    filter: drop-shadow(0 0 7px rgba(255,200,110,0.75)); }
+  50%,100% { background-position: 0 calc(var(--bulb) / 2); filter: drop-shadow(0 0 7px rgba(255,200,110,0.75)); }
+}
+
+/* letras encendidas como tubo de neón */
+.city-text {
+  position: relative;
+  display: block;
+  z-index: 1;
+  color: #ffe6b8;
+  text-shadow:
+    0 0 6px  rgba(255,222,160,0.95),
+    0 0 18px rgba(245,147,58,0.85),
+    0 0 42px rgba(226,117,18,0.65),
+    0 0 90px rgba(226,117,18,0.35);
+}
+.city-text .ltr { display: inline-block; }
+.city-text .sp  { display: inline-block; width: 0.32em; }
+
+/* bombillo cansado: el parpadeo clásico de un teatro viejo */
+.city-text .flick-a { animation: neonFlicker 5.5s infinite; }
+.city-text .flick-b { animation: neonFlicker 7.3s 1.4s infinite; }
+
+@keyframes neonFlicker {
+  0%, 42%, 44.5%, 47%, 100% { opacity: 1; }
+  43%, 46% { opacity: 0.28; text-shadow: 0 0 4px rgba(255,222,160,0.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city-bulbs, .city-text .flick-a, .city-text .flick-b { animation: none; }
+}
+
+.hero-title .under {
+  color: rgba(236,220,194,0.25);
+  font-size: 0.38em;
+  letter-spacing: 0.25em;
+  display: block;
+  margin-top: 0.8rem;
+  font-family: var(--f-label);
+  font-weight: 300;
+}
+
+.hero-subtitle {
+  position: relative;
+  font-family: var(--f-label);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--smoke);
+  text-transform: uppercase;
+  margin: 1.5rem 0 3rem;
+  font-style: italic;
+}
+
+.hero-ctas {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  font-family: var(--f-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--base-1);
+  background: var(--accent);
+  text-decoration: none;
+  transition: all 0.25s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--accent-bright); transform: translateY(-2px); }
+
+.btn-ghost {
+  display: inline-block;
+  padding: 0.85rem 2.2rem;
+  font-family: var(--f-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid rgba(226,117,18,0.4);
+  text-decoration: none;
+  transition: all 0.25s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+
+.btn-ghost:hover { border-color: var(--accent); background: rgba(226,117,18,0.08); }
+
+/* ═══ SECCIONES ═══ */
+.section { padding: 5rem 0; position: relative; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.section-rule::before {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(226,117,18,0.3));
+}
+
+.section-rule::after {
+  content: '';
+  flex: 2;
+  height: 1px;
+  background: linear-gradient(to right, rgba(226,117,18,0.3), transparent);
+}
+
+.section-tag {
+  font-family: var(--f-label);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.section-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.section-title em {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(236,220,194,0.7);
+  max-width: 700px;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.section-lead em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+/* ═══ CAJA TRIBUTO ═══ */
+.tribute-box {
+  background: linear-gradient(135deg, rgba(160,24,24,0.12), rgba(28,18,11,0.95));
+  border: 1px solid rgba(160,24,24,0.35);
+  padding: 2.5rem;
+  text-align: center;
+  margin: 3rem auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tribute-box::before {
+  content: '♪';
+  position: absolute;
+  font-size: 12rem;
+  opacity: 0.03;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: var(--secondary);
+  pointer-events: none;
+}
+
+.tribute-box h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.5rem,4vw,3rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.tribute-box p {
+  font-size: 0.96rem;
+  color: rgba(236,220,194,0.65);
+  line-height: 1.9;
+  max-width: 620px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* ═══ TRANSPORTE ═══ */
+.transport-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.transport-card {
+  background: var(--base-3);
+  border: 1px solid var(--rule);
+  padding: 1.8rem;
+  transition: border-color 0.2s;
+}
+
+.transport-card:hover { border-color: rgba(226,117,18,0.3); }
+
+.transport-card h3 {
+  font-family: var(--f-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.transport-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.transport-row:last-of-type { border-bottom: none; }
+
+.transport-name { font-size: 0.88rem; color: var(--parch); }
+
+/* ═══ GRID DE TARJETAS ═══ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--base-3);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(226,117,18,0.25);
+}
+
+.card-type {
+  font-family: var(--f-label);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.card-type.hotel    { background: rgba(226,117,18,0.10); color: var(--accent); }
+.card-type.food     { background: rgba(192,56,10,0.10); color: #e07840; }
+.card-type.cafe     { background: rgba(120,80,20,0.15); color: #c8943a; }
+.card-type.culture  { background: rgba(30,80,160,0.10); color: #6090d0; }
+.card-type.festival { background: rgba(80,160,30,0.10); color: #70b050; }
+.card-type.nature   { background: rgba(30,140,100,0.10); color: #50c080; }
+.card-type.music    { background: rgba(160,30,120,0.10); color: #d060a0; }
+.card-type.tour     { background: rgba(100,60,180,0.10); color: #9070d0; }
+.card-type.sustain  { background: rgba(50,130,90,0.12); color: #70c098; }
+.card-type.sport    { background: rgba(30,110,190,0.10); color: #5aa0e0; }
+
+.card-body { padding: 1.3rem; }
+
+.card-title {
+  font-family: var(--f-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.6rem;
+  color: var(--bone);
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: rgba(236,220,194,0.65);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  font-style: italic;
+}
+
+.card-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* ═══ BOTONES MINI ═══ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--f-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--smoke);
+}
+
+.btn:hover { color: var(--accent); border-color: rgba(226,117,18,0.4); }
+
+.btn-map {
+  background: rgba(160,24,24,0.15);
+  color: var(--secondary-glow);
+  border-color: rgba(160,24,24,0.3);
+}
+
+.btn-map:hover {
+  color: var(--accent-bright);
+  background: rgba(160,24,24,0.25);
+  border-color: var(--secondary);
+}
+
+.btn-web {
+  background: rgba(226,117,18,0.10);
+  color: var(--accent);
+  border-color: rgba(226,117,18,0.30);
+}
+
+.btn-web:hover {
+  background: rgba(226,117,18,0.20);
+  border-color: rgba(226,117,18,0.60);
+}
+
+/* ═══ TIP BOX ═══ */
+.tip-box {
+  background: rgba(226,117,18,0.06);
+  border: 1px solid rgba(226,117,18,0.2);
+  border-left: 3px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  border-radius: 0 4px 4px 0;
+  margin-top: 2rem;
+}
+
+.tip-box p {
+  font-size: 0.9rem;
+  color: rgba(236,220,194,0.8);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.tip-box strong { color: var(--accent); font-style: normal; }
+
+/* ═══ TIMELINE ═══ */
+.timeline { position: relative; padding-left: 3rem; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.85rem;
+  top: 0.6rem;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--secondary), transparent);
+  opacity: 0.4;
+}
+
+.tl-item { position: relative; margin-bottom: 2.5rem; }
+
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  background: var(--secondary);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.tl-time {
+  font-family: var(--f-label);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--secondary-glow);
+  margin-bottom: 0.3rem;
+}
+
+.tl-place {
+  font-family: var(--f-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bone);
+  margin-bottom: 0.4rem;
+}
+
+.tl-desc {
+  font-size: 0.86rem;
+  color: rgba(236,220,194,0.6);
+  line-height: 1.75;
+  margin-bottom: 0.7rem;
+  font-style: italic;
+}
+
+.tl-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+/* ═══ TABS ═══ */
+.tabs-nav {
+  background: var(--base-3);
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 62px;
+  z-index: 50;
+}
+
+.tabs-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs-nav-inner::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  padding: 1rem 1.5rem;
+  font-family: var(--f-label);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover { color: var(--bone); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ═══ QUOTE ═══ */
+.quote-block {
+  background: var(--base-3);
+  border-left: 3px solid var(--accent);
+  padding: 2rem 2.5rem;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.quote-text {
+  font-family: var(--f-head);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: rgba(236,220,194,0.85);
+}
+
+.quote-source {
+  margin-top: 1rem;
+  font-family: var(--f-label);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+/* ═══ STATS ═══ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  margin-top: 4rem;
+  border: 1px solid var(--rule);
+}
+
+.stat-cell {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--rule);
+}
+
+.stat-cell:last-child { border-right: none; }
+
+.stat-cell .num {
+  font-family: var(--f-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.stat-cell .num em { font-style: italic; font-weight: 400; font-size: 0.6em; }
+
+.stat-cell .lbl {
+  font-family: var(--f-label);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-bottom: 0.6rem;
+}
+
+.stat-cell .desc {
+  font-size: 0.85rem;
+  color: rgba(236,220,194,0.55);
+  font-style: italic;
+}
+
+/* ═══ MAPA ═══ */
+.map-embed {
+  width: 100%;
+  height: 380px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  margin-top: 2rem;
+  filter: sepia(30%) contrast(1.05) brightness(0.85);
+  transition: filter 0.3s;
+}
+
+.map-embed:hover { filter: sepia(10%) contrast(1.05) brightness(0.95); }
+
+.map-embed iframe { width: 100%; height: 100%; border: none; }
+
+/* ═══ DIVISOR ═══ */
+.hr {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  margin: 3rem 0;
+}
+
+/* ═══ FOOTER ═══ */
+footer {
+  background: var(--base-2);
+  border-top: 1px solid rgba(226,117,18,0.15);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: var(--f-display);
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-tag {
+  font-family: var(--f-label);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  margin-bottom: 2rem;
+}
+
+.footer-note {
+  font-size: 0.8rem;
+  color: rgba(236,220,194,0.3);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ═══ ANIMACIONES ═══ */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 1100px) {
+  .hero-title .city { --bulb: 16px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero-title { line-height: 0.92; }
+  .hero-title .city { --bulb: 11px; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <a href="#top" class="nav-logo">
+    <span class="brand-seal seal-nav"></span>
+    <span><em>El Pasaporte Sinfónico</em>
+    Nueva York</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#llegada">Cómo Llegar</a></li>
+    <li><a href="#hoteles">Hoteles</a></li>
+    <li><a href="#itinerario">Itinerario</a></li>
+    <li><a href="#cultura">Cultura</a></li>
+    <li><a href="#deportes">Deportes</a></li>
+    <li><a href="#festivales">Festivales</a></li>
+    <li><a href="#gastronomia">Sabores</a></li>
+    <li><a href="#regenerativo">Regenerativo</a></li>
+    <li><a href="#banda-sonora">Banda Sonora</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-watermark">♫</div>
+
+  <span class="brand-seal seal-hero"></span>
+  <div class="episode-badge" style="position:relative">Podcast · Salsa Brava · Primera y Segunda Parte</div>
+
+  <h1 class="hero-title" style="position:relative">
+    <span class="under">El Pasaporte Sinfónico presenta</span>
+    <span class="city" aria-label="Nueva York"><span class="city-bulbs t" aria-hidden="true"></span><span class="city-bulbs b" aria-hidden="true"></span><span class="city-bulbs l" aria-hidden="true"></span><span class="city-bulbs r" aria-hidden="true"></span><span class="city-text" aria-hidden="true"><span class="ltr">N</span><span class="ltr">U</span><span class="ltr">E</span><span class="ltr flick-a">V</span><span class="ltr">A</span><span class="sp"></span><span class="ltr">Y</span><span class="ltr">O</span><span class="ltr flick-b">R</span><span class="ltr">K</span></span></span>
+    <span style="color:rgba(236,220,194,0.5);font-size:0.25em;font-family:var(--f-label);font-weight:300;letter-spacing:0.4em;display:block;margin-top:1.5rem">La Capital Mundial de la Salsa</span>
+  </h1>
+
+  <p class="hero-subtitle" style="position:relative">
+    Salsa Brava · El Barrio · La Fania · La Gran Manzana
+  </p>
+
+  <div class="hero-ctas" style="position:relative">
+    <a href="#itinerario" class="btn-primary">Ver el Itinerario →</a>
+    <a href="https://open.spotify.com/episode/7hElUe7uoZI8wUA7mP5LN9" target="_blank" rel="noopener" class="btn-ghost">🎧 Episodio 1ra Parte</a>
+    <a href="https://open.spotify.com/episode/1AoUMoA6jTCM3gtKe1SIfN" target="_blank" rel="noopener" class="btn-ghost">🎧 Episodio 2da Parte</a>
+  </div>
+</section>
+
+<!-- ═══ TRIBUTO ═══ -->
+<section style="background:var(--base-2);border-top:1px solid rgba(160,24,24,0.4);padding:4rem 2rem">
+  <div class="tribute-box">
+    <h2>Nuestra Cosa Latina</h2>
+    <p>La salsa no nació en una isla. Nació en un cruce de calles: puertorriqueños, cubanos, dominicanos y judíos del Bronx compartiendo escaleras de incendio, radios abiertas y pianos de segunda mano. En agosto de 1971, en un club llamado Cheetah, la Fania All-Stars grabó <em>Our Latin Thing</em> y le puso nombre a lo que ya sonaba en cada esquina. Héctor Lavoe, Celia Cruz, Tito Puente, Willie Colón, Ray Barretto — todos cantaron aquí, todos caminaron estas aceras. Esta guía es para ir a pisarlas.</p>
+  </div>
+
+  <div class="section-inner">
+    <div class="stats-row">
+      <div class="stat-cell fade-up">
+        <div class="num">6</div>
+        <div class="lbl">Días de circuito</div>
+        <div class="desc">De El Barrio al Bronx, de Loisaida a la Manhattan icónica</div>
+      </div>
+      <div class="stat-cell fade-up">
+        <div class="num">1971</div>
+        <div class="lbl">El año del Cheetah</div>
+        <div class="desc">Cuando la Fania le puso nombre al sonido</div>
+      </div>
+      <div class="stat-cell fade-up">
+        <div class="num">70<em>+</em></div>
+        <div class="lbl">Lugares verificados</div>
+        <div class="desc">Cada enlace comprobado antes de publicar</div>
+      </div>
+      <div class="stat-cell fade-up">
+        <div class="num">2</div>
+        <div class="lbl">Episodios del podcast</div>
+        <div class="desc">Salsa brava, primera y segunda parte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CÓMO LLEGAR ═══ -->
+<section class="section" id="llegada" style="background:var(--base-2)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Antes de salir</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Cómo llegar<br>a <em>Nueva York</em></h2>
+    <p class="section-lead">Tres aeropuertos — JFK, LaGuardia y Newark — y vuelos directos desde casi cualquier capital del continente. La ciudad más conectada del mundo es también una de las más fáciles de recorrer sin carro: el metro que llevó a los músicos de El Barrio al Bronx sigue costando lo mismo para todos.</p>
+
+    <div class="transport-grid">
+
+      <div class="transport-card fade-up">
+        <h3>✈ Desde Norteamérica</h3>
+        <p style="font-size:0.82rem;color:var(--smoke);margin-bottom:1rem;font-style:italic">Directos diarios desde todo México, Centroamérica y el Caribe.</p>
+        <div class="transport-row">
+          <span class="transport-name">American Airlines</span>
+          <a href="https://www.aa.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Delta</span>
+          <a href="https://www.delta.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">United</span>
+          <a href="https://www.united.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">JetBlue</span>
+          <a href="https://www.jetblue.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Aeroméxico</span>
+          <a href="https://www.aeromexico.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+      </div>
+
+      <div class="transport-card fade-up">
+        <h3>✈ Desde Sudamérica</h3>
+        <p style="font-size:0.82rem;color:var(--smoke);margin-bottom:1rem;font-style:italic">Directos desde Bogotá, Lima, Santiago, Buenos Aires y São Paulo; Copa conecta todo el continente vía Panamá.</p>
+        <div class="transport-row">
+          <span class="transport-name">LATAM</span>
+          <a href="https://www.latamairlines.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Avianca</span>
+          <a href="https://www.avianca.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Copa Airlines</span>
+          <a href="https://www.copaair.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Aerolíneas Argentinas</span>
+          <a href="https://www.aerolineas.com.ar" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+      </div>
+
+      <div class="transport-card fade-up">
+        <h3>✈ Desde Europa</h3>
+        <p style="font-size:0.82rem;color:var(--smoke);margin-bottom:1rem;font-style:italic">Madrid–JFK e Iberia como puerta natural del mundo hispano; low-cost transatlántico con Norse.</p>
+        <div class="transport-row">
+          <span class="transport-name">Iberia</span>
+          <a href="https://www.iberia.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Air Europa</span>
+          <a href="https://www.aireuropa.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Air France</span>
+          <a href="https://www.airfrance.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Lufthansa</span>
+          <a href="https://www.lufthansa.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Norse Atlantic</span>
+          <a href="https://www.flynorse.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+      </div>
+
+      <div class="transport-card fade-up">
+        <h3>🚇 Moverse por la ciudad</h3>
+        <p style="font-size:0.82rem;color:var(--smoke);margin-bottom:1rem;font-style:italic">El metro funciona 24 horas — como la salsa. Paga con tarjeta sin contacto (OMNY) y olvídate de boletos.</p>
+        <div class="transport-row">
+          <span class="transport-name">Metro y buses (MTA)</span>
+          <a href="https://www.mta.info" target="_blank" class="btn btn-web">Ver rutas →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">AirTrain JFK</span>
+          <a href="https://www.jfkairport.com" target="_blank" class="btn btn-web">Info →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">NYC Ferry</span>
+          <a href="https://www.ferry.nyc" target="_blank" class="btn btn-web">Horarios →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Citi Bike</span>
+          <a href="https://citibikenyc.com" target="_blank" class="btn btn-web">Alquilar →</a>
+        </div>
+      </div>
+
+      <div class="transport-card fade-up">
+        <h3>🚗 Alquiler de carro</h3>
+        <p style="font-size:0.82rem;color:var(--smoke);margin-bottom:1rem;font-style:italic">Solo si planeas escaparte de la ciudad — dentro de Manhattan, el metro siempre gana.</p>
+        <div class="transport-row">
+          <span class="transport-name">Hertz</span>
+          <a href="https://www.hertz.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Avis</span>
+          <a href="https://www.avis.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Enterprise</span>
+          <a href="https://www.enterprise.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Sixt</span>
+          <a href="https://www.sixt.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+        <div class="transport-row">
+          <span class="transport-name">Turo</span>
+          <a href="https://turo.com" target="_blank" class="btn btn-web">Reservar →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box">
+      <p>💡 <strong>Consejo:</strong> <em>El tren 6 — el mismo que inmortalizó la película de graffiti y hip-hop de los 80 — sube por Lexington y te deja en la 103 y la 110: el corazón de El Barrio. Para el Bronx salsero, el 2 y el 5 hasta Prospect Avenue. Compra un pase semanal ilimitado si te quedas los 5 días: se paga solo al tercer viaje diario.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOTELES ═══ -->
+<section class="section" id="hoteles">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Dónde alojarte</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Alojamiento con<br><em>carácter</em></h2>
+    <p class="section-lead">Cinco opciones, cinco maneras de dormir en la ciudad. Desde un teatro de 1913 en el Bronx donde actuó Houdini hasta una torre con azotea frente al Empire State. Elegimos por historia y por ubicación respecto al circuito — no por estrellas.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Boutique · Harlem</div>
+        <div class="card-body">
+          <div class="card-title">Aloft Harlem</div>
+          <p class="card-desc">A tres minutos a pie del Teatro Apollo y a diez del límite norte de Central Park. Habitaciones compactas, bar en el lobby y la única base hotelera dentro del Harlem real — el que suena a gospel los domingos y a timba los viernes. Desde aquí, El Barrio queda a un paseo por la 125.</p>
+          <div class="card-links">
+            <a href="https://www.marriott.com/en-us/hotels/nyclh-aloft-harlem/overview/" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Aloft+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Histórico · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">Opera House Hotel</div>
+          <p class="card-desc">Dormir dentro de la historia: este era el Bronx Opera House de 1913, donde actuaron Houdini, los hermanos Marx y Fats Waller. Hoy es un hotel boutique en la 149, a minutos de Casa Amadeo y del corazón salsero del sur del Bronx. Nadie más puede decir que durmió en un teatro del circuito.</p>
+          <div class="card-links">
+            <a href="https://www.operahousehotel.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Opera+House+Hotel+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Diseño · Midtown</div>
+        <div class="card-body">
+          <div class="card-title">Arlo NoMad</div>
+          <p class="card-desc">Treinta y un pisos, habitaciones pequeñas y perfectas, y una azotea que mira directo al Empire State. Base ideal si tu plan mezcla la ruta del Palladium con teatros y tiendas. De noche, el bar de la terraza es un cierre digno para las piernas cansadas de bailar.</p>
+          <div class="card-links">
+            <a href="https://arlohotels.com/nomad/" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Arlo+NoMad+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Heritage · Times Square</div>
+        <div class="card-body">
+          <div class="card-title">Hotel Edison</div>
+          <p class="card-desc">Abrió en 1931 con Thomas Edison encendiendo las luces del lobby art déco. En sus salones tocaron las big bands que después alimentaron el mambo del Palladium — que quedaba a cuatro cuadras. Sigue siendo el hotel con más memoria musical por dólar en todo Midtown.</p>
+          <div class="card-links">
+            <a href="https://www.edisonhotelnyc.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Hotel+Edison+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type hotel">🏨 Budget · Murray Hill</div>
+        <div class="card-body">
+          <div class="card-title">Pod 39</div>
+          <p class="card-desc">Camas tipo cabina, precios que dejan presupuesto para discos y entradas, y una azotea de ladrillo con arcos que parece de La Habana Vieja. Para el viajero que solo va al hotel a dormir — porque la ciudad no cierra y el plan tampoco.</p>
+          <div class="card-links">
+            <a href="https://www.thepodhotel.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Pod+39+Hotel+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ITINERARIO · 5 DÍAS ═══ -->
+<section class="section" id="itinerario" style="background:var(--base-2)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">El recorrido</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Seis días en<br><em>clave de son</em></h2>
+    <p class="section-lead">Este no es un itinerario de postales. Es la ruta de la salsa brava: las esquinas donde se inventó el sonido, los sellos, los salones que ya no existen y los que siguen abiertos — más un día entero para la Manhattan icónica, porque hasta el sonero más duro se toma la foto en el Empire State. Cada día es un barrio, un capítulo, un disco.</p>
+  </div>
+
+  <div class="tabs-nav">
+    <div class="tabs-nav-inner">
+      <button class="tab-btn active" onclick="switchTab('d1', this)">Día 1 · El Barrio</button>
+      <button class="tab-btn" onclick="switchTab('d2', this)">Día 2 · El Bronx</button>
+      <button class="tab-btn" onclick="switchTab('d3', this)">Día 3 · Midtown</button>
+      <button class="tab-btn" onclick="switchTab('d4', this)">Día 4 · Loisaida</button>
+      <button class="tab-btn" onclick="switchTab('d6', this)">Día 5 · Manhattan Icónica</button>
+      <button class="tab-btn" onclick="switchTab('d5', this)">Día 6 · La Despedida</button>
+    </div>
+  </div>
+
+  <div class="section-inner" style="padding-top:3rem;padding-bottom:3rem">
+
+    <!-- DÍA 1 -->
+    <div id="d1" class="tab-content active">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Tito Puente Way — Calle 110 Este</div>
+          <div class="tl-desc">Empieza donde empieza todo: la calle donde creció Ernesto Antonio Puente, rebautizada con su nombre. No hay museo ni taquilla. Solo una placa verde de calle, el rumor del tren 6 y la certeza de que el Rey del Timbal salió de aquí a conquistar el mundo con dos baquetas.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Tito+Puente+Way+East+110th+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🖼 Media mañana</div>
+          <div class="tl-place">El Museo del Barrio</div>
+          <div class="tl-desc">En la punta norte de la Milla de los Museos, el museo que fundó la generación nuyorican para contarse a sí misma. Arte boricua, caribeño y latinoamericano — y la mejor tienda de la ciudad para llevarse algo que no sea un imán de la Estatua de la Libertad.</div>
+          <div class="tl-links">
+            <a href="https://www.elmuseo.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/El+Museo+del+Barrio+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Almuerzo</div>
+          <div class="tl-place">La Marqueta</div>
+          <div class="tl-desc">El mercado bajo el viaducto de Park Avenue funciona desde los años 30. Aquí las abuelas puertorriqueñas compraban gandules y bacalao mientras sonaban los discos de la vitrola de Casa Latina. Quedan pocos puestos, pero los que quedan son verdad pura.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/La+Marqueta+East+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎨 Tarde</div>
+          <div class="tl-place">Graffiti Hall of Fame</div>
+          <div class="tl-desc">Un patio escolar en la 106 y Park donde el graffiti dejó de ser delito y se volvió patrimonio. Los muros se repintan cada año por leyendas del aerosol. Salsa y hip-hop nacieron en los mismos barrios, de la misma urgencia: hacer arte con lo que había.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Graffiti+Hall+of+Fame+East+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎺 Atardecer</div>
+          <div class="tl-place">SpaHa Salsa Gallery</div>
+          <div class="tl-desc">En una antigua ferretería de la 116, el músico Johnny Cruz montó un santuario casero dedicado a los pioneros de la salsa: fotos, congas firmadas, trajes de escenario. No es un museo institucional — es un acto de amor. Y por eso vale doble.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/SpaHa+Salsa+Gallery+East+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌙 Noche</div>
+          <div class="tl-place">La Fonda Boricua</div>
+          <div class="tl-desc">Mofongo de camarones y, con suerte, banda en vivo: La Fonda es el comedor de El Barrio desde los 90. En sus paredes cuelgan los retratos de los grandes que comieron aquí. Pide lo que pida la mesa de al lado y quédate hasta que apaguen las luces.</div>
+          <div class="tl-links">
+            <a href="https://lafondanyc.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/La+Fonda+Boricua+East+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DÍA 2 -->
+    <div id="d2" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Casa Amadeo</div>
+          <div class="tl-desc">La tienda de música latina más antigua de Nueva York, abierta desde 1941 y en el Registro Nacional de Lugares Históricos. Mike Amadeo — compositor de boleros que grabaron los grandes — sigue detrás del mostrador. Compra un vinilo. Es la entrada al museo vivo más barato de la ciudad.</div>
+          <div class="tl-links">
+            <a href="https://www.nyctourism.com/articles/casa-amadeo-nyc-latin-history-in-the-bronx/" target="_blank" class="btn btn-web">🌐 Historia</a>
+            <a href="https://www.google.com/maps/search/Casa+Amadeo+record+store+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🚶 Media mañana</div>
+          <div class="tl-place">Héctor Lavoe Way — Longwood</div>
+          <div class="tl-desc">En el cruce de Westchester y Bryant, una placa recuerda al Cantante de los Cantantes, que vivió sus años de gloria y de sombra en estas cuadras. El Bronx que lo recibió de Ponce a los 17 años sigue oliendo a lechón y sonando a trombones desde las ventanas.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Westchester+Avenue+and+Bryant+Avenue+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Almuerzo</div>
+          <div class="tl-place">188 Cuchifritos</div>
+          <div class="tl-desc">Más de cuarenta años friendo alcapurrias, bacalaítos y chicharrón bajo luces de neón amarillo. Un mostrador, cero pretensiones, y el sabor exacto que los músicos de la Fania buscaban a las tres de la mañana después de grabar.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/188+Cuchifritos+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌳 Tarde</div>
+          <div class="tl-place">Cementerio de Woodlawn — Celia Cruz</div>
+          <div class="tl-desc">Woodlawn guarda a Duke Ellington, Miles Davis y a la Reina: Celia Cruz descansa aquí en un mausoleo que sus fans visitan como quien va a misa. Camina despacio — este cementerio es un jardín histórico nacional y, de algún modo, el salón de la fama más silencioso de la música.</div>
+          <div class="tl-links">
+            <a href="https://www.woodlawn.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Woodlawn+Cemetery+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌙 Noche</div>
+          <div class="tl-place">Lehman Center for the Performing Arts</div>
+          <div class="tl-desc">El teatro del Bronx donde la salsa dura sigue llenando butacas: aquí tocan las orquestas históricas y los soneros que quedan. Revisa el calendario antes de viajar — si coincide un concierto de salsa, organiza el día entero alrededor de eso.</div>
+          <div class="tl-links">
+            <a href="https://www.lehmancenter.org" target="_blank" class="btn btn-web">🎟 Cartelera</a>
+            <a href="https://www.google.com/maps/search/Lehman+Center+for+the+Performing+Arts+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="quote-block fade-up">
+        <p class="quote-text">"La salsa no nació en Cuba ni en Puerto Rico. Nació en el barrio — en Nueva York, donde todos los ritmos del Caribe se encontraron en la misma escalera de incendios y decidieron quedarse a vivir."</p>
+        <div class="quote-source">— El Pasaporte Sinfónico · Salsa Brava, Primera Parte</div>
+      </div>
+    </div>
+
+    <!-- DÍA 3 -->
+    <div id="d3" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Broadway y la 53 — El solar del Palladium</div>
+          <div class="tl-desc">Aquí estuvo el Palladium Ballroom, el templo del mambo donde Machito, Tito Puente y Tito Rodríguez se batían en duelo cada miércoles, y donde blancos, negros y latinos bailaron juntos una década antes de las leyes de derechos civiles. El edificio ya no está. La lección sí.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Broadway+and+West+53rd+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🚶 Media mañana</div>
+          <div class="tl-place">Broadway y la 52 — El sitio del Cheetah</div>
+          <div class="tl-desc">Una cuadra más abajo, otro fantasma mayor: el Cheetah, donde el 26 de agosto de 1971 la Fania All-Stars grabó <em>Our Latin Thing</em> ante un público que no sabía que estaba fundando un género. Párate en la esquina, ponte el disco en los audífonos y entiende por qué viajaste hasta aquí.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/1686+Broadway+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Almuerzo</div>
+          <div class="tl-place">Victor's Café</div>
+          <div class="tl-desc">Cubano de mantel blanco desde 1963: ropa vieja, plátanos y fotos de todos los que han pasado — que son todos. A tres cuadras del distrito de los teatros, es el lugar donde el pre-show huele a mojo criollo.</div>
+          <div class="tl-links">
+            <a href="https://www.victorscafe.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Victor's+Cafe+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎷 Tarde</div>
+          <div class="tl-place">Birdland Jazz Club</div>
+          <div class="tl-desc">El club que lleva el nombre de Charlie Parker fue también la casa de Machito y sus Afro-Cubans, el eslabón entre el jazz y lo que después sería salsa. Hoy programa jazz latino de primera línea. Reserva la función temprana y cena en la mesa del fondo.</div>
+          <div class="tl-links">
+            <a href="https://www.birdlandjazz.com" target="_blank" class="btn btn-web">🎟 Cartelera</a>
+            <a href="https://www.google.com/maps/search/Birdland+Jazz+Club+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌙 Noche</div>
+          <div class="tl-place">Copacabana</div>
+          <div class="tl-desc">El club donde cantó todo el que fue alguien — de Nat King Cole a Celia — sigue vivo en su encarnación actual de la calle 51 Oeste. Noches de salsa, bachata y merengue con orquesta. Ve elegante: el Copa siempre fue de vestirse.</div>
+          <div class="tl-links">
+            <a href="https://thecopanyc.com" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Copacabana+625+West+51st+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DÍA 4 -->
+    <div id="d4" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Loisaida — Avenida C</div>
+          <div class="tl-desc">El Lower East Side que los puertorriqueños rebautizaron con su propio acento: Loisaida. Camina la Avenida C entre jardines comunitarios y casitas de madera que sobrevivieron a todo — al abandono, a los incendios, a la gentrificación. Cada jardín era un solar quemado que el barrio convirtió en vida.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Loisaida+Avenue+C+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">📖 Media mañana</div>
+          <div class="tl-place">Nuyorican Poets Cafe</div>
+          <div class="tl-desc">La casa de la palabra nuyorican desde 1973, fundada por los poetas que le pusieron letra a la misma rabia que la salsa le puso música. Tras una renovación de 24 millones, reabre sus dos teatros en el 2026. Verifica la cartelera: un slam de poesía aquí vale por tres conciertos.</div>
+          <div class="tl-links">
+            <a href="https://www.nuyorican.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Nuyorican+Poets+Cafe+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Almuerzo</div>
+          <div class="tl-place">Casa Adela</div>
+          <div class="tl-desc">Pollo al horno, arroz con gandules y la receta intacta de Adela Fargas, que alimentó a Loisaida durante medio siglo. Su familia mantiene el fogón encendido. Comer aquí es la manera más directa de entender qué defendía este barrio.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Casa+Adela+Avenue+C+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🛍 Tarde</div>
+          <div class="tl-place">Cacería de vinilos por el Village</div>
+          <div class="tl-desc">Las tiendas de discos del East y West Village guardan más Fania de la que imaginas: busca las cajas de "Latin" y revisa disco por disco. Un original de <em>Siembra</em> o <em>Cosa Nuestra</em> encontrado en cubeta es el mejor recuerdo posible de este viaje.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/record+stores+East+Village+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌙 Noche</div>
+          <div class="tl-place">SOB's — Sounds of Brazil</div>
+          <div class="tl-desc">Desde 1982, el club donde la música del sur del mundo tiene residencia permanente en Manhattan. Sus noches de salsa con orquesta en vivo son de las pocas donde bailadores serios y curiosos comparten pista sin fricción. Llega temprano a la clase gratuita y quédate hasta el final.</div>
+          <div class="tl-links">
+            <a href="https://sobs.com" target="_blank" class="btn btn-web">🎟 Cartelera</a>
+            <a href="https://www.google.com/maps/search/SOB's+204+Varick+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DÍA 5 (MANHATTAN ICÓNICA) -->
+    <div id="d6" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Empire State Building</div>
+          <div class="tl-desc">Sube temprano, antes de que lleguen las multitudes. Desde el piso 86 se ve todo el mapa de esta guía: El Barrio al norte, el Bronx detrás, Loisaida al sureste. La ciudad que parecía infinita desde la calle, entera de un solo vistazo. Compra la entrada en línea y ahórrate la fila.</div>
+          <div class="tl-links">
+            <a href="https://www.esbnyc.com" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Empire+State+Building+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🏙 Media mañana</div>
+          <div class="tl-place">Edificio Chrysler</div>
+          <div class="tl-desc">La corona art déco más hermosa del mundo no se visita: se contempla. Camina hasta Lexington y la 42, entra al lobby de mármol rojo africano y acero — es gratis y casi nadie lo hace — y luego busca el ángulo desde la calle 44 para la foto. Acero de 1930 brillando como un trombón recién pulido.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/Chrysler+Building+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🕊 Mediodía</div>
+          <div class="tl-place">Memorial y Museo del 11 de Septiembre</div>
+          <div class="tl-desc">Dos espejos de agua donde estuvieron las torres, con cada nombre grabado en bronce. No es una atracción: es un lugar para estar en silencio un rato. La ciudad que tanto celebra esta guía también sabe recordar — y lo hace con una dignidad que conmueve.</div>
+          <div class="tl-links">
+            <a href="https://www.911memorial.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/9%2F11+Memorial+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🍽 Almuerzo</div>
+          <div class="tl-place">Eataly NYC Flatiron</div>
+          <div class="tl-desc">El mercado italiano frente al Flatiron Building: pasta fresca, mozzarella hecha en el día y un mostrador de cannoli que exige disciplina. Nueva York también es esto — cada cocina del mundo con sucursal propia. Come en la barra y mira pasar la ciudad.</div>
+          <div class="tl-links">
+            <a href="https://www.eataly.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Eataly+NYC+Flatiron" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🎸 Tarde</div>
+          <div class="tl-place">Hotel Chelsea</div>
+          <div class="tl-desc">En sus habitaciones vivieron y escribieron Leonard Cohen, Janis Joplin, Patti Smith y Dylan Thomas. El hotel de ladrillo rojo de la calle 23 es el otro gran mito musical de Manhattan — el de la bohemia. Entra al lobby restaurado, tómate un café y lee las placas de la fachada.</div>
+          <div class="tl-links">
+            <a href="https://www.hotelchelsea.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Hotel+Chelsea+222+West+23rd+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">📷 Atardecer</div>
+          <div class="tl-place">El Dakota — desde afuera</div>
+          <div class="tl-desc">Para los amantes de la fotografía: el edificio gótico de la 72 y Central Park West, donde vivió John Lennon y donde el 8 de diciembre de 1980 el mundo cambió de canción. No se puede entrar — es residencial — pero la esquina, los gabletes y la portería de hierro son una lección de composición a cualquier hora de luz.</div>
+          <div class="tl-links">
+            <a href="https://www.google.com/maps/search/The+Dakota+1+West+72nd+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌳 Cierre</div>
+          <div class="tl-place">Strawberry Fields y el mosaico Imagine</div>
+          <div class="tl-desc">Cruza la calle hacia Central Park y llega al mosaico que dice lo único que hay que decir: <em>Imagine</em>. Casi siempre hay un guitarrista, casi siempre hay flores, casi siempre alguien llora un poquito. Quédate hasta que caiga el sol entre los árboles. Así se despide Manhattan.</div>
+          <div class="tl-links">
+            <a href="https://www.centralparknyc.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Strawberry+Fields+Imagine+Mosaic+Central+Park" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tip-box fade-up">
+        <p>📰 <strong>Como un local:</strong> <em>Antes de armar tu semana, revisa lo que recomiendan las revistas de la ciudad: <a href="https://www.timeout.com/newyork" target="_blank" style="color:var(--accent)">Time Out New York</a> para la agenda grande, <a href="https://www.theskint.com" target="_blank" style="color:var(--accent)">The Skint</a> para lo gratis y barato de cada día, y <a href="https://www.nymag.com" target="_blank" style="color:var(--accent)">New York Magazine</a> para lo que la ciudad está discutiendo esta semana. Así es como los neoyorquinos deciden su fin de semana.</em></p>
+      </div>
+    </div>
+
+    <!-- DÍA 6 (LA DESPEDIDA) -->
+    <div id="d5" class="tab-content">
+      <div class="timeline">
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌅 Mañana</div>
+          <div class="tl-place">Central Park — El Harlem Meer</div>
+          <div class="tl-desc">La esquina noreste del parque es la esquina de El Barrio: el lago donde los domingos suenan congas informales y las familias llegan con neveras y dominó. Desayuna caminando desde la 110 y despídete del parque por la puerta que casi ningún turista usa.</div>
+          <div class="tl-links">
+            <a href="https://www.centralparknyc.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Harlem+Meer+Central+Park+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">⚾ Mediodía</div>
+          <div class="tl-place">Yankee Stadium</div>
+          <div class="tl-desc">En agosto de 1973, la Fania All-Stars llenó el estadio de los Yankees y el público invadió el campo a mitad de "Congo Bongo". El estadio actual es otro, pero el peregrinaje vale: tour guiado o, mejor, un partido con el Bronx entero rugiendo alrededor.</div>
+          <div class="tl-links">
+            <a href="https://www.mlb.com/yankees" target="_blank" class="btn btn-web">🎟 Boletos</a>
+            <a href="https://www.google.com/maps/search/Yankee+Stadium+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🏖 Tarde</div>
+          <div class="tl-place">Orchard Beach — Salsa Sundays</div>
+          <div class="tl-desc">Si tu último día cae en domingo de verano, no hay debate: la "Riviera del Bronx" celebra tardes de salsa al aire libre desde hace décadas. Soneros veteranos, parejas que llevan cincuenta años bailando juntas y el Atlántico de fondo. La escena más pura que verás en todo el viaje.</div>
+          <div class="tl-links">
+            <a href="https://www.nycgovparks.org/parks/pelham-bay-park" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Orchard+Beach+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌆 Atardecer</div>
+          <div class="tl-place">Ferry por el East River</div>
+          <div class="tl-desc">El skyline de despedida no se mira desde un mirador de pago: se mira desde la cubierta del ferry público, con el viento del río y la ciudad encendiéndose. Baja en Brooklyn, date la vuelta y mírala completa — la ciudad que convirtió el exilio en orquesta.</div>
+          <div class="tl-links">
+            <a href="https://www.ferry.nyc" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Wall+Street+Pier+11+Ferry+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+        <div class="tl-item fade-up">
+          <div class="tl-time">🌙 Noche</div>
+          <div class="tl-place">Última social: Salsamania</div>
+          <div class="tl-desc">Un piso 15 en el distrito de la moda, clase para empezar y pista hasta las dos. Las socials de Midtown son el laboratorio donde el mambo estilo Nueva York se sigue refinando cada semana. Baila hasta que el cuerpo diga basta. Mañana el avión; esta noche, el "on 2".</div>
+          <div class="tl-links">
+            <a href="https://salsamanianyc.com" target="_blank" class="btn btn-web">🎟 Info</a>
+            <a href="https://www.google.com/maps/search/224+West+35th+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CULTURA ═══ -->
+<section class="section" id="cultura">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Cultura & Arte</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Museos con<br><em>clave y tumbao</em></h2>
+    <p class="section-lead">Nueva York tiene más museos que días tiene tu viaje. Los primeros seis cuentan la parte de la historia que nos interesa — la de las comunidades que llegaron con una maleta y un instrumento — y los tres últimos son los gigantes que ninguna visita perdona: arte moderno, la espiral de Wright y los dinosaurios.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type culture">🖼 Museo · Arte Latino</div>
+        <div class="card-body">
+          <div class="card-title">El Museo del Barrio</div>
+          <p class="card-desc">Fundado en 1969 por artistas y activistas nuyorican que no se veían en los museos de la Quinta Avenida — así que fundaron el suyo en la misma avenida. Colección de arte taíno, gráfica política boricua y contemporáneo latinoamericano.</p>
+          <div class="card-links">
+            <a href="https://www.elmuseo.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/El+Museo+del+Barrio+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🖼 Museo · Historia Urbana</div>
+        <div class="card-body">
+          <div class="card-title">Museum of the City of New York</div>
+          <p class="card-desc">A dos cuadras de El Museo del Barrio, el museo que cuenta cómo esta ciudad se hizo a sí misma: migraciones, música, activismo. Sus exposiciones sobre las comunidades puertorriqueña e hip-hop son el contexto perfecto para todo lo que viste en la calle.</p>
+          <div class="card-links">
+            <a href="https://www.mcny.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Museum+of+the+City+of+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🎺 Casa Museo · Queens</div>
+        <div class="card-body">
+          <div class="card-title">Louis Armstrong House Museum</div>
+          <p class="card-desc">Satchmo pudo vivir donde quisiera y eligió Corona, Queens — hoy un barrio profundamente latino. Su casa quedó congelada en el tiempo: la cocina turquesa, los reels con su voz, el jardín. La visita más íntima que ofrece la ciudad entera.</p>
+          <div class="card-links">
+            <a href="https://www.louisarmstronghouse.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Louis+Armstrong+House+Museum+Queens" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🎷 Museo · Harlem</div>
+        <div class="card-body">
+          <div class="card-title">National Jazz Museum in Harlem</div>
+          <p class="card-desc">Pequeño y generoso: instrumentos, grabaciones raras y sesiones en vivo en pleno Harlem. El jazz y el mambo se criaron juntos en estas calles — Machito grabó con Charlie Parker — y este museo explica ese matrimonio mejor que nadie.</p>
+          <div class="card-links">
+            <a href="https://jmih.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/National+Jazz+Museum+in+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🖼 Museo · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">The Bronx Museum of the Arts</div>
+          <p class="card-desc">Entrada gratuita, en pleno Grand Concourse. Arte contemporáneo con las comunidades del Bronx como protagonistas, no como tema. La parada cultural natural entre Casa Amadeo y el Yankee Stadium.</p>
+          <div class="card-links">
+            <a href="https://www.bronxmuseum.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Bronx+Museum+of+the+Arts" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🎭 Escenario · Lincoln Center</div>
+        <div class="card-body">
+          <div class="card-title">Lincoln Center</div>
+          <p class="card-desc">El complejo de artes escénicas más grande del mundo se construyó, ironía enorme, sobre el barrio latino que retrató <em>West Side Story</em>. En verano, sus noches de baile al aire libre convierten la explanada en el Palladium que la ciudad le debía a esa memoria.</p>
+          <div class="card-links">
+            <a href="https://www.lincolncenter.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Lincoln+Center+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🖼 Museo · Arte Moderno</div>
+        <div class="card-body">
+          <div class="card-title">MoMA — Museum of Modern Art</div>
+          <p class="card-desc">Van Gogh, Picasso, Frida, Warhol — el canon del siglo XX bajo un mismo techo en la calle 53, a tres cuadras del solar del Palladium. Si el tiempo aprieta, sube directo al quinto piso y baja despacio. Los viernes por la tarde la entrada es gratuita para residentes; para el resto, reserva en línea.</p>
+          <div class="card-links">
+            <a href="https://www.moma.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/MoMA+Museum+of+Modern+Art+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🖼 Museo · La Espiral</div>
+        <div class="card-body">
+          <div class="card-title">Solomon R. Guggenheim Museum</div>
+          <p class="card-desc">La espiral blanca de Frank Lloyd Wright en la Quinta Avenida es obra de arte antes de entrar. Sube en ascensor hasta arriba y baja caminando la rampa — así fue diseñada la visita. Queda en la misma Milla de los Museos que El Museo del Barrio: se pueden hilar en una sola tarde.</p>
+          <div class="card-links">
+            <a href="https://www.guggenheim.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Guggenheim+Museum+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type culture">🦕 Museo · Ciencias Naturales</div>
+        <div class="card-body">
+          <div class="card-title">American Museum of Natural History</div>
+          <p class="card-desc">La ballena azul colgando del techo, los dinosaurios del cuarto piso y el planetario de la esfera de cristal. Está frente a Central Park West, a diez cuadras del Dakota — combina perfecto con la tarde fotográfica del día 5. Ve temprano: es el museo favorito de todos los niños de la ciudad, y de sus abuelos.</p>
+          <div class="card-links">
+            <a href="https://www.amnh.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/American+Museum+of+Natural+History+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEPORTES ═══ -->
+<section class="section" id="deportes" style="background:var(--base-2)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">La otra pasión</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Deportes en la<br><em>Gran Manzana</em></h2>
+    <p class="section-lead">Ninguna ciudad del mundo tiene dos equipos de todo. Aquí el deporte es tribuna, tambor y pertenencia — el Yankee Stadium fue escenario de la Fania y las gradas del Bronx suenan a clave. Elige tu bando en cada liga y reserva con tiempo: los clásicos se agotan.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type sport">⚾ Béisbol · MLB</div>
+        <div class="card-body">
+          <div class="card-title">Yankees & Mets</div>
+          <p class="card-desc">Los Yankees son el imperio: 27 series mundiales y un estadio en el mismo Bronx salsero. Los Mets son el corazón obrero de Queens, con Citi Field rodeado del barrio latino de Corona. El Subway Series — cuando se enfrentan — parte la ciudad en dos.</p>
+          <div class="card-links">
+            <a href="https://www.mlb.com/yankees" target="_blank" class="btn btn-web">🎟 Yankees</a>
+            <a href="https://www.mlb.com/mets" target="_blank" class="btn btn-web">🎟 Mets</a>
+            <a href="https://www.mlb.com" target="_blank" class="btn">⚾ MLB</a>
+            <a href="https://www.google.com/maps/search/Yankee+Stadium+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sport">🏈 Fútbol Americano · NFL</div>
+        <div class="card-body">
+          <div class="card-title">Giants & Jets</div>
+          <p class="card-desc">Dos franquicias históricas que comparten casa: el MetLife Stadium, el mismo coloso que acogió la final de la Copa del Mundo 2026. Un tailgate de domingo — parrillas, banderas, horas de previa — es un ritual americano que hay que vivir una vez.</p>
+          <div class="card-links">
+            <a href="https://www.giants.com" target="_blank" class="btn btn-web">🎟 Giants</a>
+            <a href="https://www.newyorkjets.com" target="_blank" class="btn btn-web">🎟 Jets</a>
+            <a href="https://www.nfl.com" target="_blank" class="btn">🏈 NFL</a>
+            <a href="https://www.google.com/maps/search/MetLife+Stadium+East+Rutherford" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sport">🏀 Básquetbol · NBA</div>
+        <div class="card-body">
+          <div class="card-title">Knicks & Nets</div>
+          <p class="card-desc">Los Knicks juegan en el Madison Square Garden — "la meca del básquet", el mismo edificio donde la Fania grabó discos en vivo. Los Nets responden desde el Barclays Center de Brooklyn. Una entrada al Garden es cara; la electricidad, impagable.</p>
+          <div class="card-links">
+            <a href="https://www.nba.com/knicks" target="_blank" class="btn btn-web">🎟 Knicks</a>
+            <a href="https://www.nba.com/nets" target="_blank" class="btn btn-web">🎟 Nets</a>
+            <a href="https://www.nba.com" target="_blank" class="btn">🏀 NBA</a>
+            <a href="https://www.google.com/maps/search/Madison+Square+Garden+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sport">⚽ Fútbol · MLS</div>
+        <div class="card-body">
+          <div class="card-title">NYCFC & Red Bulls</div>
+          <p class="card-desc">El derbi del Hudson: NYCFC — campeón de la MLS en 2021 — contra los Red Bulls de Nueva Jersey. La hinchada latina pone los cánticos, la murga y el tambor. Si extrañas el fútbol de tu tierra, aquí tiene sucursal.</p>
+          <div class="card-links">
+            <a href="https://www.newyorkcityfc.com" target="_blank" class="btn btn-web">🎟 NYCFC</a>
+            <a href="https://www.newyorkredbulls.com" target="_blank" class="btn btn-web">🎟 Red Bulls</a>
+            <a href="https://www.mlssoccer.com" target="_blank" class="btn">⚽ MLS</a>
+            <a href="https://www.google.com/maps/search/Yankee+Stadium+NYCFC+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sport">🏒 Hockey · NHL</div>
+        <div class="card-body">
+          <div class="card-title">Rangers & Islanders</div>
+          <p class="card-desc">Los Rangers, uno de los "Original Six" de la liga, convierten el Garden en una caldera cada invierno. Los Islanders defienden Long Island desde el UBS Arena. El hockey en vivo es más rápido, más físico y más adictivo de lo que la televisión deja ver.</p>
+          <div class="card-links">
+            <a href="https://www.nhl.com/rangers" target="_blank" class="btn btn-web">🎟 Rangers</a>
+            <a href="https://www.nhl.com/islanders" target="_blank" class="btn btn-web">🎟 Islanders</a>
+            <a href="https://www.nhl.com" target="_blank" class="btn">🏒 NHL</a>
+            <a href="https://www.google.com/maps/search/UBS+Arena+Elmont+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sport">🎾 Y además · WNBA / Tenis / Maratón</div>
+        <div class="card-body">
+          <div class="card-title">Liberty, US Open & NYC Marathon</div>
+          <p class="card-desc">Las New York Liberty llenan el Barclays con el mejor básquet femenino del mundo. En Flushing Meadows, el US Open corona el verano a pasos del barrio de los Mets. Y el primer domingo de noviembre, el maratón cruza los cinco condados — con congas animando en cada esquina del Bronx.</p>
+          <div class="card-links">
+            <a href="https://liberty.wnba.com" target="_blank" class="btn btn-web">🎟 Liberty</a>
+            <a href="https://www.usopen.org" target="_blank" class="btn btn-web">🎾 US Open</a>
+            <a href="https://www.nyrr.org" target="_blank" class="btn">🏃 Maratón</a>
+            <a href="https://www.google.com/maps/search/USTA+Billie+Jean+King+National+Tennis+Center+Queens" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box">
+      <p>💡 <strong>Consejo:</strong> <em>Compra siempre en los sitios oficiales de los equipos o en su reventa verificada. Para partidos de temporada regular entre semana hay entradas desde 15-30 USD en béisbol y MLS — el plan más barato y más neoyorquino de toda la ciudad.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FESTIVALES & NOCHE ═══ -->
+<section class="section" id="festivales">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Agenda musical</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Festivales &<br><em>vida nocturna</em></h2>
+    <p class="section-lead">La salsa en Nueva York no es nostalgia: es agenda semanal. Congresos de baile, conciertos de estadio, tardes gratuitas junto al mar y clubes donde la orquesta sigue mandando. Cruza estas fechas con tu vuelo antes de comprar nada.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type festival">🎪 Festival · Mayo</div>
+        <div class="card-body">
+          <div class="card-title">BIG Salsa Festival New York</div>
+          <p class="card-desc">El congreso de baile del Memorial Day Weekend: talleres, competencias y socials hasta las cuatro de la mañana en pleno Midtown. Vienen bailadores de los cinco continentes a medirse en la ciudad donde se inventó el estilo "on 2".</p>
+          <div class="card-links">
+            <a href="https://www.bigsalsafestival.com/newyork" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/New+York+Hilton+Midtown" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type festival">🎪 Concierto · Anual</div>
+        <div class="card-body">
+          <div class="card-title">New York Salsa Festival</div>
+          <p class="card-desc">Una noche, un estadio, media docena de leyendas vivas del género en el mismo escenario. El heredero directo de aquellos conciertos multitudinarios de la Fania. Revisa Ticketmaster: el cartel se anuncia con meses de antelación y vuela.</p>
+          <div class="card-links">
+            <a href="https://www.ticketmaster.com/new-york-salsa-festival-tickets/artist/821117" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Barclays+Center+Brooklyn" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type festival">🎪 Desfile · Junio</div>
+        <div class="card-body">
+          <div class="card-title">Desfile Nacional Puertorriqueño</div>
+          <p class="card-desc">El segundo domingo de junio, la Quinta Avenida se viste de monoestrellada: millones de personas, carrozas con orquestas y la diáspora entera celebrándose. No es un evento para ver la salsa — es para entender de dónde sale.</p>
+          <div class="card-links">
+            <a href="https://www.nprdpinc.org" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Fifth+Avenue+and+East+79th+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type festival">🎪 Gratis · Verano</div>
+        <div class="card-body">
+          <div class="card-title">Salsa Sundays en Orchard Beach</div>
+          <p class="card-desc">De Memorial Day a Labor Day, los domingos de la "Riviera del Bronx" son de salsa al aire libre y gratuita. Generaciones enteras bailando en el mismo malecón desde los años 70. Lleva sombrero, agua y cero prisa.</p>
+          <div class="card-links">
+            <a href="https://www.nycgovparks.org/parks/pelham-bay-park" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Orchard+Beach+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type music">🎸 Venue · Hudson Square</div>
+        <div class="card-body">
+          <div class="card-title">SOB's</div>
+          <p class="card-desc">Cuarenta años de músicas del mundo con la salsa como columna vertebral. Orquesta en vivo, clase gratuita antes de la fiesta y una pista donde nadie te mira mal por aprender. El club que mantiene viva la tradición del baile social en Manhattan.</p>
+          <div class="card-links">
+            <a href="https://sobs.com" target="_blank" class="btn btn-web">🎟 Cartelera</a>
+            <a href="https://www.google.com/maps/search/SOB's+204+Varick+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type music">🎸 Venue · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">Lehman Center for the Performing Arts</div>
+          <p class="card-desc">El teatro donde la salsa dura tiene temporada estable: soneros históricos, orquestas de trombones y un público que se sabe cada letra. Si solo puedes ir a un concierto en todo el viaje, que sea aquí — el Bronx aplaude distinto.</p>
+          <div class="card-links">
+            <a href="https://www.lehmancenter.org" target="_blank" class="btn btn-web">🎟 Cartelera</a>
+            <a href="https://www.google.com/maps/search/Lehman+Center+for+the+Performing+Arts+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type music">🎸 Club · Calle 51</div>
+        <div class="card-body">
+          <div class="card-title">Copacabana</div>
+          <p class="card-desc">La marca nocturna más legendaria de la ciudad, reencarnada en la calle 51 Oeste: salsa, bachata y merengue con producción de club grande. Entre estas paredes — las de antes y las de ahora — cantó toda la realeza latina del siglo XX.</p>
+          <div class="card-links">
+            <a href="https://thecopanyc.com" target="_blank" class="btn btn-web">🎟 Entradas</a>
+            <a href="https://www.google.com/maps/search/Copacabana+625+West+51st+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type music">🎸 Social · Midtown</div>
+        <div class="card-body">
+          <div class="card-title">Salsamania Saturdays</div>
+          <p class="card-desc">La social de los sábados en un piso 15 del distrito de la moda: clase para principiantes a las nueve, pista hasta las dos. Aquí no importa tu nivel — importa que saques a bailar y te dejes sacar. Así se ha transmitido este baile durante sesenta años.</p>
+          <div class="card-links">
+            <a href="https://salsamanianyc.com" target="_blank" class="btn btn-web">🎟 Info</a>
+            <a href="https://www.google.com/maps/search/224+West+35th+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GASTRONOMÍA ═══ -->
+<section class="section" id="gastronomia" style="background:var(--base-2)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Sabores</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">La mesa del<br><em>barrio</em></h2>
+    <p class="section-lead">La salsa se cocinó con hambre de casa: mofongo, cuchifritos, ropa vieja, café con leche a medianoche. Los primeros seis lugares son la despensa emocional de la música que viniste a buscar. Los tres siguientes son la otra cara del plato: los barrios donde se come el mundo entero — porque en esta ciudad hay más de 150 cocinas nacionales sirviendo cena esta misma noche.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Puertorriqueño · El Barrio</div>
+        <div class="card-body">
+          <div class="card-title">La Fonda Boricua</div>
+          <p class="card-desc">El comedor de El Barrio desde los años 90: mofongo, pernil y paredes llenas de retratos de los grandes. Los viernes suele haber música en vivo y los fines de semana, brunch con espectáculo. Se viene por la comida; se vuelve por la casa.</p>
+          <div class="card-links">
+            <a href="https://lafondanyc.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/La+Fonda+Boricua+East+Harlem+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Cuchifritos · El Barrio</div>
+        <div class="card-body">
+          <div class="card-title">Cuchifritos (calle 116)</div>
+          <p class="card-desc">Mostrador de neón funcionando desde los años 60: alcapurrias, bacalaítos, orejitas y jugo de china. Comer de pie, con servilleta de papel, mientras pasa la 116 entera por la puerta. La experiencia gastronómica más honesta de Manhattan por menos de 15 dólares.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Cuchifritos+East+116th+Street+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Cuchifritos · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">188 Cuchifritos</div>
+          <p class="card-desc">La institución frita del sur del Bronx, a pasos del corazón salsero de la 149. Cuarenta años de chicharrón, morcilla y pasteles bajo luz amarilla. El almuerzo obligado del día 2 — y la razón por la que vas a caminar de vuelta.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/188+Cuchifritos+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Lechonera · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">El Nuevo Bohío</div>
+          <p class="card-desc">La lechonera del Bronx: pernil dorado en vitrina, porciones que alimentan a dos y precios de otra década. El tipo de lugar donde el cocinero te pregunta de dónde eres — y cuando contestas, te sirve más.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/El+Nuevo+Bohio+Lechonera+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Cubano · Midtown</div>
+        <div class="card-body">
+          <div class="card-title">Victor's Café</div>
+          <p class="card-desc">Desde 1963, el comedor cubano de mantel blanco del distrito de los teatros: ropa vieja, lechón asado y mojitos con historia. Aquí celebraron los músicos cuando la salsa conquistó Broadway — y la carta casi no ha cambiado desde entonces.</p>
+          <div class="card-links">
+            <a href="https://www.victorscafe.com" target="_blank" class="btn btn-web">🌐 Web</a>
+            <a href="https://www.google.com/maps/search/Victor's+Cafe+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🍽 Puertorriqueño · Loisaida</div>
+        <div class="card-body">
+          <div class="card-title">Casa Adela</div>
+          <p class="card-desc">Medio siglo alimentando a Loisaida con pollo al horno y arroz con gandules. Adela Fargas ya no está, pero su familia sostiene la receta y el barrio sostiene la mesa. Comer aquí es un acto de memoria — y un almuerzo espléndido.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Casa+Adela+Avenue+C+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🌏 Cocinas del mundo · Queens</div>
+        <div class="card-body">
+          <div class="card-title">Jackson Heights</div>
+          <p class="card-desc">La cuadra más diversa del planeta: momos tibetanos, arepas colombianas, biryani de Little India y taquerías mexicanas compartiendo la misma acera bajo el tren 7. Baja en la estación 74 St–Broadway sin plan y déjate llevar por el olfato. Aquí se cena en tres continentes por 30 dólares.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Jackson+Heights+74th+Street+Queens" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🌏 Cocinas del mundo · Queens</div>
+        <div class="card-body">
+          <div class="card-title">Flushing — el Chinatown mayor</div>
+          <p class="card-desc">Olvida el Chinatown de Manhattan: el de Flushing es más grande, más regional y más honesto. Sopas de Sichuan que hacen sudar, dumplings de Shanghái, patios de comida donde el menú está solo en chino y nadie te juzga por señalar. Al final de la línea 7 — el viaje en metro más sabroso de la ciudad.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Flushing+Chinatown+Main+Street+Queens" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type food">🌏 Cocinas del mundo · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">Arthur Avenue — la Little Italy real</div>
+          <p class="card-desc">La Little Italy que los neoyorquinos usan de verdad está en el Bronx: salumerías de cuarta generación, pasta fresca colgando en vitrinas y el mercado cubierto que inauguró La Guardia en 1940. A veinte minutos del circuito salsero del día 2 — el desvío gastronómico que mejor paga de toda la guía.</p>
+          <div class="card-links">
+            <a href="https://www.google.com/maps/search/Arthur+Avenue+Retail+Market+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box">
+      <p>💡 <strong>Consejo:</strong> <em>En los mostradores de cuchifritos se paga en efectivo y se pide señalando la vitrina. Di "un poquito de todo" y deja que decidan por ti: nunca falla, y suele venir con conversación incluida.</em></p>
+    </div>
+
+    <div class="tip-box">
+      <p>📖 <strong>La guía gastronómica completa:</strong> <em>Para explorar las 150+ cocinas de la ciudad como un local, estas son las biblias: <a href="https://ny.eater.com" target="_blank" style="color:var(--accent)">Eater NY</a> y sus mapas de "dónde comer ahora mismo", <a href="https://www.theinfatuation.com/new-york" target="_blank" style="color:var(--accent)">The Infatuation</a> con reseñas sin filtro por barrio y antojo, la <a href="https://guide.michelin.com/us/en/new-york-state/new-york/restaurants" target="_blank" style="color:var(--accent)">Guía Michelin de Nueva York</a> para las noches de mantel, y <a href="https://www.timeout.com/newyork/food-drink" target="_blank" style="color:var(--accent)">Time Out Food & Drink</a> para lo que abre esta semana. Entre las cuatro cubren desde el puesto de dumplings hasta la mesa con estrellas.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TURISMO REGENERATIVO ═══ -->
+<section class="section" id="regenerativo" style="background:linear-gradient(135deg, var(--base-1) 0%, var(--base-2) 50%, var(--base-1) 100%);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Turismo con propósito</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">Devolverle algo<br><em>a la ciudad</em></h2>
+    <p class="section-lead">La salsa nació de comunidades que convirtieron solares quemados en jardines y esquinas duras en orquestas. Viajar a Nueva York en esa misma clave significa dejar el lugar un poco mejor que como lo encontraste: sembrar, restaurar, aprender, comprar donde importa. No es caridad — es pertenencia. Es reforzar, a través de la música, el arte y la naturaleza, los lazos que nos hacen humanos.</p>
+
+    <div class="cards-grid">
+
+      <div class="card fade-up">
+        <div class="card-type sustain">🌊 Restauración · El Puerto</div>
+        <div class="card-body">
+          <div class="card-title">Billion Oyster Project</div>
+          <p class="card-desc">La meta: devolver mil millones de ostras al puerto de Nueva York para 2035, porque las ostras filtran el agua y protegen la costa. Los voluntarios preparan arrecifes y monitorean estaciones en los muelles. Una mañana con las manos en el agua que rodea todo lo que bailaste.</p>
+          <div class="card-links">
+            <a href="https://www.billionoysterproject.org" target="_blank" class="btn btn-web">🌐 Participar</a>
+            <a href="https://www.google.com/maps/search/Governors+Island+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sustain">🌱 Río · El Bronx</div>
+        <div class="card-body">
+          <div class="card-title">Bronx River Alliance</div>
+          <p class="card-desc">El único río de agua dulce de la ciudad atraviesa el condado de la salsa, y esta alianza lo devolvió a la vida: hoy tiene castores, canoas y huertos en la ribera. Jornadas abiertas de siembra, limpieza y remo. Restaurar el río del Bronx es restaurar el paisaje de la música.</p>
+          <div class="card-links">
+            <a href="https://bronxriver.org/get-involved/volunteer" target="_blank" class="btn btn-web">🌐 Participar</a>
+            <a href="https://www.google.com/maps/search/Bronx+River+Greenway" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sustain">🌱 Huertos · Toda la ciudad</div>
+        <div class="card-body">
+          <div class="card-title">GrowNYC & los jardines comunitarios</div>
+          <p class="card-desc">Más de 170 huertos comunitarios — muchos nacidos en los solares quemados de Loisaida y el Bronx de los 70, los mismos años y las mismas cuadras de la salsa brava. Compra en sus greenmarkets o únete a una jornada de siembra: cada tomate sostiene esa historia.</p>
+          <div class="card-links">
+            <a href="https://www.grownyc.org" target="_blank" class="btn btn-web">🌐 Participar</a>
+            <a href="https://www.google.com/maps/search/Union+Square+Greenmarket+New+York" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sustain">🌳 Parques · Voluntariado</div>
+        <div class="card-body">
+          <div class="card-title">It's My Park — NYC Parks</div>
+          <p class="card-desc">El programa de voluntariado de los parques públicos: plantar bulbos en Pelham Bay, pintar bancas en El Barrio, limpiar senderos donde los domingos suenan las congas. Dos horas de trabajo, un parque mejor, y la sensación rara y hermosa de ser vecino en una ciudad ajena.</p>
+          <div class="card-links">
+            <a href="https://www.nycgovparks.org/opportunities/volunteer" target="_blank" class="btn btn-web">🌐 Participar</a>
+            <a href="https://www.google.com/maps/search/Thomas+Jefferson+Park+East+Harlem" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sustain">💃 Cultura · Aprender el baile</div>
+        <div class="card-body">
+          <div class="card-title">Toma clases donde se inventó el estilo</div>
+          <p class="card-desc">El turismo regenerativo también es cultural: paga una clase de salsa "on 2" con maestros locales en vez de mirar desde la barra. Las escuelas y socials de la ciudad viven de eso, y tú te llevas el único souvenir que mejora con los años. Empieza por las clases previas de SOB's o Salsamania.</p>
+          <div class="card-links">
+            <a href="https://sobs.com" target="_blank" class="btn btn-web">🌐 Clases en SOB's</a>
+            <a href="https://salsamanianyc.com" target="_blank" class="btn btn-web">💃 Salsamania</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-up">
+        <div class="card-type sustain">🎵 Patrimonio · Comprar con sentido</div>
+        <div class="card-body">
+          <div class="card-title">Sostén la memoria: compra en el barrio</div>
+          <p class="card-desc">Un vinilo en Casa Amadeo, artesanía en La Marqueta, la entrada de El Museo del Barrio, la propina generosa en la lechonera: cada dólar gastado en los negocios históricos latinos es conservación patrimonial directa, sin intermediarios. La forma más sabrosa de activismo que existe.</p>
+          <div class="card-links">
+            <a href="https://www.nyctourism.com/articles/casa-amadeo-nyc-latin-history-in-the-bronx/" target="_blank" class="btn btn-web">🌐 Conoce Casa Amadeo</a>
+            <a href="https://www.google.com/maps/search/Casa+Amadeo+record+store+Bronx" target="_blank" class="btn btn-map">📍 Maps</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ BANDA SONORA · SPOTIFY ═══ -->
+<section class="section" id="banda-sonora" style="background:var(--base-1);border-top:1px solid rgba(226,117,18,0.18)">
+  <div class="section-inner">
+    <div class="section-rule"><span class="section-tag">Ponte los audífonos</span><span class="brand-seal seal-rule"></span></div>
+    <h2 class="section-title">La banda sonora<br>de <em>este viaje</em></h2>
+    <p class="section-lead">Esta guía nació de dos episodios de El Pasaporte Sinfónico. Escúchalos antes de salir — o mientras caminas El Barrio — y después métete de cabeza en los perfiles de quienes inventaron este sonido en las calles de Nueva York.</p>
+
+    <div class="sp-episodes">
+
+      <div class="sp-ep fade-up">
+        <div class="ep-kicker">Episodio · Primera Parte</div>
+        <h3>Música Afrocaribeña — New York</h3>
+        <div class="ep-meta">2 h 31 min · Temporada 2</div>
+        <p>La historia de la salsa desde su raíz migrante, cómo llegar y dónde alojarse, y los circuitos de los días 1 y 2. Con el sonero Victor Quintana como invitado.</p>
+        <iframe style="border-radius:10px" src="https://open.spotify.com/embed/episode/7hElUe7uoZI8wUA7mP5LN9?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <a href="https://open.spotify.com/episode/7hElUe7uoZI8wUA7mP5LN9" target="_blank" rel="noopener" class="ep-open">Abrir en Spotify ↗</a>
+      </div>
+
+      <div class="sp-ep fade-up">
+        <div class="ep-kicker">Episodio · Segunda Parte</div>
+        <h3>Música Afrocaribeña — New York</h3>
+        <div class="ep-meta">1 h 40 min · Temporada 2</div>
+        <p>Héctor Lavoe, Willie Colón, Jerry Masucci y Rubén Blades, más los circuitos de los días 3 y 4 por Harlem y Brooklyn: Apollo, Carnegie Hall, Lincoln Center y misa gospel.</p>
+        <iframe style="border-radius:10px" src="https://open.spotify.com/embed/episode/1AoUMoA6jTCM3gtKe1SIfN?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <a href="https://open.spotify.com/episode/1AoUMoA6jTCM3gtKe1SIfN" target="_blank" rel="noopener" class="ep-open">Abrir en Spotify ↗</a>
+      </div>
+
+    </div>
+
+    <div class="section-rule"><span class="section-tag">Los arquitectos del sonido</span></div>
+    <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:1.2rem">Perfiles en <em>Spotify</em></h2>
+    <p class="section-lead" style="margin-bottom:2.5rem">Doce nombres que caminaron estas mismas aceras. Toca cualquiera para abrir su perfil completo y armar tu propia lista antes de volar.</p>
+
+    <div class="artist-grid">
+        <a href="https://open.spotify.com/artist/1OdyhpUABf8avaZ9r8nI1u" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">La orquesta madre</div>
+          <div class="ac-name">Fania All Stars</div>
+          <div class="ac-note">El seleccionado que grabó <em>Our Latin Thing</em> en el Cheetah, 1971.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/7opp16lU7VM3l2WBdGMYHP" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El Cantante de los Cantantes</div>
+          <div class="ac-name">Héctor Lavoe</div>
+          <div class="ac-note">Su calle lleva su nombre en Longwood, el Bronx. Voz y herida a partes iguales.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/7x5Slu7yTE5icZjNsc3OzW" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El Malo del Bronx</div>
+          <div class="ac-name">Willie Colón</div>
+          <div class="ac-note">Trombón sucio, portadas de cine negro y el sonido de la esquina hecho disco.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/5BwMgvRwlq61SmknvsVIQj" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El poeta de la salsa</div>
+          <div class="ac-name">Rubén Blades</div>
+          <div class="ac-note"><em>Siembra</em>, <em>Pedro Navaja</em>: la canción convertida en crónica urbana.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/788HzQOFhN3mcDo0InBqbJ" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El Sonero Mayor</div>
+          <div class="ac-name">Ismael Rivera</div>
+          <div class="ac-note">Maelo. El fraseo más libre que ha dado el Caribe; nadie improvisó como él.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/2weA6hhVqTIN2gSn9PUB9U" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">La Guarachera de Cuba</div>
+          <div class="ac-name">Celia Cruz</div>
+          <div class="ac-note">¡Azúcar! De La Habana a Nueva York, y de Nueva York al mundo entero.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/6SPpCqM8gOzrtICAxN5NuX" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El Rey del Timbal</div>
+          <div class="ac-name">Tito Puente</div>
+          <div class="ac-note">Del Spanish Harlem al Palladium: el puente entre el mambo y la salsa.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/2h4ndKS2vRWeFLpq8ARu0D" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">Manos duras</div>
+          <div class="ac-name">Ray Barretto</div>
+          <div class="ac-note">Congas de Brooklyn, boogaloo y jazz latino en la misma descarga.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/2VviFtXYreO6Zn9n8Ibk6C" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El piano rebelde</div>
+          <div class="ac-name">Eddie Palmieri</div>
+          <div class="ac-note">La Perfecta y décadas de disonancia brillante desde el Bronx.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/09947uhj2ZwU9mFXK5v50o" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El fundador</div>
+          <div class="ac-name">Johnny Pacheco</div>
+          <div class="ac-note">Flautista dominicano y cofundador de Fania Records junto a Jerry Masucci.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/1Ypa8o8muvDcgOt1YYtcOC" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">Voz de terciopelo</div>
+          <div class="ac-name">Cheo Feliciano</div>
+          <div class="ac-note"><em>Anacaona</em>, <em>El Ratón</em>: el bolero y la salsa en la misma garganta.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+        <a href="https://open.spotify.com/artist/5S3BxZrK4hYN3fwsw8oumq" target="_blank" rel="noopener" class="artist-card fade-up">
+          <div class="ac-role">El Niño Bonito</div>
+          <div class="ac-name">Ismael Miranda</div>
+          <div class="ac-note">La juventud de la Fania, con Larry Harlow y voz propia desde los veinte.</div>
+          <span class="ac-go">Abrir en Spotify ↗</span>
+        </a>
+    </div>
+
+    <div style="text-align:center;margin-top:3.5rem">
+      <a href="https://open.spotify.com/show/0gYgTB6oyizyaaaHxhQORe" target="_blank" rel="noopener" class="btn-primary">Sigue El Pasaporte Sinfónico en Spotify →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ QUOTE FINAL ═══ -->
+<section class="section" style="background:var(--base-1)">
+  <div class="section-inner" style="text-align:center;max-width:820px">
+    <span class="brand-seal seal-quote"></span>
+    <p class="quote-text" style="font-size:clamp(1.2rem,3vw,1.7rem)">"El que no sabe de dónde viene, no sabe para dónde va. Nueva York lo sabe: viene de todas partes. Por eso su música va a todas partes."</p>
+    <div class="quote-source" style="margin-top:1.4rem">— El Pasaporte Sinfónico · Salsa Brava, Segunda Parte</div>
+  </div>
+</section>
+
+<!-- ═══ CIERRE ═══ -->
+<section class="section" style="background:var(--base-2);border-top:1px solid rgba(226,117,18,0.15)">
+  <div class="section-inner" style="text-align:center;max-width:800px">
+    <span class="brand-seal seal-closing"></span>
+    <div class="section-rule" style="justify-content:center"><span class="section-tag">El último acorde</span></div>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Nueva York<br><em>para siempre</em></h2>
+
+    <p style="font-size:1.1rem;line-height:1.8;color:rgba(236,220,194,0.75);margin-bottom:2.5rem;font-style:italic">
+      Los viajes son el antídoto. Son la clave y el tumbao del alma. Nueva York — la ciudad que recibió a los que llegaban con una maleta y les devolvió una orquesta — es la prueba de que la mezcla no diluye: multiplica. Camina El Barrio, cruza al Bronx, baila hasta tarde, siembra algo antes de irte. Y verás cómo cada paso te hace un poco más grande, un poco más sabio, un poco más... humano. Y recuerda que cada ciudad tiene su banda sonora, y cada ritmo tiene su hogar. Hasta el próximo destino donde la música nos lleve.
+    </p>
+
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="https://www.nyctourism.com" target="_blank" class="btn-primary">Visita Nueva York →</a>
+      <a href="#banda-sonora" class="btn-ghost">🎧 Escuchar la Banda Sonora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <span class="brand-seal seal-footer"></span>
+  <div class="footer-logo">El Pasaporte Sinfónico</div>
+  <div class="footer-tag">El podcast donde la música viaja</div>
+  <p class="footer-note">
+    Guía de viajes basada en los episodios "Salsa Brava" (primera y segunda parte) dedicados a Nueva York.
+    Los enlaces, fechas y horarios son orientativos — verifica siempre directamente con cada establecimiento antes de tu visita.
+    Algunos enlaces pueden ser enlaces de afiliado sin costo adicional para el viajero.
+    © 2026 El Pasaporte Sinfónico.
+  </p>
+</footer>
+
+<script>
+// ═══ CAMBIO DE PESTAÑAS (itinerario) ═══
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+
+  const items = document.querySelectorAll('#' + id + ' .fade-up');
+  items.forEach((el, i) => {
+    el.classList.remove('visible');
+    setTimeout(() => el.classList.add('visible'), 80 * i);
+  });
+}
+
+// ═══ FADE-IN AL HACER SCROLL ═══
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.fade-up').forEach((el, i) => {
+  el.style.transitionDelay = `${(i % 5) * 70}ms`;
+  obs.observe(el);
+});
+
+// ═══ NAV ACTIVO AL HACER SCROLL ═══
+const navLinks = document.querySelectorAll('.nav-links a');
+const sectionIds = ['llegada', 'hoteles', 'itinerario', 'cultura', 'deportes', 'festivales', 'gastronomia', 'regenerativo'];
+const secObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { threshold: 0.25 });
+
+sectionIds.forEach(id => {
+  const el = document.getElementById(id);
+  if (el) secObs.observe(el);
+});
+
+// Inicializar fade-ups del tab activo
+setTimeout(() => {
+  document.querySelectorAll('.tab-content.active .fade-up').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 200 + i * 70);
+  });
+}, 100);
+</script>
+
+</body>
+</html>
