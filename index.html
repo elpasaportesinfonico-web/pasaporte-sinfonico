@@ -279,6 +279,38 @@
         guideTags: ['Cómo llegar', 'Transporte', 'Circuito'],
       },
       {
+        id: 'ny-1',
+        img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&h=450&q=80',
+        typeColor: '#2bb3a3',
+        category: 'Música Afrocaribeña',
+        title: 'Música Afrocaribeña — New York (1ra parte)',
+        kicker: 'Nueva York · El Barrio · Salsa Brava',
+        description: 'La capital mundial de la salsa: El Barrio, el Bronx y los clubes donde la música afrocaribeña se volvió neoyorquina.',
+        spotify: 'https://open.spotify.com/episode/7hElUe7uoZI8wUA7mP5LN9',
+        ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-1ra-parte-audios-mp3_rf_115814013_1.html',
+        fountain: FOUNTAIN_SHOW,
+        guideHref: './guias/nueva-york-salsa-guide.html',
+        guideTitle: 'Nueva York — Salsa Brava',
+        guideDescription: 'De El Barrio al Bronx: Casa Amadeo, el Copacabana, La Fonda y los escenarios de la Fania — llegada, hoteles y el circuito día a día.',
+        guideTags: ['Cómo llegar', 'Hoteles', 'Circuito'],
+      },
+      {
+        id: 'ny-2',
+        img: 'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=800&h=450&q=80',
+        typeColor: '#2bb3a3',
+        category: 'Música Afrocaribeña',
+        title: 'Música Afrocaribeña — New York (2da parte)',
+        kicker: 'Nueva York · La era Fania',
+        description: 'La segunda parte del viaje: la era Fania, los venues legendarios y el legado que sigue sonando en cada esquina de Nueva York.',
+        spotify: 'https://open.spotify.com/episode/1AoUMoA6jTCM3gtKe1SIfN',
+        ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-2da-parte-audios-mp3_rf_119031727_1.html',
+        fountain: FOUNTAIN_SHOW,
+        guideHref: './guias/nueva-york-salsa-guide.html',
+        guideTitle: 'Nueva York — Salsa Brava',
+        guideDescription: 'De El Barrio al Bronx: Casa Amadeo, el Copacabana, La Fonda y los escenarios de la Fania — llegada, hoteles y el circuito día a día.',
+        guideTags: ['Cómo llegar', 'Hoteles', 'Circuito'],
+      },
+      {
         id: 'australia',
         img: 'https://images.pexels.com/photos/1878293/pexels-photo-1878293.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&dpr=1',
         typeColor: '#e57315',
@@ -316,8 +348,6 @@
     const MORE_EPISODES = [
       { id: 'back-to-the-beginning', category: 'Especial', title: 'Back to the Beginning — Reseña del evento (Birmingham)', spotify: 'https://open.spotify.com/episode/59MRilmn5BmBdzSQZndNd2', ivoox: 'https://www.ivoox.com/en/back-to-the-beginning-resena-del-evento-audios-mp3_rf_162302149_1.html' },
       { id: 'venezuela', category: 'Destino', title: 'Venezuela — Puerto Ordáz y Delta del Orinoco', spotify: 'https://open.spotify.com/episode/4h7BEReBdl47pXrpdA8S8P', ivoox: 'https://www.ivoox.com/en/venezuela-puerto-ordaz-delta-del-orinoco-audios-mp3_rf_122634199_1.html' },
-      { id: 'ny-1', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — New York (1ra parte)', spotify: 'https://open.spotify.com/episode/7hElUe7uoZI8wUA7mP5LN9', ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-1ra-parte-audios-mp3_rf_115814013_1.html' },
-      { id: 'ny-2', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — New York (2da parte)', spotify: 'https://open.spotify.com/episode/1AoUMoA6jTCM3gtKe1SIfN', ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-new-york-2da-parte-audios-mp3_rf_119031727_1.html' },
       { id: 'rep-dominicana', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — República Dominicana', spotify: null, ivoox: 'https://www.ivoox.com/en/episodio-3-8211-2da-temporada-musica-afrocaribena-audios-mp3_rf_111550581_1.html' },
       { id: 'cuba', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — Cuba', spotify: null, ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-cuba-audios-mp3_rf_106888096_1.html' },
       { id: 'puerto-rico', category: 'Música Afrocaribeña', title: 'Música Afrocaribeña — Puerto Rico', spotify: null, ivoox: 'https://www.ivoox.com/en/musica-afrocaribena-puerto-rico-audios-mp3_rf_99460980_1.html' },
@@ -464,7 +494,7 @@
                   key={ep.id}
                   type="Guía completa"
                   typeColor={ep.typeColor}
-                  title={ep.title}
+                  title={ep.guideTitle || ep.title}
                   description={ep.guideDescription}
                   links={ep.guideTags}
                   href={ep.guideHref}
